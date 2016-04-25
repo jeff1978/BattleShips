@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleShips
 {
-   public class Program
+   public class MainProgram
     {
         public string SayHello()
         {

@@ -7,19 +7,21 @@ using System.Threading.Tasks;
 namespace BattleShips.Sea
 {
     /// <summary>
-    /// This class represents the coordinates of a grid using an x and y integer.
+    /// This class represents the coordinates of a grid using x and y integers.
     /// </summary>
-    class Position
+    public class Position
     {
+        #region property
         public int row { get; set; }
         public int column { get; set; }
+        #endregion
 
-        #region properties
+        #region constructor
         public Position(int x, int y)
         {
             this.row = x;
-            this.row = y;
-        } 
+            this.column = y;
+        }
         #endregion
     }
 }
