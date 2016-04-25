@@ -14,7 +14,10 @@ namespace BattleShips.Tests
         [TestMethod()]
         public void SayHelloTest()
         {
-            Assert.Fail();
+            Program thisTest = new Program();
+            var thisResult=thisTest.SayHello();
+            //var thisResult = Console.ReadLine();
+            Assert.AreEqual("Hello World", thisResult);
         }
     }
 }

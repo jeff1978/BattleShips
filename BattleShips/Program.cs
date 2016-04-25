@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace BattleShips
 {
-    class Program
+   public class Program
     {
+        public string SayHello()
+        {
+            Console.WriteLine("Hello World");
+            //Console.ReadLine();
+            return "Hello World";
+        }
         static void Main(string[] args)
         {
         }
