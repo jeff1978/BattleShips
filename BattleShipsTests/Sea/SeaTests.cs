@@ -16,7 +16,7 @@ namespace BattleShips.Sea.Tests
         {
             // arrange
             Sea thisSea = new Sea(5, 5);
-            Position validPosition = new Position(3, 3);
+            Position validPosition = new Position(4, 3);
             // act
             var result = thisSea.IsValidPosition(validPosition); 
             // assert
@@ -24,7 +24,7 @@ namespace BattleShips.Sea.Tests
         }
 
         [Test]
-        public void IsInValidPosition()
+        public void IsInvalidPosition()
         {
             // arrange
             Sea thisSea = new Sea(5, 5);

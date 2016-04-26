@@ -15,11 +15,15 @@ namespace BattleShips.Sea
 
         public Sea(int a, int b)
         {
-            this.seaRow = a;
-            this.seaColumn = b;
-
+            seaRow = a;
+            seaColumn = b;
         }
-
+        /// <summary>
+        /// A method to check x and y coordinates to see if they lie within
+        /// the sea.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public bool IsValidPosition(Position position)
         {
             return position.row < seaRow && position.column < seaColumn && position.row >= 0 && position.column >= 0;
