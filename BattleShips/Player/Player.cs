@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleShipsTests1.Ship
+namespace BattleShips.Player
 {
-    class ShipTests
+    public class Player
     {
     }
 }

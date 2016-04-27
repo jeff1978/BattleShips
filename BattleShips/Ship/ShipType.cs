@@ -8,7 +8,9 @@ namespace BattleShips.Ship
 {
     /// <summary>
     /// This stores the ship types.
-    /// The list can be added to in later versions of the application.
+    /// the enum values are explicit and are used the represent the number
+    /// of positions that the ship occupies ie. the ship size.
+    /// The list can be added to if you want to include more ship types.
     /// </summary>
     public enum ShipType
     {

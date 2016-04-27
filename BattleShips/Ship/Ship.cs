@@ -1,9 +1,5 @@
 ﻿using BattleShips.Sea;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattleShips.Ship
 {
@@ -23,7 +19,7 @@ namespace BattleShips.Ship
         
         /// <summary>
         /// This method will take the place parameters and work out the occupied grid
-        /// coordinates based on the ship size and direction. Assume that the ship
+        /// coordinates based on the ship type and direction. Assume that the ship
         /// placement coordinate is on the far left (if horizontal) or bottom (if
         /// vertical.
         /// </summary>
@@ -31,7 +27,7 @@ namespace BattleShips.Ship
         /// <param name="shipSize"></param>
         /// <param name="isShipHorizontal"></param>
         /// <returns></returns>
-        public ShipPositions getShipPositions(Position placePosition, int shipSize, bool isShipHorizontal)
+        public List<Position> getShipPositions(Position placePosition, ShipType shipType, bool isShipHorizontal)
         {
             // lets breakdown the placePosition and work out the 
             // other coordinates.
@@ -43,7 +39,7 @@ namespace BattleShips.Ship
             // if isHoriz true then use a for loop to work out the other coords.
             if (isShipHorizontal)
             {
-                for (int i = 0; i < shipSize; i++)
+                for (int i = 0; i < (int)ShipType; i++)
                 {
                     var positionToAdd = new Position(x + i, y);
                     newList.Add(positionToAdd);
@@ -53,14 +49,31 @@ namespace BattleShips.Ship
             {
 
                 // if isHoriz false then use a for loop to work out the other coords.
-                for (int i = 0; i < shipSize; i++)
+                for (int i = 0; i < (int)ShipType; i++)
                 {
                     var positionToAdd = new Position(x, y + i);
                     newList.Add(positionToAdd);
                 }
             }
-            return new ShipPositions(newList);
+            return newList;
         }
+
+        /// <summary>
+        /// A method that takes a list of positions and returns text showing the
+        /// full properties of each position. It is useful for unit testing.
+        /// </summary>
+        /// <param name="aListOfPositions"></param>
+        /// <returns></returns>
+        public string showList(List<Position> aListOfPositions)
+        {
+            // this is a string used to build the result
+            string thesePostions="";
+            foreach (var Position in aListOfPositions)
+            {
+                thesePostions = thesePostions + $"Position floating is {Position.IsFloating} row is {Position.row} and column is {Position.column}\n";         
+            }
+            return thesePostions;
+       }
     }
 }
 
