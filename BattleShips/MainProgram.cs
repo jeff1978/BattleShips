@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BattleShips.Setup;
+using System;
 
 namespace BattleShips
 {
-   public class MainProgram
+    public class MainProgram
     {
-        public string SayHello()
-        {
-            Console.WriteLine("Hello World");
-            //Console.ReadLine();
-            return "Hello World";
+        public IGameSetup thisSetup { get; set; }
+
+        public MainProgram(IGameSetup anyInt) {
+            this.thisSetup = anyInt;
         }
+
         static void Main(string[] args)
         {
+            IGameSetup thisGame = new GameSetup();
+            var thisProgram = new MainProgram(thisGame);
+            thisProgram.thisSetup.setupGame();
+            Console.ReadLine();
         }
     }
 }

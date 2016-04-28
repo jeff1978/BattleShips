@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShips.Ship
+﻿namespace BattleShips.Ship
 {
     /// <summary>
     /// This stores the ship types.
@@ -16,7 +10,7 @@ namespace BattleShips.Ship
     {
         Scout = 1,
         Destroyer = 2,
-        Battelship = 3
+        Battleship = 3
     } 
 
 }

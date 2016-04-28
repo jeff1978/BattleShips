@@ -1,4 +1,4 @@
-﻿using BattleShips.Sea;
+﻿using BattleShips.BattleGround;
 using System.Collections.Generic;
 
 namespace BattleShips.Ship
@@ -57,23 +57,6 @@ namespace BattleShips.Ship
             }
             return newList;
         }
-
-        /// <summary>
-        /// A method that takes a list of positions and returns text showing the
-        /// full properties of each position. It is useful for unit testing.
-        /// </summary>
-        /// <param name="aListOfPositions"></param>
-        /// <returns></returns>
-        public string showList(List<Position> aListOfPositions)
-        {
-            // this is a string used to build the result
-            string thesePostions="";
-            foreach (var Position in aListOfPositions)
-            {
-                thesePostions = thesePostions + $"Position floating is {Position.IsFloating} row is {Position.row} and column is {Position.column}\n";         
-            }
-            return thesePostions;
-       }
     }
 }
 

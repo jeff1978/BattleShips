@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BattleShips.BattleGround
 
-namespace BattleShips.Sea
 {
     public class Sea
     {
@@ -13,10 +8,10 @@ namespace BattleShips.Sea
         public int seaColumn { get; set; }
         #endregion
 
-        public Sea(int a, int b)
+        public Sea(int SeaRow, int SeaColumn)
         {
-            seaRow = a;
-            seaColumn = b;
+            seaRow = SeaRow;
+            seaColumn = SeaColumn;
         }
         /// <summary>
         /// A method to check x and y coordinates to see if they lie within

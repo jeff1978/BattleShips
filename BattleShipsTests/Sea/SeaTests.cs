@@ -1,12 +1,7 @@
-﻿using NUnit.Framework;
-using BattleShips.Sea;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BattleShips.BattleGround;
+using NUnit.Framework;
 
-namespace BattleShips.Sea.Tests
+namespace BattleShipsTests.SeaTests
 {
     [TestFixture]
     public class SeaTests

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShips.Sea
+﻿namespace BattleShips.BattleGround
 {
     /// <summary>
     /// This class represents the coordinates of a grid using x and y integers.
