@@ -27,7 +27,7 @@ namespace BattleShips.Ship
         /// <param name="shipSize"></param>
         /// <param name="isShipHorizontal"></param>
         /// <returns></returns>
-        public List<Position> getShipPositions(Position placePosition, ShipType shipType, bool isShipHorizontal)
+        public List<Position> getShipPositions(Position placePosition)
         {
             // lets breakdown the placePosition and work out the 
             // other coordinates.
@@ -37,7 +37,7 @@ namespace BattleShips.Ship
             var newList = new List<Position> ();
 
             // if isHoriz true then use a for loop to work out the other coords.
-            if (isShipHorizontal)
+            if (this.IsHorizontal)
             {
                 for (int i = 0; i < (int)ShipType; i++)
                 {
@@ -45,9 +45,8 @@ namespace BattleShips.Ship
                     newList.Add(positionToAdd);
                 }
             }
-            else
+            else  
             {
-
                 // if isHoriz false then use a for loop to work out the other coords.
                 for (int i = 0; i < (int)ShipType; i++)
                 {

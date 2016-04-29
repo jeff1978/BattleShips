@@ -18,7 +18,7 @@ namespace BattleShips.Setup
             var thisList = new List<ShipTypeInGame>();
             foreach (int item in Enum.GetValues(typeof(ShipType)))
             {
-                Console.WriteLine("Please enter the number of {0}s needed:", (ShipType)item);
+                Console.WriteLine("   Please enter the number of {0}s needed:", (ShipType)item);
                 var thisType = new ShipTypeInGame();
                 thisType.shipType = (ShipType)item;
                 thisType.typeQuantity = int.Parse(Console.ReadLine());

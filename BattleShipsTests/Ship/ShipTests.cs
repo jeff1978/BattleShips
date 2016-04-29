@@ -8,7 +8,7 @@ namespace BattleShipsTest.ShipTests
     public class ShipTests
     {
         [Test]
-        public void CheckShipPositionsCreated()
+        public void CheckShipListCreated()
         {
             // arrange
             // set up the test with some initialised objects
@@ -16,7 +16,7 @@ namespace BattleShipsTest.ShipTests
             var thisShip = new Ship(ShipType.Battleship, true);
 
             // act
-            var actualResult = thisShip.getShipPositions(placePosition, ShipType.Battleship, true);
+            var actualResult = thisShip.getShipPositions(placePosition);
 
             // assert
             // check that the result list has appropriate size
@@ -28,20 +28,21 @@ namespace BattleShipsTest.ShipTests
         {
             // arrange
             // set up the test with some initialised objects
+            // add a ship and expect two grid positions returned
             var placePosition = new Position(2, 3);
             var thisShip = new Ship(ShipType.Destroyer, true);
             var actual = "";
 
             // act
-            var ThisList = thisShip.getShipPositions(placePosition, ShipType.Destroyer, true);
+            var ThisList = thisShip.getShipPositions(placePosition);
 
             foreach (var Position in ThisList)
             {
-                actual = actual + $"Position floating is {Position.IsFloating} row is {Position.row} and column is {Position.column}\n";
+                actual = actual + $"{Position.IsFloating},{Position.row},{Position.column}\n";
             }
 
             // assert
-            Assert.AreEqual("Position floating is False row is 2 and column is 3\nPosition floating is False row is 3 and column is 3\n", actual);
+            Assert.AreEqual("False,2,3\nFalse,3,3\n", actual);
         }
 
         [Test]
@@ -49,19 +50,20 @@ namespace BattleShipsTest.ShipTests
         {
             // arrange
             // set up the test with some initialised objects
+            // add a ship and expect three grid positions returned
             var placePosition = new Position(2, 3);
-            var thisShip = new Ship(ShipType.Battleship, true);
+            var thisShip = new Ship(ShipType.Battleship, false);
             var actual = "";
 
             // act
-            var ThisList = thisShip.getShipPositions(placePosition, ShipType.Battleship, true);
+            var ThisList = thisShip.getShipPositions(placePosition);
 
             foreach (var Position in ThisList)
             {
-                actual = actual + $"Position floating is {Position.IsFloating} row is {Position.row} and column is {Position.column}\n";
+                actual = actual + $"{Position.IsFloating},{Position.row},{Position.column}\n";
             }
             // assert
-            Assert.AreEqual("Position floating is False row is 2 and column is 3\nPosition floating is False row is 3 and column is 3\nPosition floating is False row is 4 and column is 3\n", actual);
+            Assert.AreEqual("False,2,3\nFalse,2,4\nFalse,2,5\n", actual);
         }
     }
 }

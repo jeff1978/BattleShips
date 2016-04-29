@@ -10,48 +10,37 @@ namespace BattleShips.Setup
     /// </summary>
     public class GameSetup : IGameSetup
     {
-        // The game setup information will be set
-        // to these read only properties.
-
+        // The game setup information will be stored here   
         public int numberOfPlayers { get; private set; }
         public List<ShipTypeInGame> listOfShipTypes { get; private set; }
         public Sea gameSea { get; private set; }
 
         // Public method for access to this class
-        //
-        //
         public void setupGame()
         {
             // show welcome message
-            showMessage(GameMessages.welcome);
+            Console.WriteLine(GameMessages.welcome);
 
             // get and set the number of players
-            showMessage(GameMessages.getNumberOfPlayers);
+            Console.WriteLine(GameMessages.getNumberOfPlayers);
             numberOfPlayers = Int32.Parse(Console.ReadLine());
 
             // get and set the game mode
-            showMessage(GameMessages.getGameMode);
+            Console.WriteLine(GameMessages.getGameMode);
             var gameMode = Int32.Parse(Console.ReadLine());
             listOfShipTypes = GameInput.getSettings((GameMode)gameMode);
 
             // get and set the sea dimensions
-            showMessage(GameMessages.getSeaSizeWidth);
-            var x = Int32.Parse(Console.ReadLine());
-            showMessage(GameMessages.getSeaSizeHight);
-            var y = Int32.Parse(Console.ReadLine());
+            Console.WriteLine(GameMessages.getSeaSizeWidth);
+            var x = int.Parse(Console.ReadLine());
+            Console.WriteLine(GameMessages.getSeaSizeHight);
+            var y = int.Parse(Console.ReadLine());
             gameSea = new Sea(x, y);
         }
 
-        // Method to get the mode from the console
-        public List<ShipTypeInGame> getMode(GameMode gameMode)
+        public void useMode(GameMode thisMode)
         {
-            return GameInput.getSettings(gameMode);
-        }
-
-        // Method to show messages from storage class
-        public static void showMessage(string thisMessage)
-        {
-            Console.WriteLine(thisMessage);
+          GameInput.getSettings(thisMode);
         }
 
     }

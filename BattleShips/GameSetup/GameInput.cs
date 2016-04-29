@@ -10,20 +10,16 @@ namespace BattleShips.Setup
     /// </summary>
     public static class GameInput
     {
-
         public static List<ShipTypeInGame> getSettings(GameMode gameMode)
         {
             switch (gameMode)
             {
                 case GameMode.Default:
-                    return GameDefault.setDefaults();
-                  
+                    return GameDefault.setDefaults();              
                 case GameMode.Custom:
-                    return GameCustom.setCustom();
-                   
+                    return GameCustom.setCustom();                  
                  //   more cases can be added here in the future
                  //   eg.a new game mode.
-
                 default:
                     Console.WriteLine("The game cannot be initialised. No method implementation has been found for your selection.");
                     Console.ReadLine();

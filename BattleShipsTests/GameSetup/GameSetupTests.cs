@@ -17,8 +17,8 @@ namespace BattleShipsTests.GameSetupTests
             var expected = "";
 
             // act
-            var listOfDefaultSettings = thisGame.getMode(thisMode);
-            foreach (var ShipTypeInGame in listOfDefaultSettings)
+            thisGame.useMode(thisMode);
+            foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
                 expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
             }
@@ -36,8 +36,8 @@ namespace BattleShipsTests.GameSetupTests
             var expected = "";
 
             // act
-            var listOfDefaultSettings = thisGame.getMode(thisMode);
-            foreach (var ShipTypeInGame in listOfDefaultSettings)
+            thisGame.useMode(thisMode);
+            foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
                 expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
             }

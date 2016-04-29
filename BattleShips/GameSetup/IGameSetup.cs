@@ -10,7 +10,7 @@ namespace BattleShips.Setup
         List<ShipTypeInGame> listOfShipTypes { get; }
         int numberOfPlayers { get; }
 
-        List<ShipTypeInGame> getMode(GameMode gameMode);
         void setupGame();
+        void useMode(GameMode thisMode);
     }
 }
