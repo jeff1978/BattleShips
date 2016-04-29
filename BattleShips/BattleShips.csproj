@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleChecker\Command.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="GameSetup\GameCustom.cs" />
     <Compile Include="GameSetup\GameMessages.cs" />
     <Compile Include="GameSetup\GameMode.cs" />

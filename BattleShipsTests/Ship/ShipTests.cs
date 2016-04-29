@@ -20,7 +20,7 @@ namespace BattleShipsTest.ShipTests
 
             // assert
             // check that the result list has appropriate size
-            Assert.AreEqual(3, actualResult);
+            Assert.AreEqual(3, actualResult.Count);
         }
 
         [Test]
