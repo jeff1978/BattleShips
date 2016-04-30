@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BattleShips.Setup
+﻿namespace BattleShips.Setup
 {
     public static class GameMessages
     {

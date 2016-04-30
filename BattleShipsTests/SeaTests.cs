@@ -1,7 +1,7 @@
 ﻿using BattleShips.BattleGround;
 using NUnit.Framework;
 
-namespace BattleShipsTests.SeaTests
+namespace BattleShipsTests
 {
     [TestFixture]
     public class SeaTests

@@ -16,7 +16,6 @@ namespace BattleShips
             IGameSetup thisGame = new GameSetup();
             var thisProgram = new MainProgram(thisGame);
             thisProgram.thisSetup.setupGame();
-            Console.ReadLine();
         }
     }
 }

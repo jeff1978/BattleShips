@@ -67,9 +67,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="GameSetup\GameSetupTests.cs" />
-    <Compile Include="Ship\ShipTests.cs" />
-    <Compile Include="Sea\SeaTests.cs" />
+    <Compile Include="InputMock.cs" />
+    <Compile Include="GameSetupTests.cs" />
+    <Compile Include="InputParserTests.cs" />
+    <Compile Include="ShipTests.cs" />
+    <Compile Include="SeaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

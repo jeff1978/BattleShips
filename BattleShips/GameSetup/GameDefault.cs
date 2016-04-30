@@ -15,8 +15,6 @@ namespace BattleShips.Setup
             var thisList = new List<ShipTypeInGame>();
             thisList.Add(thisType);
             return thisList;
-
         }
-
     }
 }

@@ -18,6 +18,7 @@ namespace BattleShips.Setup
         // Public method for access to this class
         public void setupGame()
         {
+            
             // show welcome message
             Console.WriteLine(GameMessages.welcome);
 
@@ -27,7 +28,7 @@ namespace BattleShips.Setup
 
             // get and set the game mode
             Console.WriteLine(GameMessages.getGameMode);
-            var gameMode = Int32.Parse(Console.ReadLine());
+            var gameMode = int.Parse(Console.ReadLine());
             listOfShipTypes = GameInput.getSettings((GameMode)gameMode);
 
             // get and set the sea dimensions
@@ -40,8 +41,7 @@ namespace BattleShips.Setup
 
         public void useMode(GameMode thisMode)
         {
-          GameInput.getSettings(thisMode);
+            listOfShipTypes = GameInput.getSettings(thisMode);
         }
-
     }
 }

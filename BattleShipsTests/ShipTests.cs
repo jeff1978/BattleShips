@@ -2,7 +2,7 @@
 using BattleShips.Ship;
 using NUnit.Framework;
 
-namespace BattleShipsTest.ShipTests
+namespace BattleShipsTest
 {
     [TestFixture]
     public class ShipTests
@@ -28,7 +28,7 @@ namespace BattleShipsTest.ShipTests
         {
             // arrange
             // set up the test with some initialised objects
-            // add a ship and expect two grid positions returned
+            // add a ship and expect two horizontal grid positions returned
             var placePosition = new Position(2, 3);
             var thisShip = new Ship(ShipType.Destroyer, true);
             var actual = "";
@@ -50,7 +50,7 @@ namespace BattleShipsTest.ShipTests
         {
             // arrange
             // set up the test with some initialised objects
-            // add a ship and expect three grid positions returned
+            // add a ship and expect three vertical grid positions returned
             var placePosition = new Position(2, 3);
             var thisShip = new Ship(ShipType.Battleship, false);
             var actual = "";
