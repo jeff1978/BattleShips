@@ -1,4 +1,5 @@
 ﻿using BattleShips.BattleGround;
+using BattleShips.ConsoleChecker;
 using BattleShips.Ship;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ namespace BattleShips.Setup
     /// </summary>
     public class GameSetup : IGameSetup
     {
+        // setup the validation
+        IInputParser inputParser = new InputParser();
+
         // The game setup information will be stored here   
         public int numberOfPlayers { get; private set; }
         public List<ShipTypeInGame> listOfShipTypes { get; private set; }
@@ -24,7 +28,8 @@ namespace BattleShips.Setup
 
             // get and set the number of players
             Console.WriteLine(GameMessages.getNumberOfPlayers);
-            numberOfPlayers = Int32.Parse(Console.ReadLine());
+            inputParser.getUserInput(RequestType.SetNoOfPlayers);
+            numberOfPlayers = inputParser.noOfPlayers;
 
             // get and set the game mode
             Console.WriteLine(GameMessages.getGameMode);
