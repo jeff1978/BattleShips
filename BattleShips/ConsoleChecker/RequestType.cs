@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShips.ConsoleChecker
+﻿namespace BattleShips.ConsoleChecker
 {
     /// <summary>
     /// This is an important list of enums that are used to

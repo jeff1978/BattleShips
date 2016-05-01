@@ -5,6 +5,11 @@ using System;
 namespace BattleShipsTests
 {
 
+    /// <summary>
+    /// This class mocks the console inputs
+    /// It inplements the IInputParser interface
+    /// Its constructor takes the game inputs
+    /// </summary>
     public class InputMock : IInputParser
     {
         // add appropriate props and methods for interface
@@ -12,11 +17,13 @@ namespace BattleShipsTests
         public int noOfShips { get; set; }
 
         private int testVariables;
+        private string stringVariables;
 
         // add a constructor to take the test input
-        public InputMock(int TestVariables)
+        public InputMock(int TestVariables, string StringVariables)
         {
             testVariables = TestVariables;
+            stringVariables = StringVariables;
         }
 
         public void getUserInput(RequestType thisRequest)
@@ -24,10 +31,10 @@ namespace BattleShipsTests
             switch (thisRequest)
             {
                 case RequestType.SetNoOfPlayers:
-                    noOfPlayers = testVariables;
+                    noOfPlayers = 3;
                     break;
                 case RequestType.SetNoOfShips:
-                    noOfShips = testVariables;
+                    noOfShips = 3;
                     break;
                 default:
                     throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");

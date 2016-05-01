@@ -69,7 +69,7 @@
   <ItemGroup>
     <Compile Include="InputMock.cs" />
     <Compile Include="GameSetupTests.cs" />
-    <Compile Include="InputParserTests.cs" />
+    <Compile Include="ValidationParserTests.cs" />
     <Compile Include="ShipTests.cs" />
     <Compile Include="SeaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

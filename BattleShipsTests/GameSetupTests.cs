@@ -21,7 +21,8 @@ namespace BattleShipsTests
         public void CheckGameSetupDefaults()
         {
             // arrange
-            var thisGame = new GameSetup();
+            IInputParser thisParser = new InputParser();
+            var thisGame = new GameSetup(thisParser);
             var expected = "";
 
             // act

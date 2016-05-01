@@ -1,4 +1,5 @@
-﻿using BattleShips.Setup;
+﻿using BattleShips.ConsoleChecker;
+using BattleShips.Setup;
 using System;
 
 namespace BattleShips
@@ -13,7 +14,8 @@ namespace BattleShips
 
         static void Main(string[] args)
         {
-            IGameSetup thisGame = new GameSetup();
+            IInputParser thisParser = new InputParser();
+            IGameSetup thisGame = new GameSetup(thisParser);
             var thisProgram = new MainProgram(thisGame);
             thisProgram.thisSetup.setupGame();
         }

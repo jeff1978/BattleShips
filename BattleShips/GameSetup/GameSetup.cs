@@ -7,12 +7,16 @@ using System.Collections.Generic;
 namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class gets all the information needed to start a new game.
+    /// This class gets and stores all the information needed to start a new game.
     /// </summary>
     public class GameSetup : IGameSetup
     {
-        // setup the validation
-        IInputParser inputParser = new InputParser();
+        /// <summary>
+        /// Constructor injection used here to facilitate the
+        /// mockup for unit testing.
+        /// </summary>
+        private IInputParser inputParser { get; set; }
+        public GameSetup(IInputParser anyIIParser){ inputParser = anyIIParser;}
 
         // The game setup information will be stored here   
         public int numberOfPlayers { get; private set; }
@@ -21,8 +25,7 @@ namespace BattleShips.Setup
 
         // Public method for access to this class
         public void setupGame()
-        {
-            
+        {           
             // show welcome message
             Console.WriteLine(GameMessages.welcome);
 
@@ -33,20 +36,21 @@ namespace BattleShips.Setup
 
             // get and set the game mode
             Console.WriteLine(GameMessages.getGameMode);
-            var gameMode = int.Parse(Console.ReadLine());
-            listOfShipTypes = GameInput.getSettings((GameMode)gameMode);
+            //var gameMode = int.Parse(Console.ReadLine());
+            inputParser.getUserInput(RequestType.SelectGameMode);
+            var gameMode = inputParser.gameMode;
+            //listOfShipTypes = inputParser.
+            listOfShipTypes = GameInput.getSettings((GameMode)gameMode, inputParser);
 
             // get and set the sea dimensions
-            Console.WriteLine(GameMessages.getSeaSizeWidth);
-            var x = int.Parse(Console.ReadLine());
-            Console.WriteLine(GameMessages.getSeaSizeHight);
-            var y = int.Parse(Console.ReadLine());
-            gameSea = new Sea(x, y);
+            Console.WriteLine(GameMessages.getSeaSize);
+            inputParser.getUserInput(RequestType.SetSeaSize);
+            gameSea = inputParser.seaSize;
         }
 
         public void useMode(GameMode thisMode)
         {
-            listOfShipTypes = GameInput.getSettings(thisMode);
+            listOfShipTypes = GameInput.getSettings(thisMode, inputParser);
         }
     }
 }

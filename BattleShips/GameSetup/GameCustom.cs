@@ -8,16 +8,14 @@ namespace BattleShips.Setup
     /// <summary>
     /// This class enables the users to specify the quantities of each ship type.
     /// </summary>
-    public class GameCustom
+    public static class GameCustom
     {
-        public static List<ShipTypeInGame> setCustom()
-        {
             // Get the list of ships.
             // For each one get the user to type in the quantity needed.
             // Create a new shipTypeInGame instance and add it to a list.
 
-            // setup the validation
-            IInputParser inputParser = new InputParser();
+            public static List<ShipTypeInGame>  setCustom(IInputParser inputParser)
+        {
 
             // create the list
             var thisList = new List<ShipTypeInGame>();

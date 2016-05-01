@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BattleShips.BattleGround;
+using BattleShips.Setup;
+using BattleShips.Ship;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,16 +17,26 @@ namespace BattleShips.ConsoleChecker
     {
         public int noOfPlayers { get; set; }
         public int noOfShips { get; set; }
+        public GameMode gameMode { get; set; }
+        public Sea seaSize { get; set; }
+        public List<ShipTypeInGame> listOfShipTypes { get; set; }
 
         public void getUserInput(RequestType thisRequest)
         {
+            //var thisValidation = new GameSetupValidation();
             switch (thisRequest)
             {
                 case RequestType.SetNoOfPlayers:
                     noOfPlayers = GameSetupValidation.setNoOfPlayers();
                     break;
                 case RequestType.SetNoOfShips:
-                    noOfShips = GameSetupValidation.SetNoOfShips();
+                    noOfShips = GameSetupValidation.setNoOfShips();
+                    break;
+                case RequestType.SelectGameMode:
+                    gameMode = GameSetupValidation.selectGameMode();
+                    break;
+                case RequestType.SetSeaSize:
+                    seaSize = GameSetupValidation.setSeaSize();
                     break;
                 default:
                     throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");
