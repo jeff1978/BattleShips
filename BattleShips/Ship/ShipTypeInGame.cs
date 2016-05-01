@@ -13,11 +13,5 @@
             shipType = thisType;
             typeQuantity = thisQuantity;
         }
-
-        /// <summary>
-        /// Overloaded constructor needed for when user
-        /// inputs parameters via the console.
-        /// </summary>
-        public ShipTypeInGame() { }
     }
 }

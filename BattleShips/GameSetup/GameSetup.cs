@@ -36,11 +36,9 @@ namespace BattleShips.Setup
 
             // get and set the game mode
             Console.WriteLine(GameMessages.getGameMode);
-            //var gameMode = int.Parse(Console.ReadLine());
             inputParser.getUserInput(RequestType.SelectGameMode);
             var gameMode = inputParser.gameMode;
-            //listOfShipTypes = inputParser.
-            listOfShipTypes = GameInput.getSettings((GameMode)gameMode, inputParser);
+            listOfShipTypes = GameInput.getSettings(gameMode, inputParser);
 
             // get and set the sea dimensions
             Console.WriteLine(GameMessages.getSeaSize);

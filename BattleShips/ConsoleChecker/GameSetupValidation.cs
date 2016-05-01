@@ -5,15 +5,14 @@ using System;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This is a looooooong list of validation methods used to
-    /// check user input and repeat read line operations
+    /// This is a looooooong list of validation methods used to check user input
+    /// and repeat read line operations
     /// until valid input is obtained.
     /// </summary>
     public static class GameSetupValidation
     {
         /// <summary>
-        /// Get an int equal or greater than two
-        /// and repeat request until valid entry
+        /// Get an int equal or greater than two and repeat request until valid entry
         /// </summary>
         /// <returns></returns>
         public static int setNoOfPlayers()
@@ -34,8 +33,7 @@ namespace BattleShips.ConsoleChecker
         }
 
         /// <summary>
-        /// Get an int equal or greater than zero
-        /// and repeat request until valid entry
+        /// Get an int equal or greater than zero and repeat request until valid entry
         /// </summary>
         /// <returns></returns>
         public static int setNoOfShips()
@@ -56,8 +54,7 @@ namespace BattleShips.ConsoleChecker
         }
 
         /// <summary>
-        /// Get int of range
-        /// in GameMode enum list
+        /// Get int of range in GameMode enum list
         /// </summary>
         /// <returns></returns>
         public static GameMode selectGameMode()
@@ -82,8 +79,7 @@ namespace BattleShips.ConsoleChecker
         }
 
         /// <summary>
-        /// Get string input in the format a,b
-        /// where a and b are greater than 4.
+        /// Get string input in the format a,b where a and b are greater than 4.
         /// </summary>
         /// <returns></returns>
         public static Sea setSeaSize()

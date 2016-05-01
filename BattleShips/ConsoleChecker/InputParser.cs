@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This class is used to process the console readline requests.
-    /// The class implements an interface which is used for the unit tests.
+    /// This class is used to process the console readline requests.The class
+    /// implements an interface which is used for the unit tests.
     /// </summary>
     public class InputParser : IInputParser
     {
@@ -23,7 +23,6 @@ namespace BattleShips.ConsoleChecker
 
         public void getUserInput(RequestType thisRequest)
         {
-            //var thisValidation = new GameSetupValidation();
             switch (thisRequest)
             {
                 case RequestType.SetNoOfPlayers:

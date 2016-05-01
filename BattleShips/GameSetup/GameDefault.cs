@@ -4,8 +4,7 @@ using System.Collections.Generic;
 namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class stores the game default parameters
-    /// eg. two destroyer ships
+    /// This class stores the game default parameters eg. two destroyer ships
     /// </summary>
     public static class GameDefault
     {
