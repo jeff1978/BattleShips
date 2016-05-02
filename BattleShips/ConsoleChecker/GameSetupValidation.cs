@@ -5,9 +5,8 @@ using System;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This is a looooooong list of validation methods used to check user input
-    /// and repeat read line operations
-    /// until valid input is obtained.
+    /// This is a list of validation methods used to check user input
+    /// and repeat read line operations until valid input is obtained.
     /// </summary>
     public static class GameSetupValidation
     {
@@ -17,19 +16,18 @@ namespace BattleShips.ConsoleChecker
         /// <returns></returns>
         public static int setNoOfPlayers()
         {
-            int X = 0;
-            bool result = false;
-            while (X < 2)
+            int noOfPlayers;
+            while (true)
             {
                 string input = Console.ReadLine();
-                result = int.TryParse(input, out X);
+                bool result = int.TryParse(input, out noOfPlayers);
                 if (result == false || int.Parse(input) < 2)
                 {
                     Console.WriteLine(@"   Please enter a valid number. Two or more players
    are required for this game.");
-                }            
+                }
+                else { return noOfPlayers; }
             }
-            return X;
         }
 
         /// <summary>
@@ -38,19 +36,18 @@ namespace BattleShips.ConsoleChecker
         /// <returns></returns>
         public static int setNoOfShips()
         {
-            int X = -1;
-            bool result = false;
-            while (X < 0)
+            int noOfShips;
+            while (true)
             {
                 string input = Console.ReadLine();
-                result = int.TryParse(input, out X);
+                bool result = int.TryParse(input, out noOfShips);
                 if (result == false || int.Parse(input) < 0)
                 {
-                    Console.WriteLine(@"   Please enter a valid number. If you don't want
-   any ships of this kind then enter 0.");
+                    Console.WriteLine(@"   The number you entered was not recognised. If no ships of this
+   kind are required then type 0");
                 }
+                else { return noOfShips; }
             }
-            return X;
         }
 
         /// <summary>
@@ -59,23 +56,24 @@ namespace BattleShips.ConsoleChecker
         /// <returns></returns>
         public static GameMode selectGameMode()
         {
-            //         var enumLength = Enum.GetNames(typeof(GameMode)).Length;
-            //         GameMode modes;
-            //         int X = -1;
-            //         bool result = false;
-            //         while (X > enumLength - 1 && X < 0)
-            //         {
-            //             string input = Console.ReadLine();
-            //             result = Enum.TryParse(input, out modes);
-            //             if (int.Parse((input)) > enumLength - 1 && int.Parse(input) < 0)
-            //             {
-            //                 Console.WriteLine(@"   Please enter a valid mode number between 0
-            //and {0}", enumLength - 1);
-            //             }
-            //         }
-            //         return (GameMode)X;
-            string input = Console.ReadLine();
-            return GameMode.Custom;
+            GameMode chosenMode;
+            var gameModeEnum = Enum.GetValues(typeof(GameMode)).Length;
+            int modeEntered;
+            while (true)
+            {
+                string input = Console.ReadLine();
+                bool result = int.TryParse(input, out modeEntered);
+                if (result == false || int.Parse(input) < 0 || int.Parse(input) > gameModeEnum - 1)
+                {
+                    Console.WriteLine(@"   The mode you entered was not recognised. Try again using
+   a valid number for your game mode.");
+                }
+                else {
+                    // cast the int to its enum
+                    GameMode thisModeAsEnum = (GameMode)modeEntered;
+                    chosenMode = thisModeAsEnum;
+                    return chosenMode; }
+            }
         }
 
         /// <summary>
@@ -84,27 +82,30 @@ namespace BattleShips.ConsoleChecker
         /// <returns></returns>
         public static Sea setSeaSize()
         {
-            //         Sea sea = new Sea(0,0);
-            int x = 0;
-            int y = 0;
-            string input = Console.ReadLine();
-            string[] dimensions = input.Split(',');
-            x = int.Parse(dimensions[0]);
-            y = int.Parse(dimensions[1]);
-            //         bool result = false;
-            //         while (x < 5 && y < 5)
-            //         {
-            //             string input = Console.ReadLine();
-            //             var commandParams = input[1].Split(',');
-            //             result = int.TryParse(input, out X);
-            //             if (int.Parse(input) < 2)
-            //             {
-            //                 Console.WriteLine(@"   Please enter a valid format and ensure that the
-            //the sea size is 5 x 5 or greater eg. 6,7");
-            //             }
-            //         }
-            //         return X;
-            return new Sea(x, y);
+            while (true)
+            {
+                bool isValid = true;
+                int validItem;
+                string input = Console.ReadLine();
+                string[] dimensions = input.Split(',');
+                foreach (var item in dimensions)
+                {
+                    bool result = int.TryParse(item, out validItem);
+                    if (result == false || int.Parse(item) < 5 || dimensions.Length!=2)
+                    {
+                        isValid = false;
+                    }
+                }
+                if (!isValid)
+                {
+                    Console.WriteLine(@"   The sea dimensions given were not valid. Ensure that the format is correct
+   and that the minimum size is 5,5. Enter the sea dimensions.");
+                }
+                else
+                {
+                    return new Sea(int.Parse(dimensions[0]), int.Parse(dimensions[1]));
+                }             
+             }
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using BattleShips.ConsoleChecker;
 using System;
+using BattleShips.Setup;
+using BattleShips.BattleGround;
+using BattleShips.Ship;
 
 namespace BattleShipsTests
 {
@@ -15,16 +18,9 @@ namespace BattleShipsTests
         // add appropriate props and methods for interface
         public int noOfPlayers { get; set; }
         public int noOfShips { get; set; }
-
-        private int testVariables;
-        private string stringVariables;
-
-        // add a constructor to take the test input
-        public InputMock(int TestVariables, string StringVariables)
-        {
-            testVariables = TestVariables;
-            stringVariables = StringVariables;
-        }
+        public GameMode gameMode { get; set; }
+        public Sea seaSize { get; set; }
+        public List<ShipTypeInGame> listOfShipTypes { get; set; }
 
         public void getUserInput(RequestType thisRequest)
         {
@@ -35,6 +31,12 @@ namespace BattleShipsTests
                     break;
                 case RequestType.SetNoOfShips:
                     noOfShips = 3;
+                    break;
+                case RequestType.SelectGameMode:
+                    gameMode = 0;
+                    break;
+                case RequestType.SetSeaSize:
+                    seaSize = new Sea(6, 7);
                     break;
                 default:
                     throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");

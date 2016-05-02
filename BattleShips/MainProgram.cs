@@ -9,11 +9,11 @@ namespace BattleShips
         public IGameSetup thisSetup { get; set; }
 
         public MainProgram(IGameSetup anyInt) {
-            this.thisSetup = anyInt;
+            thisSetup = anyInt;
         }
 
         static void Main(string[] args)
-        {
+            {
             IInputParser thisParser = new InputParser();
             IGameSetup thisGame = new GameSetup(thisParser);
             var thisProgram = new MainProgram(thisGame);

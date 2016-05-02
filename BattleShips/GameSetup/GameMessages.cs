@@ -34,8 +34,7 @@
         public const string getSeaSize =
 @"
    Note: the sea grid size typed here must be > or = 5 x 5 :
-   Please enter the size of the sea, use a comma to
-   separate the x and y dimensions eg. 6,7
+   Please enter the size of the sea, use a comma to separate the x and y dimensions eg. 6,7
    Enter the sea size.....
 ";
     }

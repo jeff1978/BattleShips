@@ -17,22 +17,24 @@ namespace BattleShips.Setup
         {
             // create the list
             var thisList = new List<ShipTypeInGame>();
-            foreach (int item in Enum.GetValues(typeof(ShipType)))
+            for (int i = 0; i < Enum.GetValues(typeof(ShipType)).Length; i++)
             {
-                Console.WriteLine("   Please enter the number of {0}s needed:", (ShipType)item);
+                Console.WriteLine("   Please enter the number of {0}s needed:", (ShipType)i+1);
                 inputParser.getUserInput(RequestType.SetNoOfShips);
 
-                // if no of ships chosen greater than zero then...
-                if (inputParser.noOfShips > 0)
-                {
-                    var quantityInput = inputParser.noOfShips;
-                    var thisType= new ShipTypeInGame((ShipType)item,quantityInput);
-                    thisList.Add(thisType);
+                // if no of ships chosen is zero or more then...
+                    if (inputParser.noOfShips > -1)
+                    {
+                        var quantityInput = inputParser.noOfShips;
+                        if (quantityInput != 0)
+                        {
+                            var thisType = new ShipTypeInGame((ShipType)i+1, quantityInput);
+                            thisList.Add(thisType);
+                        }
+                 // do nothing, go to next ship
                 }
-                // else do nothing.
             }
             return thisList;
         }
-
     }
 }
