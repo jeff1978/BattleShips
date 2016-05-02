@@ -33,7 +33,7 @@ namespace BattleShipsTests
                     noOfShips = 3;
                     break;
                 case RequestType.SelectGameMode:
-                    gameMode = 0;
+                    gameMode = GameMode.Default;
                     break;
                 case RequestType.SetSeaSize:
                     seaSize = new Sea(6, 7);
