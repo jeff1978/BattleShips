@@ -12,22 +12,15 @@ Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for v
 <br>quit - ends the current game and returns to the welcome message
 <h4>Installing and Running</h4>
 The application runs in a single executable file. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a><br>The executable file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
-<h4>Development Notes and Acknowledgements</h4>
-A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
-<h4>Supported operating systems</h4>
-BattleShips should run on any Windows operating system. It has been tested on Windows 10 Home Edition 32-bit.
-<h4>Issues</h4>
-Existing issues can be logged on the <a href = "https://github.com/jeff1978/BattleShips/issues">Issues page.</a>
-
 <h4>Unit Testing and Mockups</h4>
 C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
-
 <h4>Development Work</h4>
 This project is ongoing and still under development.
-
+<h4>Development Notes and Acknowledgements</h4>
+A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
+<h4>Supported operating systems and Issues</h4>
+BattleShips should run on any Windows operating system. It has been tested on Windows 10 Home Edition 32-bit. Existing issues can be logged on the <a href = "https://github.com/jeff1978/BattleShips/issues">Issues page.</a>
 <h4>Licence</h4>
-BattleShips is licensed under the GNU Lesser General Public License v.3.0
-
-<h4>Why the LGPL?</h4>
+BattleShips is licensed under the GNU Lesser General Public License v.3.0<br>
 The GPL is specifically designed to reduce the usefulness of GPL-licensed code to closed-source, proprietary software. The BSD license (and similar) do not mandate code-sharing if the BSD-licensed code is modified by licensees. The LGPL achieves the best of both worlds: an LGPL-licensed library can be incorporated within closed-source proprietary code, and yet those using an LGPL-licensed library are required to release source code to that library if they change it.
