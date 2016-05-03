@@ -22,7 +22,7 @@
 ";
         public const string getNumberOfPlayers =
 @"
-   Please enter the number of players for this game ( must be 2 or more ): 
+   Please enter the number of players for this game ( must be two or more ): 
 ";
         public const string getGameMode =
 @"

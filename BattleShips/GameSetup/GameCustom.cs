@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class enables the users to specify the quantities of each ship type.
+    /// This class enables the users to specify the quantities of each ship type when custom game
+    /// mode is selected.
     /// </summary>
     public static class GameCustom
     {
@@ -15,9 +16,9 @@ namespace BattleShips.Setup
             // Create a new shipTypeInGame instance and add it to a list.
             public static List<ShipTypeInGame>  setCustom(IInputParser inputParser)
         {
-            // create the list
-            // put the enums in an array, needed to access values by index
+            // put the enums in an array, needed to access values by index.
             string[] shipNameList = Enum.GetNames(typeof(ShipType));
+            // create the list of ship types.
             var thisList = new List<ShipTypeInGame>();
             for (int i = 0; i < shipNameList.Length; i++)
             {

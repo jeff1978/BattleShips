@@ -8,7 +8,7 @@ using BattleShips.Ship;
 namespace BattleShipsTests
 {
     /// <summary>
-    /// This class mocks the console inputs. It inplements the IInputParser interface
+    /// This class mocks the console inputs for user commands. It inplements the IInputParser interface
     /// </summary>
     public class MockSetupCustom : IInputParser
     {

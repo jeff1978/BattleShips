@@ -72,6 +72,7 @@
     <Compile Include="Mocks\MockSetupDefault.cs" />
     <Compile Include="GameSetupTests.cs" />
     <Compile Include="GameSetupValidationTests.cs" />
+    <Compile Include="PlayerSetupTests.cs" />
     <Compile Include="ShipTests.cs" />
     <Compile Include="SeaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -37,7 +37,7 @@ namespace BattleShips.Ship
             var newList = new List<Position> ();
 
             // if isHoriz true then use a for loop to work out the other coords.
-            if (this.IsHorizontal)
+            if (IsHorizontal)
             {
                 for (int i = 0; i < (int)ShipType; i++)
                 {

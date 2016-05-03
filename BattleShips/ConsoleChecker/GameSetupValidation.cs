@@ -60,8 +60,8 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfShips);
                 if (result == false || int.Parse(input) < 0)
                 {
-                    Console.WriteLine(@"   The number you entered was not recognised. If no ships of this
-   kind are required then type 0");
+                    Console.WriteLine(@"   The number you entered was not recognised. If ships of this
+   kind are not required then type 0");
                     count++;
                 }
                 else { return noOfShips; }
