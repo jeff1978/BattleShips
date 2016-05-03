@@ -15,7 +15,7 @@ The application runs in a single executable file. For convenience the file can b
 <h4>Unit Testing and Mockups</h4>
 C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
-<h4>Development Work</h4>
+<h4>Development Status</h4>
 This project is ongoing and is still under development.
 <h4>Notes and Acknowledgements</h4>
 A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
