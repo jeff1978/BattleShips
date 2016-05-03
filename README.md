@@ -10,25 +10,17 @@ Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for v
 <br>Fire Input: 3,5 - fires a missile to position 3,5
 <br>leave - removes the current player from the game
 <br>quit - ends the current game and returns to the welcome message
-<h4>Usage</h4>
-BattleShips is a console application. It opens and gives the users instructions on how to setup and play the game.
-<h4>Supported operating systems</h4>
-BattleShips should run on any Windows operating system. It has been tested on Windows 10 Home Edition 32-bit.
-
-<h4>Installing</h4>
-The application runs in a single executable file. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a><br>Note: Some user priviledges may prevent the downloading or opening of this file type. Affected users should check with their network administrator.
-
-<h4>Running</h4>
-The executable file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
-
+<h4>Installing and Running</h4>
+The application runs in a single executable file. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a><br>The executable file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
 <h4>Development Notes and Acknowledgements</h4>
 A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
-
+<h4>Supported operating systems</h4>
+BattleShips should run on any Windows operating system. It has been tested on Windows 10 Home Edition 32-bit.
 <h4>Issues</h4>
 Existing issues can be logged on the <a href = "https://github.com/jeff1978/BattleShips/issues">Issues page.</a>
 
 <h4>Unit Testing and Mockups</h4>
-C# Test files are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
+C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
 
 <h4>Development Work</h4>
