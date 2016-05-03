@@ -1,5 +1,5 @@
-<img src = "https://github.com/jeff1978/BattleShips/blob/master/BattleshipGameImage.jpg" align = right>
 <h3>BattleShips</h3>
+<img src = "https://github.com/jeff1978/BattleShips/blob/master/BattleshipGameImage.jpg" align = right>
 This is my unique take on the popular board game. It uses a single console, has two game modes and it is multiplayer.
 <br>The development of this project is driven by unit testing (tests are included in this repo)
 
