@@ -1,6 +1,6 @@
 <h3>BattleShips</h3>
-This is my take on the popular board game but it uses a single console, it has two game modes and it is multiplayer.
-<br>The development of this project was driven by unit testing (tests are included in this repo)
+This is my unique take on the popular board game. It uses a single console, has two game modes and it is multiplayer.
+<br>The development of this project is driven by unit testing (tests are included in this repo)
 
 <h4>Instructions:</h4>
 Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships, where each ship takes up two adjacent grid positions (either horizontal or vertical) In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner.
@@ -15,7 +15,7 @@ BattleShips is a console application. It opens and gives the users instructions 
 BattleShips should run on any Windows operating system. It has been tested on Windows 10 Home Edition 32-bit.
 
 <h3>Installing</h3>
-The application runs in a single executable file. The file can be downloaded from: <a href = "https://github.com/jeff1978/Toy-Robot-Simulator/blob/master/ToyRobotSimulator/bin/Debug/ToyRobotSimulator.exe">\ToyRobotSimulator\bin\Debug\ToyRobotSimulator.exe</a><br>Note: Some user priviledges may prevent the downloading or opening of this file type. Affected users should check with their network administrator.
+The application runs in a single executable file. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/Toy-Robot-Simulator/blob/master/ToyRobotSimulator/bin/Debug/ToyRobotSimulator.exe">\ToyRobotSimulator\bin\Debug\ToyRobotSimulator.exe</a><br>Note: Some user priviledges may prevent the downloading or opening of this file type. Affected users should check with their network administrator.
 
 <h3>Running</h3>
 The executable file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
