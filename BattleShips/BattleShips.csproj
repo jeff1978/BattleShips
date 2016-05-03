@@ -78,7 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleChecker\ConsoleReader.cs" />
     <Compile Include="ConsoleChecker\GameSetupValidation.cs" />
+    <Compile Include="ConsoleChecker\IConsoleReader.cs" />
     <Compile Include="ConsoleChecker\IInputParser.cs" />
     <Compile Include="ConsoleChecker\RequestType.cs" />
     <Compile Include="ConsoleChecker\InputParser.cs" />
@@ -93,7 +95,6 @@
     <Compile Include="Sea\Position.cs" />
     <Compile Include="Sea\Sea.cs" />
     <Compile Include="Ship\Ship.cs" />
-    <Compile Include="GamePlay\GamePlay.cs" />
     <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ship\ShipType.cs" />
@@ -115,7 +116,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GamePlay\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

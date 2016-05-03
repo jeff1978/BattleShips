@@ -67,9 +67,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="InputMock.cs" />
+    <Compile Include="Mocks\MockConsoleReader.cs" />
+    <Compile Include="Mocks\MockSetupCustom.cs" />
+    <Compile Include="Mocks\MockSetupDefault.cs" />
     <Compile Include="GameSetupTests.cs" />
-    <Compile Include="ValidationParserTests.cs" />
+    <Compile Include="GameSetupValidationTests.cs" />
     <Compile Include="ShipTests.cs" />
     <Compile Include="SeaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,9 +81,6 @@
       <Project>{C36FA7F1-9DA5-4308-93BF-05A3EDFD1863}</Project>
       <Name>BattleShips</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

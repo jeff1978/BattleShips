@@ -21,4 +21,3 @@ C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\NUnit.V
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.framework.xml
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.pdb
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.csprojResolveAssemblyReference.cache

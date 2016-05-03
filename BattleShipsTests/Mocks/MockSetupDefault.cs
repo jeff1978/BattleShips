@@ -9,11 +9,9 @@ namespace BattleShipsTests
 {
 
     /// <summary>
-    /// This class mocks the console inputs
-    /// It inplements the IInputParser interface
-    /// Its constructor takes the game inputs
+    /// This class mocks the console inputs. It inplements the IInputParser interface
     /// </summary>
-    public class InputMock : IInputParser
+    public class MockSetupDefault : IInputParser
     {
         // add appropriate props and methods for interface
         public int noOfPlayers { get; set; }
@@ -30,7 +28,7 @@ namespace BattleShipsTests
                     noOfPlayers = 3;
                     break;
                 case RequestType.SetNoOfShips:
-                    noOfShips = 3;
+                    // not needed for this test.
                     break;
                 case RequestType.SelectGameMode:
                     gameMode = GameMode.Default;

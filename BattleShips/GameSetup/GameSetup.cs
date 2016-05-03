@@ -11,11 +11,12 @@ namespace BattleShips.Setup
     /// </summary>
     public class GameSetup : IGameSetup
     {
+        private IInputParser inputParser { get; set; }
+
         /// <summary>
         /// Constructor injection used here to facilitate mockup for unit testing.
         /// </summary>
-        private IInputParser inputParser { get; set; }
-        public GameSetup(IInputParser anyIIParser){ inputParser = anyIIParser;}
+        public GameSetup(IInputParser thisIIParser){ inputParser = thisIIParser;}
 
         // The game setup information will be stored here   
         public int numberOfPlayers { get; private set; }

@@ -1,20 +1,18 @@
-﻿using BattleShips.BattleGround;
-using BattleShips.Setup;
-using BattleShips.Ship;
+﻿using System.Collections.Generic;
+using BattleShips.ConsoleChecker;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BattleShips.Setup;
+using BattleShips.BattleGround;
+using BattleShips.Ship;
 
-namespace BattleShips.ConsoleChecker
+namespace BattleShipsTests
 {
     /// <summary>
-    /// This class is used to process the console readline requests.The class
-    /// implements an interface which is used for the unit tests.
+    /// This class mocks the console inputs. It inplements the IInputParser interface
     /// </summary>
-    public class InputParser : IInputParser
+    public class MockSetupCustom : IInputParser
     {
+        // add appropriate props and methods for interface
         public int noOfPlayers { get; set; }
         public int noOfShips { get; set; }
         public GameMode gameMode { get; set; }
@@ -23,20 +21,19 @@ namespace BattleShips.ConsoleChecker
 
         public void getUserInput(RequestType thisRequest)
         {
-            var thisSetup = new GameSetupValidation();
             switch (thisRequest)
             {
                 case RequestType.SetNoOfPlayers:
-                    noOfPlayers = thisSetup.setNoOfPlayers();
+                    noOfPlayers = 5;
                     break;
                 case RequestType.SetNoOfShips:
-                    noOfShips = thisSetup.setNoOfShips();
+                    noOfShips = 4;
                     break;
                 case RequestType.SelectGameMode:
-                    gameMode = thisSetup.selectGameMode();
+                    gameMode = GameMode.Custom;
                     break;
                 case RequestType.SetSeaSize:
-                    seaSize = thisSetup.setSeaSize();
+                    seaSize = new Sea(10, 10);
                     break;
                 default:
                     throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");

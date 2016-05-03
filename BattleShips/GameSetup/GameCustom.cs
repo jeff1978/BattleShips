@@ -16,20 +16,24 @@ namespace BattleShips.Setup
             public static List<ShipTypeInGame>  setCustom(IInputParser inputParser)
         {
             // create the list
+            // put the enums in an array, needed to access values by index
+            string[] shipNameList = Enum.GetNames(typeof(ShipType));
             var thisList = new List<ShipTypeInGame>();
-            for (int i = 0; i < Enum.GetValues(typeof(ShipType)).Length; i++)
+            for (int i = 0; i < shipNameList.Length; i++)
             {
-                Console.WriteLine("   Please enter the number of {0}s needed:", (ShipType)i+1);
+                Console.WriteLine("   Please enter the number of {0}s needed:", shipNameList.GetValue(i));
                 inputParser.getUserInput(RequestType.SetNoOfShips);
 
-                // if no of ships chosen is zero or more then...
+                // if number of ships chosen is zero or more then...
                     if (inputParser.noOfShips > -1)
                     {
                         var quantityInput = inputParser.noOfShips;
                         if (quantityInput != 0)
                         {
-                            var thisType = new ShipTypeInGame((ShipType)i+1, quantityInput);
-                            thisList.Add(thisType);
+                        string nameOfType = shipNameList[i];
+                        var thisShipType = Enum.Parse(typeof(ShipType), nameOfType);
+                        var thisType = new ShipTypeInGame((ShipType)thisShipType, quantityInput);
+                        thisList.Add(thisType);
                         }
                  // do nothing, go to next ship
                 }

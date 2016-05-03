@@ -2,31 +2,21 @@
 using BattleShips.Setup;
 using BattleShips.Ship;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace BattleShipsTests
 {
     [TestFixture]
     public class GameSetupTests
     {
-        private readonly IInputParser thisInterface;
-
-        public GameSetupTests(IInputParser anyInterface)
-        {
-            thisInterface = anyInterface;
-        }
-        public GameSetupTests() { }
-
         [Test]
         public void CheckGameSetupDefaults()
         {
-            // arrange
-            IInputParser thisParser = new InputParser();
+            // arrange and Act
+            IInputParser thisParser = new MockSetupDefault();
             var thisGame = new GameSetup(thisParser);
             var expected = "";
+            thisGame.setupGame();
 
-            // act
-            thisGame.useMode(GameMode.Default);
             foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
                 expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
@@ -34,6 +24,30 @@ namespace BattleShipsTests
 
             //assert
             Assert.AreEqual("Ship type is Destroyer and quantity is 2\n", expected);
+            Assert.AreEqual(3, thisGame.numberOfPlayers);
+            Assert.AreEqual(6, thisGame.gameSea.seaRow);
+            Assert.AreEqual(7, thisGame.gameSea.seaColumn);
+        }
+
+        [Test]
+        public void CheckGameSetupCustom()
+        {
+            // arrange and Act
+            IInputParser thisParser = new MockSetupCustom();
+            var thisGame = new GameSetup(thisParser);
+            var expected = "";
+            thisGame.setupGame();
+
+            foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
+            {
+                expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
+            }
+
+            //assert
+            Assert.AreEqual("Ship type is Scout and quantity is 4\nShip type is Destroyer and quantity is 4\nShip type is Battleship and quantity is 4\nShip type is Submarine and quantity is 4\n", expected);
+            Assert.AreEqual(5, thisGame.numberOfPlayers);
+            Assert.AreEqual(10, thisGame.gameSea.seaRow);
+            Assert.AreEqual(10, thisGame.gameSea.seaColumn);
         }
     }
 }
