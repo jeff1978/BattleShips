@@ -5,12 +5,16 @@ namespace BattleShips.ConsoleChecker
 {
     /// <summary>
     /// This is a list of validation methods used to check user input. Read line operations are repeated
-    /// until valid input is obtained. A count is used to submit values after 10 unsuccesful attempts.
+    /// until valid input is obtained. A count is used to submit default values after 10 unsuccesful attempts.
     /// </summary>
     public class GameSetupValidation
     {
-        #region constructors for use in app and unit tests.
+        #region property and constructors
         public IConsoleReader ThisReader { get; set; }
+        /// <summary>
+        /// Overloaded constructor used for game and unit testing.
+        /// </summary>
+        /// <param name="thisReader"></param>
         public GameSetupValidation(IConsoleReader thisReader)
         {
             ThisReader = thisReader;
@@ -37,7 +41,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfPlayers);
                 if (result == false || int.Parse(input) < 2)
                 {
-                    Console.WriteLine(@"   Please enter a valid number. Two or more players
+                    Console.WriteLine(@"   Enter a valid number. Two or more players
             are required for this game.");
                     count++;
                 }
@@ -48,6 +52,7 @@ namespace BattleShips.ConsoleChecker
 
         /// <summary>
         /// Get an int equal or greater than zero and repeat request until valid entry
+        /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
         public int setNoOfShips()
@@ -70,7 +75,7 @@ namespace BattleShips.ConsoleChecker
         }
 
         /// <summary>
-        /// Get int of range in GameMode enum list
+        /// Get int of range in GameMode enum list. Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
         public GameMode selectGameMode()
@@ -100,6 +105,7 @@ namespace BattleShips.ConsoleChecker
 
         /// <summary>
         /// Get string input in the format a,b where a and b are greater than 4.
+        /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
         public Sea setSeaSize()

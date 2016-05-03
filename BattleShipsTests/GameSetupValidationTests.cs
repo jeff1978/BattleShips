@@ -78,29 +78,6 @@ namespace BattleShipsTests
                 Assert.AreEqual(expected1, actual1);
                 Assert.AreEqual(expected2, actual2);
             }
-            [Test]
-            public void SetInvalidNumberOfShips()
-            {
-                // arrange
-                string inputString1 = "-1";
-                string inputString2 = "Sasha Kirsty Williams";
-
-                int expected1 = 1;
-                int expected2 = 1;
-
-                // act
-                IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputShipsTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputShipsTest1.setNoOfShips();
-
-                IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputShipsTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputShipsTest2.setNoOfShips();
-
-                // assert
-                Assert.AreEqual(expected1, actual1);
-                Assert.AreEqual(expected2, actual2);
-            }
 
             [Test]
             public void SetInValidNumberOfShips()

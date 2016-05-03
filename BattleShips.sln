@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips", "BattleShips\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipsTests", "BattleShipsTests\BattleShipsTests.csproj", "{4CD503C5-E6A5-4C8D-A22C-1EAD6BC4E6A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E444FA7E-C90D-465D-81B1-1A74FF34A2E4}"
-	ProjectSection(SolutionItems) = preProject
-		BattleShips.testsettings = BattleShips.testsettings
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
