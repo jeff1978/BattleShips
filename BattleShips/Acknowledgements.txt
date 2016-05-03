@@ -1,0 +1,28 @@
+﻿
+Sources:
+
+I met some very helpful developers from MottMcDonald and Buddy Bid. They pointed me to the right resources.
+Thank you Tim P, Tim R and Robert.
+
+I watched this fantastic video on TDD and C# by Jeremy Clark
+https://www.youtube.com/watch?v=l4xhTq4qmC0&feature=youtu.be
+
+I signed up to the pluralsight website and viewed several hours of videos on the following:
+C# Best Practices: Improving on the basics.
+C# Best Practices: Collections and Generics.
+OOP: Fundamentals in C#.
+
+MSDN information on empty interfaces
+https://msdn.microsoft.com/en-us/library/ms182128.aspx
+
+Working examples of a Toy Robot Simulator in several languages
+including C#. I used these to inform the app design of battleships and get ideas
+for unit tests.
+https://github.com/search?l=C%23&q=toy+robot+simulator&type=Repositories&utf8=%E2%9C%93
+
+I followed these instructions on how to create a good 
+GitHub repo (I had never made one before)
+https://help.github.com/articles/create-a-repo/
+
+I read up on the console class for C# on MSDN
+https://msdn.microsoft.com/en-us/library/system.console(v=vs.110).aspx
