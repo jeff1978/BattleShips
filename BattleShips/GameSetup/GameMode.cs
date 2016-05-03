@@ -1,8 +1,7 @@
 ﻿namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class stores all the modes used
-    /// in the game
+    /// This class stores all the modes used in the game
     /// </summary>
     public enum GameMode
     {

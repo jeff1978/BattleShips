@@ -9,8 +9,9 @@ namespace BattleShips.ConsoleChecker
     /// </summary>
     public class GameSetupValidation
     {
-        #region property and constructors
         public IConsoleReader ThisReader { get; set; }
+
+        #region constructors
         /// <summary>
         /// Overloaded constructor used for game and unit testing.
         /// </summary>

@@ -1,8 +1,7 @@
 ﻿namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class stores all the console messages
-    /// used during the game setup
+    /// This class stores all the console messages used during the game setup
     /// </summary>
     public static class GameMessages
     {
