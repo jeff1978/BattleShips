@@ -1,7 +1,7 @@
 <h3>BattleShips</h3>
 <img src = "https://github.com/jeff1978/BattleShips/blob/master/BattleshipGameImage.jpg" align = right>
 This is my unique take on the popular board game. It uses a single console, has two game modes and it is multiplayer.
-<br>The development of this project is driven by unit testing (tests are included in this repo)
+<br>The development of this project is driven by unit testing (tests and mockups are included in this repo)
 
 <h4>Instructions:</h4>
 Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships, where each ship takes up two adjacent grid positions (either horizontal or vertical) In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner.
@@ -27,7 +27,7 @@ A full list of information sources can be found here: <a href = "https://github.
 <h4>Issues</h4>
 Existing issues can be logged on the <a href = "https://github.com/jeff1978/BattleShips/issues">Issues page.</a>
 
-<h4>Unit Testing</h4>
+<h4>Unit Testing and Mockups</h4>
 C# Test files are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
 
