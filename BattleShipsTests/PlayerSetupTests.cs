@@ -17,17 +17,5 @@ namespace BattleShipsTests
             // assert
             Assert.IsTrue(result);
         }
-
-        [Test]
-        public void IsInvalidPosition()
-        {
-            // arrange
-            Sea thisSea = new Sea(5, 5);
-            Position inValidPosition = new Position(6, 6);
-            // act
-            var result = thisSea.IsValidPosition(inValidPosition);
-            // assert
-            Assert.IsFalse(result);
-        }
     }
 }

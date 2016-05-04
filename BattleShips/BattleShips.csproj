@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleChecker\ConsoleReader.cs" />
+    <Compile Include="ConsoleChecker\PlayerSetupValidation.cs" />
     <Compile Include="ConsoleChecker\GameSetupValidation.cs" />
     <Compile Include="ConsoleChecker\IConsoleReader.cs" />
     <Compile Include="ConsoleChecker\IInputParser.cs" />

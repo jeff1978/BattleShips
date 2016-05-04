@@ -1,7 +1,7 @@
 ﻿using BattleShips.BattleGround;
 using System.Collections.Generic;
 
-namespace BattleShips.Ship
+namespace BattleShips.BShip
 {
     /// <summary>
     /// This class represents a ship on the sea.

@@ -1,5 +1,5 @@
 ﻿using BattleShips.ConsoleChecker;
-using BattleShips.Ship;
+using BattleShips.BShip;
 using System.Collections.Generic;
 
 namespace BattleShips.Setup

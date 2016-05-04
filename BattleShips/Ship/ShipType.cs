@@ -1,4 +1,4 @@
-﻿namespace BattleShips.Ship
+﻿namespace BattleShips.BShip
 {
     /// <summary>
     /// This stores the ship types.

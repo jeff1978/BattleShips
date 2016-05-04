@@ -4,7 +4,7 @@ using System;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This is a list of validation methods used to check user input. Read line operations are repeated
+    /// This is a list of validation methods used to check user input during game setup. Read line operations are repeated
     /// until valid input is obtained. A count is used to submit default values after 10 unsuccesful attempts.
     /// </summary>
     public class GameSetupValidation

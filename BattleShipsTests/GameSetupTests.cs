@@ -1,6 +1,6 @@
 ﻿using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
-using BattleShips.Ship;
+using BattleShips.BShip;
 using NUnit.Framework;
 
 namespace BattleShipsTests

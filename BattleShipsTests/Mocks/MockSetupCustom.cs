@@ -3,7 +3,7 @@ using BattleShips.ConsoleChecker;
 using System;
 using BattleShips.Setup;
 using BattleShips.BattleGround;
-using BattleShips.Ship;
+using BattleShips.BShip;
 
 namespace BattleShipsTests
 {

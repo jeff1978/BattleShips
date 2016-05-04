@@ -1,4 +1,4 @@
-﻿namespace BattleShips.Ship
+﻿namespace BattleShips.BShip
 {
     /// <summary>
     /// This class is used to store the ship type and quantity used in a game.

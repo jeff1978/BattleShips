@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using BattleShips.BattleGround;
-using BattleShips.Ship;
+using BattleShips.BShip;
 
 namespace BattleShips.Setup
 {

@@ -1,5 +1,5 @@
 ﻿using BattleShips.BattleGround;
-using BattleShips.Ship;
+using BattleShips.BShip;
 using NUnit.Framework;
 
 namespace BattleShipsTest
