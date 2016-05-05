@@ -11,12 +11,12 @@ namespace BattleShips.Setup
     /// </summary>
     public class GameSetup : IGameSetup
     {
-        private IInputParser inputParser { get; set; }
+        private IGameSetupParser inputParser { get; set; }
 
         /// <summary>
         /// Constructor injection used here to facilitate mockup for unit testing.
         /// </summary>
-        public GameSetup(IInputParser thisIIParser){ inputParser = thisIIParser;}
+        public GameSetup(IGameSetupParser thisIIParser){ inputParser = thisIIParser;}
 
         // The game setup information will be stored here   
         public int numberOfPlayers { get; private set; }
@@ -27,21 +27,21 @@ namespace BattleShips.Setup
         public void setupGame()
         {           
             // show welcome message
-            Console.WriteLine(GameMessages.welcome);
+            Console.WriteLine(GameSetupMessages.welcome);
 
             // get and set the number of players
-            Console.WriteLine(GameMessages.getNumberOfPlayers);
+            Console.WriteLine(GameSetupMessages.getNumberOfPlayers);
             inputParser.getUserInput(RequestType.SetNoOfPlayers);
             numberOfPlayers = inputParser.noOfPlayers;
 
             // get and set the game mode
-            Console.WriteLine(GameMessages.getGameMode);
+            Console.WriteLine(GameSetupMessages.getGameMode);
             inputParser.getUserInput(RequestType.SelectGameMode);
             var gameMode = inputParser.gameMode;
             listOfShipTypes = GameInput.getSettings(gameMode, inputParser);
 
             // get and set the sea dimensions
-            Console.WriteLine(GameMessages.getSeaSize);
+            Console.WriteLine(GameSetupMessages.getSeaSize);
             inputParser.getUserInput(RequestType.SetSeaSize);
             gameSea = inputParser.seaSize;
         }

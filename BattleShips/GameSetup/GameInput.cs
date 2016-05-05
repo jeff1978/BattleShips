@@ -10,7 +10,7 @@ namespace BattleShips.Setup
     /// </summary>
     public static class GameInput
     {
-        public static List<ShipTypeInGame> getSettings(GameMode gameMode, IInputParser inputParser)
+        public static List<ShipTypeInGame> getSettings(GameMode gameMode, IGameSetupParser inputParser)
         {
             switch (gameMode)
             {

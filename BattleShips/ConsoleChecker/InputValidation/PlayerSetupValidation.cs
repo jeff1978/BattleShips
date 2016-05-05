@@ -56,7 +56,7 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a null.
         /// </summary>
         /// <returns></returns>
-        public string setNewShip()
+        public string placeNewShip()
         {
             bool isValid = true;
             int count = 0;

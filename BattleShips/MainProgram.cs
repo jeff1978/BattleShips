@@ -14,7 +14,7 @@ namespace BattleShips
 
         static void Main(string[] args)
             {
-            IInputParser thisParser = new InputParser();
+            IGameSetupParser thisParser = new GameSetupParser();
             IGameSetup thisGame = new GameSetup(thisParser);
             var thisProgram = new MainProgram(thisGame);
             thisProgram.thisSetup.setupGame();

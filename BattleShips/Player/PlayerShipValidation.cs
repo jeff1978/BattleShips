@@ -5,16 +5,32 @@ using System.Collections.Generic;
 
 namespace BattleShips
 {
-    public class PlayerSetup
+    /// <summary>
+    /// This class is used to find out if a position is not already occupied by an existing ship, and if the 
+    /// position is in the area of the sea.
+    /// </summary>
+    public class PlayerShipValidation
     {
-        /// <summary>
-        /// Checks to find out if a position is not already occupied by an existing ship, and if it is in the area of the sea.
-        /// </summary>
-        /// <param name="thisPosition"></param>
-        /// <param name="myShipPositions"></param>
-        /// <param name="gameSea"></param>
-        /// <returns></returns>
-        public bool isPositionAvailable(Position thisPosition, List<Position> myShipPositions, Sea gameSea)
+        public Sea gameSea { get; set; }
+
+        public bool canShipBeAdded(Ship thisShip, Position thisPosition, List<Position> myShipPositions)
+        {
+            // get the positions of the ship
+            var thisShipPositions = thisShip.getShipPositions(thisPosition);
+
+            // assume all is well.....
+            bool positionsAreAvailable = true;
+
+            // check for any invalid position against the existing ships or return true
+            foreach (var eachPosition in thisShipPositions)
+            {
+                positionsAreAvailable = isPositionAvailable(eachPosition, myShipPositions);
+                positionsAreAvailable = gameSea.IsValidPosition(eachPosition);
+            }
+            return positionsAreAvailable;
+        }
+
+        public bool isPositionAvailable(Position thisPosition, List<Position> myShipPositions)
         {
             bool positionIsValid = true;
             foreach (var item in myShipPositions)

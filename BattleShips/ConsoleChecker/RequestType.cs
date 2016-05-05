@@ -5,12 +5,12 @@
     /// </summary>
     public enum RequestType
     {
-        Place,
-        Fire,
         SetSeaSize,
         SetNoOfPlayers,
         SelectGameMode,
         SetNoOfShips,
+        SetPlayerName,
+        PlaceNewShip,
         Leave,
         Exit
     }

@@ -67,11 +67,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setNewShip();
+                var actual1 = inputPlayerTest1.placeNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setNewShip();
+                var actual2 = inputPlayerTest2.placeNewShip();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -87,11 +87,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setNewShip();
+                var actual1 = inputPlayerTest1.placeNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setNewShip();
+                var actual2 = inputPlayerTest2.placeNewShip();
 
                 // assert
                 Assert.IsNull(actual1);

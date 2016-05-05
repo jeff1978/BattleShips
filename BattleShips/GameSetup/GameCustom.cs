@@ -6,15 +6,11 @@ using System.Collections.Generic;
 namespace BattleShips.Setup
 {
     /// <summary>
-    /// This class enables the users to specify the quantities of each ship type when custom game
-    /// mode is selected.
+    /// This class enables the users to specify the quantities of each ship type when custom game mode is selected.
     /// </summary>
     public static class GameCustom
     {
-            // Get the list of ships.
-            // For each one get the user to type in the quantity needed.
-            // Create a new shipTypeInGame instance and add it to a list.
-            public static List<ShipTypeInGame>  setCustom(IInputParser inputParser)
+            public static List<ShipTypeInGame>  setCustom(IGameSetupParser inputParser)
         {
             // put the enums in an array, needed to access values by index.
             string[] shipNameList = Enum.GetNames(typeof(ShipType));

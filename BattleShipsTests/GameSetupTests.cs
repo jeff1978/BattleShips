@@ -12,7 +12,7 @@ namespace BattleShipsTests
         public void CheckGameSetupDefaults()
         {
             // arrange and Act
-            IInputParser thisParser = new MockSetupDefault();
+            IGameSetupParser thisParser = new MockSetupDefault();
             var thisGame = new GameSetup(thisParser);
             var expected = "";
             thisGame.setupGame();
@@ -33,7 +33,7 @@ namespace BattleShipsTests
         public void CheckGameSetupCustom()
         {
             // arrange and Act
-            IInputParser thisParser = new MockSetupCustom();
+            IGameSetupParser thisParser = new MockSetupCustom();
             var thisGame = new GameSetup(thisParser);
             var expected = "";
             thisGame.setupGame();

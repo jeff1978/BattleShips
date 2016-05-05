@@ -11,6 +11,8 @@ namespace BattleShips
 
         public void createShip(ShipType thisType, bool isHorizontal, Position placePosition)
         {
+            // create new instance of player ship validation class
+
             var newShip = new Ship(thisType, isHorizontal);
             var shipPositions = newShip.getShipPositions(placePosition);
 

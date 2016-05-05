@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BattleShips.ConsoleChecker
 {
-    public interface IInputParser
+    public interface IGameSetupParser
     {
         int noOfPlayers { get; set; }
         int noOfShips { get; set; }

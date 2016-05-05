@@ -7,10 +7,10 @@ using System.Collections.Generic;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This class is used to process the console readline requests.The class
+    /// This class is used to process the console readline requests during game setup.The class
     /// implements an interface which is used for the unit tests.
     /// </summary>
-    public class InputParser : IInputParser
+    public class GameSetupParser : IGameSetupParser
     {
         public int noOfPlayers { get; set; }
         public int noOfShips { get; set; }

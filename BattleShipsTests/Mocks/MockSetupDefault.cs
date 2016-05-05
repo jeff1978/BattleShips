@@ -11,7 +11,7 @@ namespace BattleShipsTests
     /// <summary>
     /// This class mocks the console inputs for user commands. It inplements the IInputParser interface
     /// </summary>
-    public class MockSetupDefault : IInputParser
+    public class MockSetupDefault : IGameSetupParser
     {
         // add appropriate props and methods for interface
         public int noOfPlayers { get; set; }

@@ -3,7 +3,7 @@
     /// <summary>
     /// This class stores all the console messages used during the game setup
     /// </summary>
-    public static class GameMessages
+    public static class GameSetupMessages
     {
         public const string welcome =
 @"   __________________________________
