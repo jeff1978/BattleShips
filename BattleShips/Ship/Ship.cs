@@ -8,8 +8,9 @@ namespace BattleShips.BShip
     /// </summary>
     public class Ship
     {
-        public bool IsHorizontal{ get; set; }
+        public bool IsHorizontal { get; set; }
         public ShipType ShipType { get; set; }
+        public List<Position> ShipPostions {get; set;}
 
     public Ship(ShipType thisType, bool isHorizontal)
         {
@@ -56,6 +57,13 @@ namespace BattleShips.BShip
             }
             return newList;
         }
+
+        public void setShipPositions(Position placePosition)
+        {
+            ShipPostions = getShipPositions(placePosition);
+            // set each position to floating
+        }
+
     }
 }
 

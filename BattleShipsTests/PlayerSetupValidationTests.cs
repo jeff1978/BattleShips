@@ -97,6 +97,50 @@ namespace BattleShipsTests
                 Assert.IsNull(actual1);
                 Assert.IsNull(actual2);
             }
+
+            [Test]
+            public void FireAtValidCoordinates()
+            {
+                // arrange
+                string inputString1 = "2,3";
+                string inputString2 = "33,1";
+                string expected1 = "2,3";
+                string expected2 = "33,1";
+
+                // act
+                IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
+                var inputFireTest1 = new PlayerSetupValidation(thisReader1);
+                var actual1 = inputFireTest1.fireCommand();
+
+                IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
+                var inputFireTest2 = new PlayerSetupValidation(thisReader2);
+                var actual2 = inputFireTest2.fireCommand();
+
+                // assert
+                Assert.AreEqual(expected1, actual1);
+                Assert.AreEqual(expected2, actual2);
+            }
+
+            [Test]
+            public void FireAtInvalidCoordinates()
+            {
+                // arrange
+                string inputString1 = "2,";
+                string inputString2 = "33,one";
+
+                // act
+                IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
+                var inputFireTest1 = new PlayerSetupValidation(thisReader1);
+                var actual1 = inputFireTest1.fireCommand();
+
+                IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
+                var inputFireTest2 = new PlayerSetupValidation(thisReader2);
+                var actual2 = inputFireTest2.fireCommand();
+
+                // assert
+                Assert.IsNull(actual1);
+                Assert.IsNull(actual2);
+            }
         }
     }
 }

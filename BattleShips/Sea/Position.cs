@@ -15,7 +15,7 @@
 
         /// <summary>
         /// This is the principal class used to represent the coordinates of a grid. This also
-        ///  includes a boolean property called IsFloating that is used as a flag for
+        ///  includes a boolean property called IsFloating that is used as a flag for identifying floating or sunk positions.
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>

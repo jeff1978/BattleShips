@@ -8,7 +8,7 @@ namespace BattleShipsTest
     public class ShipTests
     {
         [Test]
-        public void CheckShipListCreated()
+        public void CheckShipGetShipPositions()
         {
             // arrange
             // set up the test with some initialised objects
@@ -64,6 +64,23 @@ namespace BattleShipsTest
             }
             // assert
             Assert.AreEqual("False,2,3\nFalse,2,4\nFalse,2,5\n", actual);
+        }
+
+        [Test]
+        public void CheckShipSetShipPositions()
+        {
+            // arrange
+            // set up the test with some initialised objects
+            var placePosition = new Position(2, 3);
+            var thisShip = new Ship(ShipType.Battleship, true);
+
+            // act
+            thisShip.setShipPositions(placePosition);
+            var actualResult = thisShip.ShipPostions.Count;
+
+            // assert
+            // check that the result list has appropriate size
+            Assert.AreEqual(3, actualResult);
         }
     }
 }
