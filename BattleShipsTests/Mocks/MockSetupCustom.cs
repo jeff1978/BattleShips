@@ -19,7 +19,7 @@ namespace BattleShipsTests
         public Sea seaSize { get; set; }
         public List<ShipTypeInGame> listOfShipTypes { get; set; }
 
-        public void getUserInput(RequestType thisRequest)
+        public void GetUserInput(RequestType thisRequest)
         {
             switch (thisRequest)
             {

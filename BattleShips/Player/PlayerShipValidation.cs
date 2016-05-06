@@ -13,10 +13,10 @@ namespace BattleShips
     {
         public Sea gameSea { get; set; }
 
-        public bool canShipBeAdded(Ship thisShip, Position thisPosition, List<Position> myShipPositions)
+        public bool CanShipBeAdded(Ship thisShip, Position thisPosition, List<Position> myShipPositions)
         {
             // get the positions of the ship
-            var thisShipPositions = thisShip.getShipPositions(thisPosition);
+            var thisShipPositions = thisShip.GetShipPositions(thisPosition);
 
             // assume all is well.....
             bool positionsAreAvailable = true;
@@ -24,13 +24,13 @@ namespace BattleShips
             // check for any invalid position against the existing ships or return true
             foreach (var eachPosition in thisShipPositions)
             {
-                positionsAreAvailable = isPositionAvailable(eachPosition, myShipPositions);
+                positionsAreAvailable = IsPositionAvailable(eachPosition, myShipPositions);
                 positionsAreAvailable = gameSea.IsValidPosition(eachPosition);
             }
             return positionsAreAvailable;
         }
 
-        public bool isPositionAvailable(Position thisPosition, List<Position> myShipPositions)
+        public bool IsPositionAvailable(Position thisPosition, List<Position> myShipPositions)
         {
             bool positionIsValid = true;
             foreach (var item in myShipPositions)
@@ -43,7 +43,7 @@ namespace BattleShips
             return positionIsValid;
         }
 
-        public List<Position> getPlayerShipsPositions(List<Ship> PlayerShips)
+        public List<Position> GetPlayerShipsPositions(List<Ship> PlayerShips)
         {
             // iterate through the player ship list, get all the positions
             // create an empty list to add to

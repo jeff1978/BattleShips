@@ -15,7 +15,7 @@ namespace BattleShipsTests
             IGameSetupParser thisParser = new MockSetupDefault();
             var thisGame = new GameSetup(thisParser);
             var expected = "";
-            thisGame.setupGame();
+            thisGame.SetupGame();
 
             foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
@@ -36,7 +36,7 @@ namespace BattleShipsTests
             IGameSetupParser thisParser = new MockSetupCustom();
             var thisGame = new GameSetup(thisParser);
             var expected = "";
-            thisGame.setupGame();
+            thisGame.SetupGame();
 
             foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {

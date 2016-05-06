@@ -23,9 +23,9 @@ namespace BattleShipsTests
             // act
             var thisPlayerSetup = new PlayerShipValidation();
             thisPlayerSetup.gameSea = thisSea;
-            var result1 = thisPlayerSetup.isPositionAvailable(thisPosition1, thisList);
-            var result2 = thisPlayerSetup.isPositionAvailable(thisPosition2, thisList);
-            var result3 = thisPlayerSetup.isPositionAvailable(thisPosition3, thisList);
+            var result1 = thisPlayerSetup.IsPositionAvailable(thisPosition1, thisList);
+            var result2 = thisPlayerSetup.IsPositionAvailable(thisPosition2, thisList);
+            var result3 = thisPlayerSetup.IsPositionAvailable(thisPosition3, thisList);
             // assert
 
             Assert.IsTrue(result1);
@@ -40,8 +40,8 @@ namespace BattleShipsTests
             var ship1 = new Ship(ShipType.Submarine, true);
             var ship2 = new Ship(ShipType.Destroyer, false);
 
-            ship1.setShipPositions(new Position(3, 3));
-            ship2.setShipPositions(new Position(4, 5));
+            ship1.SetShipPositions(new Position(3, 3));
+            ship2.SetShipPositions(new Position(4, 5));
 
             List<Ship> thisList = new List<Ship>();
             thisList.Add(ship1);
@@ -50,7 +50,7 @@ namespace BattleShipsTests
             var thisPlayerSetup = new PlayerShipValidation();
 
             // act
-            var result = thisPlayerSetup.getPlayerShipsPositions(thisList);
+            var result = thisPlayerSetup.GetPlayerShipsPositions(thisList);
             
             // assert
             Assert.AreEqual(7,result.Count);

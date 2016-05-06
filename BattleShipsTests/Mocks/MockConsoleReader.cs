@@ -8,7 +8,7 @@
         {
             Input = input;
         }
-        public string readConsole()
+        public string ReadConsole()
         {
             return Input;
         }

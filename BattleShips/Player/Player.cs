@@ -9,18 +9,30 @@ namespace BattleShips
         public List<Ship> PlayerShips { get; set; }
         public string PlayerName { get; set; }
 
-        public void createShip(ShipType thisType, bool isHorizontal, Position placePosition)
+        public bool CreateShip(ShipType thisType, bool isHorizontal, Position placePosition)
         {
             // create new instance of player ship validation class
+            var thisValidaton = new PlayerShipValidation();
 
+            // create a new ship
             var newShip = new Ship(thisType, isHorizontal);
-            var shipPositions = newShip.getShipPositions(placePosition);
 
-            // bool checkAllValidPositions       list of positions      newShip.getShipPositions(placePosition);
+            // get positions from all existing ships, then check to see if new ship can be added
+            var existingShipPositions = thisValidaton.GetPlayerShipsPositions(PlayerShips);
 
-            // void setShipPositionsFloating list of positions
-
-            // add ship to myList
+            if (thisValidaton.CanShipBeAdded(newShip, placePosition, existingShipPositions))
+            {
+                // all good to add, so set the ship positions to floating.
+                newShip.SetShipPositions(placePosition);
+                // add ship to PlayerShips
+                PlayerShips.Add(newShip);
+                return true;
+            }
+            else
+            {
+                // error message? perhaps in calling code
+                return false;
+            }
         }
     }
 }

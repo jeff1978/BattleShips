@@ -22,11 +22,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setPlayerName();
+                var actual1 = inputPlayerTest1.SetPlayerName();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setPlayerName();
+                var actual2 = inputPlayerTest2.SetPlayerName();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -44,11 +44,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setPlayerName();
+                var actual1 = inputPlayerTest1.SetPlayerName();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setPlayerName();
+                var actual2 = inputPlayerTest2.SetPlayerName();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -67,11 +67,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.placeNewShip();
+                var actual1 = inputPlayerTest1.PlaceNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.placeNewShip();
+                var actual2 = inputPlayerTest2.PlaceNewShip();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -87,11 +87,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.placeNewShip();
+                var actual1 = inputPlayerTest1.PlaceNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.placeNewShip();
+                var actual2 = inputPlayerTest2.PlaceNewShip();
 
                 // assert
                 Assert.IsNull(actual1);
@@ -110,11 +110,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputFireTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputFireTest1.fireCommand();
+                var actual1 = inputFireTest1.FireCommand();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputFireTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputFireTest2.fireCommand();
+                var actual2 = inputFireTest2.FireCommand();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -131,11 +131,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputFireTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputFireTest1.fireCommand();
+                var actual1 = inputFireTest1.FireCommand();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputFireTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputFireTest2.fireCommand();
+                var actual2 = inputFireTest2.FireCommand();
 
                 // assert
                 Assert.IsNull(actual1);

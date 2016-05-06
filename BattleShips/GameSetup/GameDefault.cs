@@ -8,7 +8,7 @@ namespace BattleShips.Setup
     /// </summary>
     public static class GameDefault
     {
-        public static List<ShipTypeInGame> setDefaults()
+        public static List<ShipTypeInGame> SetDefaults()
         {
             var thisType = new ShipTypeInGame(ShipType.Destroyer, 2);
             var thisList = new List<ShipTypeInGame>();

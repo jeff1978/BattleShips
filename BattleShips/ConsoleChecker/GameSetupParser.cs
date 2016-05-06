@@ -18,22 +18,22 @@ namespace BattleShips.ConsoleChecker
         public Sea seaSize { get; set; }
         public List<ShipTypeInGame> listOfShipTypes { get; set; }
 
-        public void getUserInput(RequestType thisRequest)
+        public void GetUserInput(RequestType thisRequest)
         {
             var thisSetup = new GameSetupValidation();
             switch (thisRequest)
             {
                 case RequestType.SetNoOfPlayers:
-                    noOfPlayers = thisSetup.setNoOfPlayers();
+                    noOfPlayers = thisSetup.SetNumberOfPlayers();
                     break;
                 case RequestType.SetNoOfShips:
-                    noOfShips = thisSetup.setNoOfShips();
+                    noOfShips = thisSetup.SetNumberOfShips();
                     break;
                 case RequestType.SelectGameMode:
-                    gameMode = thisSetup.selectGameMode();
+                    gameMode = thisSetup.SelectGameMode();
                     break;
                 case RequestType.SetSeaSize:
-                    seaSize = thisSetup.setSeaSize();
+                    seaSize = thisSetup.SetSeaSize();
                     break;
                 default:
                     throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");

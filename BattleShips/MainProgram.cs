@@ -17,7 +17,7 @@ namespace BattleShips
             IGameSetupParser thisParser = new GameSetupParser();
             IGameSetup thisGame = new GameSetup(thisParser);
             var thisProgram = new MainProgram(thisGame);
-            thisProgram.thisSetup.setupGame();
+            thisProgram.thisSetup.SetupGame();
         }
     }
 }

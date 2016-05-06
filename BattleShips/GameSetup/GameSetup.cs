@@ -24,31 +24,31 @@ namespace BattleShips.Setup
         public Sea gameSea { get; private set; }
 
         // Public method for access to this class
-        public void setupGame()
+        public void SetupGame()
         {           
             // show welcome message
             Console.WriteLine(GameSetupMessages.welcome);
 
             // get and set the number of players
             Console.WriteLine(GameSetupMessages.getNumberOfPlayers);
-            inputParser.getUserInput(RequestType.SetNoOfPlayers);
+            inputParser.GetUserInput(RequestType.SetNoOfPlayers);
             numberOfPlayers = inputParser.noOfPlayers;
 
             // get and set the game mode
             Console.WriteLine(GameSetupMessages.getGameMode);
-            inputParser.getUserInput(RequestType.SelectGameMode);
+            inputParser.GetUserInput(RequestType.SelectGameMode);
             var gameMode = inputParser.gameMode;
-            listOfShipTypes = GameInput.getSettings(gameMode, inputParser);
+            listOfShipTypes = GameInput.GetSettings(gameMode, inputParser);
 
             // get and set the sea dimensions
             Console.WriteLine(GameSetupMessages.getSeaSize);
-            inputParser.getUserInput(RequestType.SetSeaSize);
+            inputParser.GetUserInput(RequestType.SetSeaSize);
             gameSea = inputParser.seaSize;
         }
 
         public void useMode(GameMode thisMode)
         {
-            listOfShipTypes = GameInput.getSettings(thisMode, inputParser);
+            listOfShipTypes = GameInput.GetSettings(thisMode, inputParser);
         }
     }
 }

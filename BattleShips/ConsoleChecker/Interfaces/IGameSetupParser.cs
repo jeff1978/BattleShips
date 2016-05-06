@@ -13,6 +13,6 @@ namespace BattleShips.ConsoleChecker
         Sea seaSize { get; set; }
         List<ShipTypeInGame> listOfShipTypes { get; set; }
 
-        void getUserInput(RequestType thisRequest);
+        void GetUserInput(RequestType thisRequest);
     }
 }

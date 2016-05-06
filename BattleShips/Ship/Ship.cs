@@ -28,7 +28,7 @@ namespace BattleShips.BShip
         /// <param name="shipSize"></param>
         /// <param name="isShipHorizontal"></param>
         /// <returns></returns>
-        public List<Position> getShipPositions(Position placePosition)
+        public List<Position> GetShipPositions(Position placePosition)
         {
             // lets breakdown the placePosition and work out the 
             // other coordinates.
@@ -58,9 +58,9 @@ namespace BattleShips.BShip
             return newList;
         }
 
-        public void setShipPositions(Position placePosition)
+        public void SetShipPositions(Position placePosition)
         {
-            var tempList = getShipPositions(placePosition);
+            var tempList = GetShipPositions(placePosition);
             // set each position to floating
             foreach (var thisPosition in tempList )
             {

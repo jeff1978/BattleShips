@@ -32,13 +32,13 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
-        public int setNoOfPlayers()
+        public int SetNumberOfPlayers()
         {
             int noOfPlayers;
             int count = 0;
             while (count < 10)
             {
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 bool result = int.TryParse(input, out noOfPlayers);
                 if (result == false || int.Parse(input) < 2)
                 {
@@ -56,13 +56,13 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
-        public int setNoOfShips()
+        public int SetNumberOfShips()
         {
             int noOfShips;
             int count = 1;
             while (count < 10)
             {
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 bool result = int.TryParse(input, out noOfShips);
                 if (result == false || int.Parse(input) < 0)
                 {
@@ -79,7 +79,7 @@ namespace BattleShips.ConsoleChecker
         /// Get int of range in GameMode enum list. Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
-        public GameMode selectGameMode()
+        public GameMode SelectGameMode()
         {
             GameMode chosenMode;
             var gameModeEnum = Enum.GetValues(typeof(GameMode)).Length;
@@ -87,7 +87,7 @@ namespace BattleShips.ConsoleChecker
             int count = 0;
             while (count < 10)
             {
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 bool result = int.TryParse(input, out modeEntered);
                 if (result == false || int.Parse(input) < 0 || int.Parse(input) > gameModeEnum - 1)
                 {
@@ -109,14 +109,14 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
-        public Sea setSeaSize()
+        public Sea SetSeaSize()
         {
             int count = 0;
             while (count  < 10)
             {
                 bool isValid = true;
                 int validItem;
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 string[] dimensions = input.Split(',');
                 foreach (var item in dimensions)
                 {

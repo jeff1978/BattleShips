@@ -8,7 +8,7 @@ namespace BattleShips.ConsoleChecker
     /// </summary>
     public class ConsoleReader : IConsoleReader
     {
-        public string readConsole()
+        public string ReadConsole()
         {
             return Console.ReadLine();
         }

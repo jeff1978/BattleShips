@@ -31,12 +31,12 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a default name
         /// </summary>
         /// <returns></returns>
-        public string setPlayerName()
+        public string SetPlayerName()
         {
             int count = 0;
             while (count < 10)
             {
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine(@"   Enter a valid name. Name must not be white
@@ -56,7 +56,7 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a null.
         /// </summary>
         /// <returns></returns>
-        public string placeNewShip()
+        public string PlaceNewShip()
         {
             bool isValid = true;
             int count = 0;
@@ -64,7 +64,7 @@ namespace BattleShips.ConsoleChecker
             {
                 int x;
                 int y;
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 string[] dimensions = input.Split(',');
                 // now look for any invalid part
                 isValid = int.TryParse(dimensions[0], out x);
@@ -92,7 +92,7 @@ namespace BattleShips.ConsoleChecker
         /// Give the user ten goes then submit a null.
         /// </summary>
         /// <returns></returns>
-        public string fireCommand()
+        public string FireCommand()
         {
             bool isValidCommand = true;
             int count = 0;
@@ -100,7 +100,7 @@ namespace BattleShips.ConsoleChecker
             {
                 int x;
                 int y;
-                string input = ThisReader.readConsole();
+                string input = ThisReader.ReadConsole();
                 string[] dimensions = input.Split(',');
                 // now look for any invalid part
                 isValidCommand = int.TryParse(dimensions[0], out x);

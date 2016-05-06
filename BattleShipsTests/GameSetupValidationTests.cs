@@ -1,7 +1,6 @@
 ﻿using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
 using NUnit.Framework;
-using System;
 
 namespace BattleShipsTests
 {
@@ -22,11 +21,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setNoOfPlayers();
+                var actual1 = inputPlayerTest1.SetNumberOfPlayers();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setNoOfPlayers();
+                var actual2 = inputPlayerTest2.SetNumberOfPlayers();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -45,11 +44,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputShipTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputShipTest1.setNoOfShips();
+                var actual1 = inputShipTest1.SetNumberOfShips();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputShipTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputShipTest2.setNoOfShips();
+                var actual2 = inputShipTest2.SetNumberOfShips();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -68,11 +67,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputPlayerTest1.setNoOfPlayers();
+                var actual1 = inputPlayerTest1.SetNumberOfPlayers();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputPlayerTest2.setNoOfPlayers();
+                var actual2 = inputPlayerTest2.SetNumberOfPlayers();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -92,11 +91,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputShipTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputShipTest1.setNoOfShips();
+                var actual1 = inputShipTest1.SetNumberOfShips();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputShipsTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputShipsTest2.setNoOfShips();
+                var actual2 = inputShipsTest2.SetNumberOfShips();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -115,11 +114,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputModeTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputModeTest1.selectGameMode();
+                var actual1 = inputModeTest1.SelectGameMode();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputModeTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputModeTest2.selectGameMode();
+                var actual2 = inputModeTest2.SelectGameMode();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);
@@ -137,11 +136,11 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputModeTest1 = new GameSetupValidation(thisReader1);
-                var actual1 = inputModeTest1.selectGameMode();
+                var actual1 = inputModeTest1.SelectGameMode();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputModeTest2 = new GameSetupValidation(thisReader2);
-                var actual2 = inputModeTest2.selectGameMode();
+                var actual2 = inputModeTest2.SelectGameMode();
 
                 // assert
                 Assert.AreEqual(expected1, actual1);

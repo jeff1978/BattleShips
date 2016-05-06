@@ -16,7 +16,7 @@ namespace BattleShipsTest
             var thisShip = new Ship(ShipType.Battleship, true);
 
             // act
-            var actualResult = thisShip.getShipPositions(placePosition);
+            var actualResult = thisShip.GetShipPositions(placePosition);
 
             // assert
             // check that the result list has appropriate size
@@ -34,7 +34,7 @@ namespace BattleShipsTest
             var actual = "";
 
             // act
-            var ThisList = thisShip.getShipPositions(placePosition);
+            var ThisList = thisShip.GetShipPositions(placePosition);
 
             foreach (var Position in ThisList)
             {
@@ -56,7 +56,7 @@ namespace BattleShipsTest
             var actual = "";
 
             // act
-            var ThisList = thisShip.getShipPositions(placePosition);
+            var ThisList = thisShip.GetShipPositions(placePosition);
 
             foreach (var Position in ThisList)
             {
@@ -75,7 +75,7 @@ namespace BattleShipsTest
             var thisShip = new Ship(ShipType.Battleship, true);
 
             // act
-            thisShip.setShipPositions(placePosition);
+            thisShip.SetShipPositions(placePosition);
             var actualResult = thisShip.ShipPostions.Count;
 
             // assert
