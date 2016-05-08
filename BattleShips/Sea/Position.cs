@@ -22,7 +22,7 @@
         /// <param name="IsFloating"> This is an optional default parameter already initialised.</param>
 
         #region constructor
-        public Position(int x, int y, bool IsFloating=true)
+        public Position(int x, int y, bool IsFloating=false)
         {
             this.row = x;
             this.column = y;

@@ -126,7 +126,7 @@ namespace BattleShips.ConsoleChecker
                         isValid = false;
                     }
                 }
-                if (!isValid)
+                if (isValid == false)
                 {
                     Console.WriteLine(@"   The sea dimensions given were not valid. Ensure that the format is correct
    and that the minimum size is 5,5. Enter the sea dimensions.");

@@ -1,6 +1,7 @@
 ﻿using BattleShips.BattleGround;
 using BattleShips.BShip;
 using NUnit.Framework;
+using System.Linq;
 
 namespace BattleShipsTest
 {
@@ -70,17 +71,23 @@ namespace BattleShipsTest
         public void CheckShipSetShipPositions()
         {
             // arrange
-            // set up the test with some initialised objects
-            var placePosition = new Position(2, 3);
-            var thisShip = new Ship(ShipType.Battleship, true);
+            // set up the test with two initialised objects
+            // set one of the ships but not the other, then check the number or IsFloating positions
+            var placePosition1 = new Position(2, 3);
+            var placePosition2 = new Position(7, 2);
+            var thisShip1 = new Ship(ShipType.Battleship, true);
+            var thisShip2 = new Ship(ShipType.Submarine, false);
 
             // act
-            thisShip.SetShipPositions(placePosition);
-            var actualResult = thisShip.ShipPostions.Count;
+            thisShip1.SetShipPositions(placePosition1);
+            thisShip2.ShipPostions = thisShip2.GetShipPositions(placePosition2);
+
+            var numberOfFloatingPositions1 = thisShip1.ShipPostions.Where(p => p.IsFloating == true).Count();
+            var numberOfFloatingPositions2 = thisShip2.ShipPostions.Where(p => p.IsFloating == true).Count();
 
             // assert
-            // check that the result list has appropriate size
-            Assert.AreEqual(3, actualResult);
+            Assert.AreEqual(3, numberOfFloatingPositions1);
+            Assert.AreEqual(0, numberOfFloatingPositions2);
         }
     }
 }

@@ -1,59 +1,52 @@
 ﻿using BattleShips.BattleGround;
 using BattleShips.BShip;
-using System;
 using System.Collections.Generic;
 
 namespace BattleShips
 {
     /// <summary>
     /// This class is used to find out if a position is not already occupied by an existing ship, and if the 
-    /// position is in the area of the sea.
+    /// position is in the area of the sea. There are unit tests for all methods - of course!
     /// </summary>
     public class PlayerShipValidation
     {
-        public Sea gameSea { get; set; }
-
-        public bool CanShipBeAdded(Ship thisShip, Position thisPosition, List<Position> myShipPositions)
+        public bool CanShipBeAdded(Sea gameSea, List<Position> thisShipPositions, List<Position> myShipPositions)
         {
-            // get the positions of the ship
-            var thisShipPositions = thisShip.GetShipPositions(thisPosition);
-
             // assume all is well.....
-            bool positionsAreAvailable = true;
+            bool positionsAreValid = true;
 
-            // check for any invalid position against the existing ships or return true
-            foreach (var eachPosition in thisShipPositions)
+            // check that all positions fit within the bounds of the sea
+            //  if all true then check the positions against the existing positions
+
+            if (thisShipPositions.TrueForAll(p => gameSea.IsValidPosition(p)))
             {
-                positionsAreAvailable = IsPositionAvailable(eachPosition, myShipPositions);
-                positionsAreAvailable = gameSea.IsValidPosition(eachPosition);
+                positionsAreValid = thisShipPositions.TrueForAll(p => IsPositionAvailable(p, myShipPositions));
             }
-            return positionsAreAvailable;
+            else
+            {
+                positionsAreValid = false;
+            }
+            return positionsAreValid;
         }
 
         public bool IsPositionAvailable(Position thisPosition, List<Position> myShipPositions)
         {
             bool positionIsValid = true;
-            foreach (var item in myShipPositions)
-            {
-                if (item.row == thisPosition.row && item.column == thisPosition.column || gameSea.IsValidPosition(thisPosition) == false)
-                {
-                    positionIsValid = false;
-                }
-            }
+
+            // check each position in myShipPositions. Use TrueForAll and then negate in lambda expression
+            // to find any invalid position.
+            positionIsValid = myShipPositions.TrueForAll(p => !(p.row == thisPosition.row && p.column == thisPosition.column));
+
             return positionIsValid;
         }
 
         public List<Position> GetPlayerShipsPositions(List<Ship> PlayerShips)
         {
-            // iterate through the player ship list, get all the positions
-            // create an empty list to add to
+            // iterate through the player ship list, get all the positions, create an empty list to add to
             var playerShipPositions = new List<Position>();
             foreach (var Ship in PlayerShips)
             {
-                foreach (var thisPosition in Ship.ShipPostions)
-                {
-                    playerShipPositions.Add(thisPosition);
-                }
+                Ship.ShipPostions.ForEach(p => playerShipPositions.Add(p));
             }
             return playerShipPositions;
         }
