@@ -31,18 +31,16 @@ namespace BattleShips
 
         public bool IsPositionAvailable(Position thisPosition, List<Position> myShipPositions)
         {
-            bool positionIsValid = true;
-
-            // check each position in myShipPositions. Use TrueForAll and then negate in lambda expression
+            // check each position in myShipPositions. Use TrueForAll and then negate in a lambda expression
             // to find any invalid position.
-            positionIsValid = myShipPositions.TrueForAll(p => !(p.row == thisPosition.row && p.column == thisPosition.column));
 
-            return positionIsValid;
+            return myShipPositions.TrueForAll(p => !(p.row == thisPosition.row && p.column == thisPosition.column));
         }
 
         public List<Position> GetPlayerShipsPositions(List<Ship> PlayerShips)
         {
             // iterate through the player ship list, get all the positions, create an empty list to add to
+
             var playerShipPositions = new List<Position>();
             foreach (var Ship in PlayerShips)
             {

@@ -93,6 +93,7 @@
     <Compile Include="GameSetup\GameSetup.cs" />
     <Compile Include="GameSetup\GameDefault.cs" />
     <Compile Include="GameSetup\IGameSetup.cs" />
+    <Compile Include="Player\PlayerSetupMessages.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Player\PlayerShipValidation.cs" />
     <Compile Include="Sea\Position.cs" />

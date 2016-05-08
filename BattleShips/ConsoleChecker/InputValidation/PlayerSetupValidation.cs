@@ -88,8 +88,7 @@ namespace BattleShips.ConsoleChecker
         }
 
         /// <summary>
-        /// Get a coordinate from the user in the format x,y
-        /// Give the user ten goes then submit a null.
+        /// Get a coordinate from the user in the format x,y Give the user ten goes then submit a null.
         /// </summary>
         /// <returns></returns>
         public string FireCommand()
