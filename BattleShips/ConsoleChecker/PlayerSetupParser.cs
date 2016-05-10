@@ -10,7 +10,7 @@ namespace BattleShips.ConsoleChecker
     /// This class is used to process the console readline requests during player setup.The class
     /// implements an interface which is used for the unit tests.
     /// </summary>
-    public class PlayerSetupParser
+    public class PlayerSetupParser : IPlayerSetupParser
     {
         public string playerName { get; set; }
         public string newShipPlaceString { get; set; }

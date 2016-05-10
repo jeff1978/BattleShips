@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleChecker\ConsoleReader.cs" />
+    <Compile Include="ConsoleChecker\Interfaces\IPlayerSetupParser.cs" />
     <Compile Include="ConsoleChecker\PlayerSetupParser.cs" />
     <Compile Include="ConsoleChecker\InputValidation\PlayerSetupValidation.cs" />
     <Compile Include="ConsoleChecker\InputValidation\GameSetupValidation.cs" />
@@ -92,7 +93,10 @@
     <Compile Include="GameSetup\GameInput.cs" />
     <Compile Include="GameSetup\GameSetup.cs" />
     <Compile Include="GameSetup\GameDefault.cs" />
-    <Compile Include="GameSetup\IGameSetup.cs" />
+    <Compile Include="GameSetup\Interfaces\IGameSetup.cs" />
+    <Compile Include="Player\Interfaces\IPlayerShipValidation.cs" />
+    <Compile Include="Player\PlayerIndividual.cs" />
+    <Compile Include="Player\PlayerSetup.cs" />
     <Compile Include="Player\PlayerSetupMessages.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Player\PlayerShipValidation.cs" />

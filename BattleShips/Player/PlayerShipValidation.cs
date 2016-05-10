@@ -8,7 +8,7 @@ namespace BattleShips
     /// This class is used to find out if a position is not already occupied by an existing ship, and if the 
     /// position is in the area of the sea. There are unit tests for all methods - of course!
     /// </summary>
-    public class PlayerShipValidation
+    public class PlayerShipValidation : IPlayerShipValidation
     {
         public bool CanShipBeAdded(Sea gameSea, List<Position> thisShipPositions, List<Position> myShipPositions)
         {
@@ -47,6 +47,17 @@ namespace BattleShips
                 Ship.ShipPostions.ForEach(p => playerShipPositions.Add(p));
             }
             return playerShipPositions;
+        }
+
+        public void createPlayerShips(List<ShipTypeInGame> typesInThisGame, Player thisPlayer)
+        {
+            foreach (var item in typesInThisGame)
+            {
+                for (int i = 0; i < item.typeQuantity; i++)
+                {
+                    thisPlayer.PlayerShips.Add(new Ship(item.shipType, false));
+                }
+            }
         }
     }
 }

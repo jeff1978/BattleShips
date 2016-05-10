@@ -13,9 +13,8 @@
 ";
         public const string getPlacementCommand =
 @"
-   Ship placement.....
    Enter the coordinates and orientation for your ship e.g. 3,4,v or 7,2,h
-   (Coordinates must lie in the bounds of the sea, and cannot overlap your other ships)
+   (All ship positions must lie in the bounds of the sea, and cannot overlap your other ships)
    Enter the command to place your ship...
 ";
     }
