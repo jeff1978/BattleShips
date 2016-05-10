@@ -3,6 +3,7 @@ using BattleShips.BShip;
 using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
 using System;
+using System.Collections.Generic;
 
 namespace BattleShips
 {
@@ -15,9 +16,15 @@ namespace BattleShips
         public IGameSetup thisGameSetup = new GameSetup(new GameSetupParser());
         public IPlayerSetupParser thisPlayerSetup = new PlayerSetupParser();
         public IPlayerShipValidation thisValidation = new PlayerShipValidation();
-
+        public List<Player> playerList { get; private set; }
         #endregion
-        
+
+        public void setupAllPlayers()
+        {
+
+        }
+
+        #region Individual Player Setup Method
         public void setupPlayer()
         {
             var thisPlayer = new Player();
@@ -25,7 +32,6 @@ namespace BattleShips
             AddPlayerName(thisPlayer);
 
             // show ship menu message and create player ships
-            Console.WriteLine(PlayerSetupMessages.getPlacementCommand);
             thisValidation.createPlayerShips(thisGameSetup.listOfShipTypes, thisPlayer);
 
             // for each ship ask for the place command and place the ship.
@@ -47,7 +53,9 @@ namespace BattleShips
                 }
             }
         }
+        #endregion
 
+        #region Add Player Name Method
         public void AddPlayerName(Player thisPlayer)
         {
             Console.WriteLine(PlayerSetupMessages.welcomePlayers);
@@ -55,7 +63,9 @@ namespace BattleShips
             thisPlayerSetup.GetUserInput(RequestType.SetPlayerName);
             thisPlayer.PlayerName = thisPlayerSetup.playerName;
         }
+        #endregion
 
+        #region Add Ship Details Method
         public bool AddShipDetails(Ship thisShip, Player thisPlayer)
         {
             Console.WriteLine("Ship to add: {0}, size {1}....", thisShip.ShipType, (int)thisShip.ShipType);
@@ -67,7 +77,7 @@ namespace BattleShips
             // get the player's existing ship positions and this ship's positions to check for clashes
             // make sure that no positions lie in the sea. If all is well then save ship and return true, else do nothing and return false.
 
-            var existingShipPositions = thisValidation.GetPlayerShipsPositions(thisPlayer.PlayerShips);         
+            var existingShipPositions = thisValidation.GetPlayerShipsPositions(thisPlayer.PlayerShips);
             var shipPositionList = thisShip.GetShipPositions(placePosition);
             if (thisValidation.CanShipBeAdded(thisGameSetup.gameSea, shipPositionList, existingShipPositions))
             {
@@ -80,7 +90,9 @@ namespace BattleShips
                 return false;
             }
         }
+        #endregion
 
+        #region Get New Ship Details From User Method
         public Position GetNewShipDetailsFromUser(Ship thisShip)
         {
             thisPlayerSetup.GetUserInput(RequestType.PlaceNewShip);
@@ -90,6 +102,7 @@ namespace BattleShips
                 thisShip.IsHorizontal = true;
             }
             return new Position(int.Parse(userInput[0]), int.Parse(userInput[1]));
-        }
+        } 
+        #endregion
     }
 }

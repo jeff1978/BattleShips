@@ -49,8 +49,6 @@ namespace BattleShipsTests
             thisList.Add(ship1);
             thisList.Add(ship2);
 
-
-
             // act
             var result = thisPlayerSetup.GetPlayerShipsPositions(thisList);
 
@@ -89,6 +87,28 @@ namespace BattleShipsTests
             Assert.IsFalse(result1);
             Assert.IsFalse(result2);
             Assert.IsTrue(result3);
+        }
+
+        [Test]
+        public void CheckCreatePlayerShips()
+        {
+            // arrange
+            var thisValidation = new PlayerShipValidation();
+            List<ShipTypeInGame> theseTypes = new List<ShipTypeInGame>();
+            var thisPlayer = new Player();
+
+            theseTypes.Add(new ShipTypeInGame(ShipType.Destroyer, 1));
+            theseTypes.Add(new ShipTypeInGame(ShipType.Battleship, 2));
+            theseTypes.Add(new ShipTypeInGame(ShipType.Scout, 3));
+
+            // act
+            thisValidation.createPlayerShips(theseTypes, thisPlayer);
+
+            // assert
+            var expected = thisPlayer.PlayerShips.Count;
+
+            // assert
+            Assert.AreEqual(6, expected);
         }
     }
 }

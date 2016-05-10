@@ -53,7 +53,7 @@ namespace BattleShips.ConsoleChecker
 
         /// <summary>
         /// Get a position and orientation in the format x,y,z where z is either h or v
-        /// Give the user ten goes then submit a null.
+        /// Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
         public string PlaceNewShip()
@@ -67,9 +67,7 @@ namespace BattleShips.ConsoleChecker
                 string input = ThisReader.ReadConsole();
                 string[] dimensions = input.Split(',');
                 // now look for any invalid part
-                isValid = int.TryParse(dimensions[0], out x);
-                isValid = int.TryParse(dimensions[1], out y);
-                if (dimensions.Length != 3 || !(dimensions[2] == "h" || dimensions[2] == "v"))
+                if (dimensions.Length != 3 || !(dimensions[2] == "h" || dimensions[2] == "v") || int.TryParse(dimensions[1], out y)==false || int.TryParse(dimensions[0], out x)==false)
                 {
                     isValid = false;
                 }
@@ -78,17 +76,18 @@ namespace BattleShips.ConsoleChecker
                     Console.WriteLine(@"   The command was not recognised. Ensure that the format is correct
    eg. 4,5,v  or  5,2,h  Enter the coordinates and direction for the ship.");
                     count++;
+                    isValid = true;
                 }
                 else
                 {
                     return input;
                 }             
              }
-            return null;
+            return "-1,-1,v";
         }
 
         /// <summary>
-        /// Get a coordinate from the user in the format x,y Give the user ten goes then submit a null.
+        /// Get a coordinate from the user in the format x,y Give the user ten goes then submit a default.
         /// </summary>
         /// <returns></returns>
         public string FireCommand()
@@ -119,7 +118,7 @@ namespace BattleShips.ConsoleChecker
                     return input;
                 }
             }
-            return null;
+            return "0,0";
         }
     }
 }

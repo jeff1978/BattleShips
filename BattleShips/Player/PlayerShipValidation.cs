@@ -44,20 +44,31 @@ namespace BattleShips
             var playerShipPositions = new List<Position>();
             foreach (var Ship in PlayerShips)
             {
-                Ship.ShipPostions.ForEach(p => playerShipPositions.Add(p));
+                if (Ship.ShipPostions != null)
+                {
+                    Ship.ShipPostions.ForEach(p => playerShipPositions.Add(p));
+                }
             }
             return playerShipPositions;
         }
 
         public void createPlayerShips(List<ShipTypeInGame> typesInThisGame, Player thisPlayer)
         {
+
+            //var thisShip = new Ship(ShipType.Destroyer, false);
+            //var thisList = new List<Ship>();
+            //thisList.Add(new Ship(ShipType.Destroyer, false));
+            //thisPlayer.PlayerShips = thisList;
+            //thisPlayer.PlayerShips.Add(new Ship(ShipType.Destroyer, false));
+            var thisList = new List<Ship>();
             foreach (var item in typesInThisGame)
             {
                 for (int i = 0; i < item.typeQuantity; i++)
                 {
-                    thisPlayer.PlayerShips.Add(new Ship(item.shipType, false));
+                    thisList.Add(new Ship(item.shipType, false));
                 }
             }
+            thisPlayer.PlayerShips = thisList;
         }
     }
 }
