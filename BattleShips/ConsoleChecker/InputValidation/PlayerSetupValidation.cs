@@ -39,8 +39,7 @@ namespace BattleShips.ConsoleChecker
                 string input = ThisReader.ReadConsole();
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine(@"   Enter a valid name. Name must not be white
-            space or null. Try again.");
+                    Console.WriteLine(PlayerSetupMessages.getNameErrorMessage);
                     count++;
                 }
                 else
@@ -73,8 +72,7 @@ namespace BattleShips.ConsoleChecker
                 }
 
                 if (isValid == false){ 
-                    Console.WriteLine(@"   The command was not recognised. Ensure that the format is correct
-   eg. 4,5,v  or  5,2,h  Enter the coordinates and direction for the ship.");
+                    Console.WriteLine(PlayerSetupMessages.getPlaceErrorMessage);
                     count++;
                     isValid = true;
                 }
@@ -109,8 +107,7 @@ namespace BattleShips.ConsoleChecker
                 }
                 if (isValidCommand == false)
                 {
-                    Console.WriteLine(@"   The command was not recognised. Ensure that the format is correct
-   eg. 4,5  or  5,2  Enter coordinates to fire your missile.");
+                    Console.WriteLine(PlayerSetupMessages.fireErrorMessage);
                     count++;
                 }
                 else

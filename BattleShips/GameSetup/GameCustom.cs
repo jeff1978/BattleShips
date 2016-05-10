@@ -18,7 +18,7 @@ namespace BattleShips.Setup
             var thisList = new List<ShipTypeInGame>();
             for (int i = 0; i < shipNameList.Length; i++)
             {
-                Console.WriteLine("   Please enter the number of {0}s needed:", shipNameList.GetValue(i));
+                Console.WriteLine(GameSetupMessages.getShipTypeNo, shipNameList.GetValue(i));
                 inputParser.GetUserInput(RequestType.SetNoOfShips);
 
                 // if number of ships chosen is zero or more then...

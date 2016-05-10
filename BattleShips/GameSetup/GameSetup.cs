@@ -48,10 +48,5 @@ namespace BattleShips.Setup
             inputParser.GetUserInput(RequestType.SetSeaSize);
             gameSea = inputParser.seaSize;
         }
-
-        public void useMode(GameMode thisMode)
-        {
-            listOfShipTypes = GameInput.GetSettings(thisMode, inputParser);
-        }
     }
 }

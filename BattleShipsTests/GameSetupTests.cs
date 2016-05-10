@@ -23,7 +23,7 @@ namespace BattleShipsTests
             }
 
             //assert
-            Assert.AreEqual("Ship type is Destroyer and quantity is 2\n", expected);
+            Assert.AreEqual("Ship type is Destroyer and quantity is 1\nShip type is Scout and quantity is 1\n", expected);
             Assert.AreEqual(3, thisGame.numberOfPlayers);
             Assert.AreEqual(6, thisGame.gameSea.seaRow);
             Assert.AreEqual(7, thisGame.gameSea.seaColumn);

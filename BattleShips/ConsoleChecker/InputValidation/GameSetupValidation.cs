@@ -42,8 +42,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfPlayers);
                 if (result == false || int.Parse(input) < 2)
                 {
-                    Console.WriteLine(@"   Enter a valid number. Two or more players
-            are required for this game.");
+                    Console.WriteLine(GameSetupMessages.getPlayerNoErrorMessage);
                     count++;
                 }
                 else { return noOfPlayers; }
@@ -66,8 +65,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfShips);
                 if (result == false || int.Parse(input) < 0)
                 {
-                    Console.WriteLine(@"   The number you entered was not recognised. If ships of this
-   kind are not required then type 0");
+                    Console.WriteLine(GameSetupMessages.getShipNoErrorMessage);
                     count++;
                 }
                 else { return noOfShips; }
@@ -91,8 +89,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out modeEntered);
                 if (result == false || int.Parse(input) < 0 || int.Parse(input) > gameModeEnum - 1)
                 {
-                    Console.WriteLine(@"   The mode you entered was not recognised. Try again using
-   a valid number for your game mode.");
+                    Console.WriteLine(GameSetupMessages.getModeErrorMessage);
                     count++;
                 }
                 else {
@@ -128,8 +125,7 @@ namespace BattleShips.ConsoleChecker
                 }
                 if (isValid == false)
                 {
-                    Console.WriteLine(@"   The sea dimensions given were not valid. Ensure that the format is correct
-   and that the minimum size is 5,5. Enter the sea dimensions.");
+                    Console.WriteLine(GameSetupMessages.getSeaErrorMessage);
                     count++;
                 }
                 else

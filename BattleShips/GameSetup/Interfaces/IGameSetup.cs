@@ -11,6 +11,5 @@ namespace BattleShips.Setup
         int numberOfPlayers { get; }
 
         void SetupGame();
-        void useMode(GameMode thisMode);
     }
 }

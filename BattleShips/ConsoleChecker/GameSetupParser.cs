@@ -36,7 +36,7 @@ namespace BattleShips.ConsoleChecker
                     seaSize = thisSetup.SetSeaSize();
                     break;
                 default:
-                    throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");
+                    throw new ArgumentException(GameSetupMessages.noMethodErrorMessage);
             }
         }
     }

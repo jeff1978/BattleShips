@@ -95,7 +95,6 @@
     <Compile Include="GameSetup\GameDefault.cs" />
     <Compile Include="GameSetup\Interfaces\IGameSetup.cs" />
     <Compile Include="Player\Interfaces\IPlayerShipValidation.cs" />
-    <Compile Include="Player\PlayerIndividual.cs" />
     <Compile Include="Player\PlayerSetup.cs" />
     <Compile Include="Player\PlayerSetupMessages.cs" />
     <Compile Include="Player\Player.cs" />

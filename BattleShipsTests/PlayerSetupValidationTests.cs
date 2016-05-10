@@ -94,8 +94,8 @@ namespace BattleShipsTests
                 var actual2 = inputPlayerTest2.PlaceNewShip();
 
                 // assert
-                Assert.IsNull(actual1);
-                Assert.IsNull(actual2);
+                Assert.AreEqual("-1,-1,v", actual1);
+                Assert.AreEqual("-1,-1,v", actual2);
             }
 
             [Test]
@@ -138,8 +138,8 @@ namespace BattleShipsTests
                 var actual2 = inputFireTest2.FireCommand();
 
                 // assert
-                Assert.IsNull(actual1);
-                Assert.IsNull(actual2);
+                Assert.AreEqual("0,0", actual1);
+                Assert.AreEqual("0,0", actual2);
             }
         }
     }

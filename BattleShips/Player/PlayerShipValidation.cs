@@ -17,7 +17,6 @@ namespace BattleShips
 
             // check that all positions fit within the bounds of the sea
             //  if all true then check the positions against the existing positions
-
             if (thisShipPositions.TrueForAll(p => gameSea.IsValidPosition(p)))
             {
                 positionsAreValid = thisShipPositions.TrueForAll(p => IsPositionAvailable(p, myShipPositions));
@@ -33,14 +32,12 @@ namespace BattleShips
         {
             // check each position in myShipPositions. Use TrueForAll and then negate in a lambda expression
             // to find any invalid position.
-
             return myShipPositions.TrueForAll(p => !(p.row == thisPosition.row && p.column == thisPosition.column));
         }
 
         public List<Position> GetPlayerShipsPositions(List<Ship> PlayerShips)
         {
             // iterate through the player ship list, get all the positions, create an empty list to add to
-
             var playerShipPositions = new List<Position>();
             foreach (var Ship in PlayerShips)
             {
@@ -54,12 +51,6 @@ namespace BattleShips
 
         public void createPlayerShips(List<ShipTypeInGame> typesInThisGame, Player thisPlayer)
         {
-
-            //var thisShip = new Ship(ShipType.Destroyer, false);
-            //var thisList = new List<Ship>();
-            //thisList.Add(new Ship(ShipType.Destroyer, false));
-            //thisPlayer.PlayerShips = thisList;
-            //thisPlayer.PlayerShips.Add(new Ship(ShipType.Destroyer, false));
             var thisList = new List<Ship>();
             foreach (var item in typesInThisGame)
             {
