@@ -4,7 +4,7 @@ This is my unique take on the popular board game. It uses a single console, has 
 <br>The development of this project is driven by unit testing (tests and mockups are included in this repo)
 
 <h4>Instructions:</h4>
-Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships, where each ship takes up two adjacent grid positions (either horizontal or vertical) In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner.For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">
+Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships, where each ship takes up two adjacent grid positions (either horizontal or vertical) In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner.For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a>
 <br><h4>Valid Commands:</h4>
 Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for vertically)
 <br>Fire Input: 3,5 - fires a missile to position 3,5
