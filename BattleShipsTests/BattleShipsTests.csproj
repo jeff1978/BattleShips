@@ -67,6 +67,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="GamePlayValidationTests.cs" />
     <Compile Include="PlayerSetupValidationTests.cs" />
     <Compile Include="Mocks\MockConsoleReader.cs" />
     <Compile Include="Mocks\MockSetupCustom.cs" />

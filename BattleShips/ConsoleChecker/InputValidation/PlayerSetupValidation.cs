@@ -83,39 +83,5 @@ namespace BattleShips.ConsoleChecker
              }
             return "-1,-1,v";
         }
-
-        /// <summary>
-        /// Get a coordinate from the user in the format x,y Give the user ten goes then submit a default.
-        /// </summary>
-        /// <returns></returns>
-        public string FireCommand()
-        {
-            bool isValidCommand = true;
-            int count = 0;
-            while (count < 10)
-            {
-                int x;
-                int y;
-                string input = ThisReader.ReadConsole();
-                string[] dimensions = input.Split(',');
-                // now look for any invalid part
-                isValidCommand = int.TryParse(dimensions[0], out x);
-                isValidCommand = int.TryParse(dimensions[1], out y);
-                if (dimensions.Length != 2)
-                {
-                    isValidCommand = false;
-                }
-                if (isValidCommand == false)
-                {
-                    Console.WriteLine(PlayerSetupMessages.fireErrorMessage);
-                    count++;
-                }
-                else
-                {
-                    return input;
-                }
-            }
-            return "0,0";
-        }
     }
 }

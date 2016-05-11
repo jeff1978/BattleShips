@@ -10,7 +10,7 @@ namespace BattleShips
     /// <summary>
     /// This class is used to get setup information from each individual player
     /// </summary>
-    public class PlayerSetup
+    public class PlayerSetup : IPlayerSetup
     {
         #region
         public IGameSetup thisGameSetup = new GameSetup(new GameSetupParser());
@@ -35,11 +35,13 @@ namespace BattleShips
 
             // add a suffix to each name, to make for easier gameplay
             AddPrefixToName(playerList);
+            playerList.ForEach(p => Console.WriteLine(p.PlayerName));
+            Console.ReadLine();
         } 
         #endregion
 
         #region Individual Player Setup Method
-        public void SetupOnePlayer(Player thisPlayer)
+        private void SetupOnePlayer(Player thisPlayer)
         {
             // show messages and get player name
             AddPlayerName(thisPlayer);
@@ -70,7 +72,7 @@ namespace BattleShips
         #endregion
 
         #region Add Player Name Method
-        public void AddPlayerName(Player thisPlayer)
+        private void AddPlayerName(Player thisPlayer)
         {
             Console.WriteLine(PlayerSetupMessages.welcomePlayers);
             Console.WriteLine(PlayerSetupMessages.getPlayerName);
@@ -80,7 +82,7 @@ namespace BattleShips
         #endregion
 
         #region Add Ship Details Method
-        public bool AddShipDetails(Ship thisShip, Player thisPlayer)
+        private bool AddShipDetails(Ship thisShip, Player thisPlayer)
         {
             Console.WriteLine(PlayerSetupMessages.shipTypeDetails, thisShip.ShipType, (int)thisShip.ShipType);
 
@@ -106,7 +108,7 @@ namespace BattleShips
         #endregion
 
         #region Get New Ship Details From User Method
-        public Position GetNewShipDetailsFromUser(Ship thisShip)
+        private Position GetNewShipDetailsFromUser(Ship thisShip)
         {
             thisPlayerSetup.GetUserInput(RequestType.PlaceNewShip);
             string[] userInput = thisPlayerSetup.newShipPlaceString.Split(',');
@@ -119,14 +121,10 @@ namespace BattleShips
         #endregion
 
         #region Add Prefix To Name Method
-        public void AddPrefixToName(List<Player> playerList)
+        private void AddPrefixToName(List<Player> playerList)
         {
             int i = 1;
-            foreach (var thisPlayer in playerList)
-            {
-                thisPlayer.PlayerName = "Player " + i + ": " + thisPlayer.PlayerName;
-                i++;
-            }
+            playerList.ForEach(p => p.PlayerName = "Player " + (i++) + ": " + p.PlayerName);
         } 
         #endregion
     }

@@ -4,8 +4,6 @@ using NUnit.Framework;
 
 namespace BattleShipsTests
 {
-    public class testClass
-    {
         [TestFixture]
         public class GameSetupParserTests
         {
@@ -147,5 +145,4 @@ namespace BattleShipsTests
                 Assert.AreEqual(expected2, actual2);
             }
         }
-    }
 }

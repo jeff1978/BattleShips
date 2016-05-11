@@ -17,7 +17,6 @@ namespace BattleShips.Setup
                 case GameMode.Default:
                     return GameDefault.SetDefaults();              
                 case GameMode.Custom:
-                    //var thisCustomGame = new GameCustom();
                     return GameCustom.SetCustom(inputParser);
 
                 //   more cases can be added here in the future

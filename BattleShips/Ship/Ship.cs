@@ -61,12 +61,13 @@ namespace BattleShips.BShip
         public void SetShipPositions(Position placePosition)
         {
             var tempList = GetShipPositions(placePosition);
-
             tempList.ForEach(p => p.IsFloating = true);
-
             ShipPostions = tempList;
         }
 
+        public bool IsShipFloating()
+        {
+            return ShipPostions.TrueForAll(p => p.IsFloating);
+        }
     }
 }
-

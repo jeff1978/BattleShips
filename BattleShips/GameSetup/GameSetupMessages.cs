@@ -38,7 +38,7 @@
 ";
         public const string getPlayerNoErrorMessage =
 @"   Enter a valid number.Two or more players
-            are required for this game.
+   are required for this game.
 ";
         public const string getShipNoErrorMessage =
 @"   The number you entered was not recognised. If ships of this

@@ -5,10 +5,8 @@ using System;
 
 namespace BattleShipsTests
 {
-    public class PlayerSetupValidationTests
-    {
         [TestFixture]
-        public class GameSetupParserTests
+        public class PlayerSetupParserTests
         {
             [Test]
             public void SetValidPlayerName()
@@ -97,50 +95,5 @@ namespace BattleShipsTests
                 Assert.AreEqual("-1,-1,v", actual1);
                 Assert.AreEqual("-1,-1,v", actual2);
             }
-
-            [Test]
-            public void FireAtValidCoordinates()
-            {
-                // arrange
-                string inputString1 = "2,3";
-                string inputString2 = "33,1";
-                string expected1 = "2,3";
-                string expected2 = "33,1";
-
-                // act
-                IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputFireTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputFireTest1.FireCommand();
-
-                IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputFireTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputFireTest2.FireCommand();
-
-                // assert
-                Assert.AreEqual(expected1, actual1);
-                Assert.AreEqual(expected2, actual2);
-            }
-
-            [Test]
-            public void FireAtInvalidCoordinates()
-            {
-                // arrange
-                string inputString1 = "2,";
-                string inputString2 = "33,one";
-
-                // act
-                IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputFireTest1 = new PlayerSetupValidation(thisReader1);
-                var actual1 = inputFireTest1.FireCommand();
-
-                IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputFireTest2 = new PlayerSetupValidation(thisReader2);
-                var actual2 = inputFireTest2.FireCommand();
-
-                // assert
-                Assert.AreEqual("0,0", actual1);
-                Assert.AreEqual("0,0", actual2);
-            }
         }
-    }
 }

@@ -79,7 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleChecker\ConsoleReader.cs" />
+    <Compile Include="ConsoleChecker\Interfaces\IGamePlayParser.cs" />
+    <Compile Include="ConsoleChecker\InputValidation\GamePlayValidation.cs" />
     <Compile Include="ConsoleChecker\Interfaces\IPlayerSetupParser.cs" />
+    <Compile Include="ConsoleChecker\GamePlayParser.cs" />
     <Compile Include="ConsoleChecker\PlayerSetupParser.cs" />
     <Compile Include="ConsoleChecker\InputValidation\PlayerSetupValidation.cs" />
     <Compile Include="ConsoleChecker\InputValidation\GameSetupValidation.cs" />
@@ -87,6 +90,8 @@
     <Compile Include="ConsoleChecker\Interfaces\IGameSetupParser.cs" />
     <Compile Include="ConsoleChecker\RequestType.cs" />
     <Compile Include="ConsoleChecker\GameSetupParser.cs" />
+    <Compile Include="GamePlay\GamePlay.cs" />
+    <Compile Include="GamePlay\GamePlayMessages.cs" />
     <Compile Include="GameSetup\GameCustom.cs" />
     <Compile Include="GameSetup\GameSetupMessages.cs" />
     <Compile Include="GameSetup\GameMode.cs" />
@@ -95,6 +100,7 @@
     <Compile Include="GameSetup\GameDefault.cs" />
     <Compile Include="GameSetup\Interfaces\IGameSetup.cs" />
     <Compile Include="Player\Interfaces\IPlayerShipValidation.cs" />
+    <Compile Include="Player\Interfaces\IPlayerSetup.cs" />
     <Compile Include="Player\PlayerSetup.cs" />
     <Compile Include="Player\PlayerSetupMessages.cs" />
     <Compile Include="Player\Player.cs" />
@@ -122,9 +128,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GamePlay\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="bin\Debug\BattleShips.exe" />
   </ItemGroup>
