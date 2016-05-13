@@ -19,7 +19,7 @@ namespace BattleShips.ConsoleChecker
             var thisPlayerSetup = new GamePlayValidation();
             switch (thisRequest)
             {
-                case RequestType.SetPlayerName:
+                case RequestType.SetFireCommand:
                     fireCoordinate = thisPlayerSetup.FireCommand();
                     break;
                 default:

@@ -13,11 +13,7 @@ C:\Users\Jeff\OneDrive\Documents\BattleShips\BattleShips\obj\Debug\BattleShips.p
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.exe.config
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.pdb
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.core.dll
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.core.interfaces.dll
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.framework.dll
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.util.dll
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.framework.xml
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.pdb

@@ -6,6 +6,7 @@
     public enum RequestType
     {
         SetSeaSize,
+        SetFireCommand,
         SetNoOfPlayers,
         SelectGameMode,
         SetNoOfShips,

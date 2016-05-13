@@ -1,70 +1,123 @@
 ﻿using BattleShips.BattleGround;
 using BattleShips.BShip;
+using BattleShips.ConsoleChecker;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using BattleShips;
 
 namespace BattleShips
 {
-    public class GamePlay
+    /// <summary>
+    /// This class handles all the gameplay once the game and the players have been set up.
+    /// </summary>
+    public class GamePlay : IGamePlay
     {
+        private IGamePlayParser thisGamePlayParser = new GamePlayParser();
         public List<Player> playerList { get; set; }
 
-        public List<Player> GetEnemyPlayers(Player thisPlayer)
+        public void PlayGame()
+        {
+            // show the game start message.
+            Console.WriteLine(GamePlayMessages.gameStart);
+
+            bool IsGameOver = false;
+            while (IsGameOver == false)
+            {
+                for (int i = 0; i < playerList.Count; i++)
+                {
+                    // show fire command message
+                    Console.WriteLine(GamePlayMessages.getFireCommand, playerList[i].PlayerName);
+
+                    // get user input for fire command and set it in the property
+                    thisGamePlayParser.GetUserInput(RequestType.SetFireCommand);
+
+                    // process the fire command
+                    PlayerTakeTurn(thisGamePlayParser.fireCoordinate, playerList[i]);
+
+                    IsGameOver = CheckForWinner();
+                }
+
+                Console.WriteLine(GamePlayMessages.gameEndMessage);
+                Console.ReadLine();
+                IsGameOver = false;
+            }
+        }
+
+        private void PlayerTakeTurn(Position firePosition, Player thisPlayer)
+        {
+            // get a list of players excluding this player:
+            var enemies = GetEnemyPlayers(thisPlayer);
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                //get the enemy's floating ships only and fire at each one!
+                var floatingEnemyShips = enemies[i].GetFloatingShips();
+                FireCommand(firePosition, floatingEnemyShips);
+            }
+        }
+
+        private void FireCommand(Position firePosition, List<Ship> floatingEnemyShips)
+        {
+            foreach (var floatingShip in floatingEnemyShips)
+            {
+                // get the floating ship positions only
+                var floatingPositions = floatingShip.ShipPostions.Where(p => p.IsFloating).ToList();
+
+                foreach (var enemyPosition in floatingPositions)
+                {
+                    // compare the fire position with the enemy position
+                    if (firePosition.row == enemyPosition.row && firePosition.column == enemyPosition.column)
+                    {
+                        enemyPosition.IsFloating = false;
+                        if (floatingShip.IsShipFloating() == false)
+                        {
+                            // issue hit and sunk message
+                            Console.WriteLine(GamePlayMessages.sinkMessage, floatingShip.ShipType);
+                        }
+                        else
+                        {
+                            // issue hit message only
+                            Console.WriteLine(GamePlayMessages.hitMessage);
+                        }
+                        UpdatePlayerList();
+                    }
+                }
+            }
+        }
+
+        private List<Player> GetEnemyPlayers(Player thisPlayer)
         {
             var tempList = playerList;
             tempList.Remove(thisPlayer);
             return tempList;
         }
 
-        public void CheckForWinner()
+        public bool CheckForWinner()
         {
             if (playerList.Count == 1)
             {
                 Console.WriteLine(GamePlayMessages.winMessage, playerList[0].PlayerName);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
         public void UpdatePlayerList()
         {
-            foreach (var thisPlayer in playerList)
-            {
-                if (thisPlayer.IsPlayerAlive() == false)
-                {
-                    Console.WriteLine(GamePlayMessages.leaveMessage, thisPlayer.PlayerName);
-                    var tempList = playerList;
-                    tempList.Remove(thisPlayer);
-                    playerList = tempList;
-                }
-            }
-        }
-        ///  **********  U N D E R   D E V E L O P M E N T  ************
-        /// 
-        ///  while IsGameOver set to false;
-        /// for each player in player list
-        ///     take turn
-        ///         until IsGameOver set to true
-        /// 
-        /// Use this fire command:
-        /// take turn
-        ///     for each enemy player
-        ///         for each floating ship
-        ///             fire command!
-        /// 
-        /// Fire command(position, floating enemyShip)
-        /// set bool hasMissed = true;
-        /// for each ship
-        ///         for each floating ship position
-        ///         if is the same (then - 1. set to Not floating 2.check IsShipFloating : then either Hit or Hit and sunk message)
-        /// if hasMissed then issue Miss! message
-        /// 
-        /// void updatePlayerList(list players){ foreach player: if IsPlayerAlive == false then show message 2. remove player}
-        /// void checkForWinner(list of players) if list of players count == 1 then message player name winner}
-        /// 
-        /// this is a Player Method
-        /// bool IsPlayerAlive( ShipList ){ return true if shiplist has at least one floating }
-        /// 
-        /// this is a shipMethod
-        /// bool IsShipFloating() {return true if ship positions.IsFloating > 0}
-        ///     
+            for (int i = 0; i < playerList.Count; i++)
+                  {
+                    if (playerList[i].IsPlayerAlive() == false)
+                    {
+                        Console.WriteLine(GamePlayMessages.leaveMessage, playerList[i].PlayerName);
+                        var tempList = playerList;
+                        tempList.Remove(playerList[i]);
+                        playerList = tempList;
+                    }
+                 }
+        }   
     }
 }

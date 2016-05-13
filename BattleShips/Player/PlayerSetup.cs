@@ -4,6 +4,7 @@ using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
 using System;
 using System.Collections.Generic;
+using BattleShips;
 
 namespace BattleShips
 {
@@ -22,6 +23,9 @@ namespace BattleShips
         #region Setup All Players Method
         public void SetupAllPlayers()
         {
+            //set up a new game
+            thisGameSetup.SetupGame();
+
             // create a list of new players and add it to the playerList
             var tempList = new List<Player>();
             for (int i = 0; i < thisGameSetup.numberOfPlayers; i++)
@@ -36,7 +40,7 @@ namespace BattleShips
             // add a suffix to each name, to make for easier gameplay
             AddPrefixToName(playerList);
             playerList.ForEach(p => Console.WriteLine(p.PlayerName));
-            Console.ReadLine();
+
         } 
         #endregion
 

@@ -1,12 +1,13 @@
 ﻿namespace BattleShips
 {
     /// <summary>
-    /// This class stores all the console messages used during the game play
+    /// This class stores all the console messages used during game play
     /// </summary>
     public static class GamePlayMessages
     {
         public const string gameStart =
-@"   Game starting....
+@"   
+   Game starting....
 ";
         public const string getFireCommand =
 @"   {0} enter the coordinates to fire at.... eg. 3,2 
@@ -30,6 +31,11 @@
    ***** W I N N E R *****
    Congratulations {0}
     You are the winner.
+";
+        public const string gameEndMessage =
+@"
+   *** This game has ended ***
+      Press any key to restart...
 ";
         public const string fireErrorMessage =
 @"   The command was not recognised. Ensure that the format is correct
