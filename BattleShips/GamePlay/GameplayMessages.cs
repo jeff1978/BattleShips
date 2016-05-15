@@ -35,7 +35,7 @@
         public const string gameEndMessage =
 @"
    *** This game has ended ***
-      Press any key to restart...
+      Press any key to exit...
 ";
         public const string fireErrorMessage =
 @"   The command was not recognised. Ensure that the format is correct

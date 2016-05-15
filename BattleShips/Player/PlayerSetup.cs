@@ -94,7 +94,7 @@ namespace BattleShips
             var placePosition = GetNewShipDetailsFromUser(thisShip);
 
             // get the player's existing ship positions and this ship's positions to check for clashes
-            // make sure that no positions lie in the sea. If all is well then save ship and return true, else do nothing and return false.
+            // make sure that no positions lie outside the sea. If all is well then save ship and return true, else do nothing and return false.
 
             var existingShipPositions = thisValidation.GetPlayerShipsPositions(thisPlayer.PlayerShips);
             var shipPositionList = thisShip.GetShipPositions(placePosition);

@@ -67,7 +67,13 @@ namespace BattleShips.BShip
 
         public bool IsShipFloating()
         {
-            return ShipPostions.TrueForAll(p => p.IsFloating);
+            // find at least one floating position
+            bool atLeastOneFloating = false;
+            if (ShipPostions.Exists(p => p.IsFloating))
+            {
+                atLeastOneFloating = true;
+            }
+            return atLeastOneFloating;
         }
     }
 }

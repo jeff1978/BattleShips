@@ -1,4 +1,5 @@
-﻿using BattleShips.BattleGround;
+﻿using BattleShips;
+using BattleShips.BattleGround;
 using BattleShips.BShip;
 using NUnit.Framework;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace BattleShipsTest
 
                 foreach (var Position in ThisList)
                 {
-                    actual = actual + "{Position.IsFloating},{Position.row},{Position.column}\n";
+                    actual = actual + $"{Position.IsFloating},{Position.row},{Position.column}\n";
                 }
 
                 // assert
@@ -64,7 +65,7 @@ namespace BattleShipsTest
 
                 foreach (var Position in ThisList)
                 {
-                    actual = actual + "{Position.IsFloating},{Position.row},{Position.column}\n";
+                    actual = actual + $"{Position.IsFloating},{Position.row},{Position.column}\n";
                 }
                 // assert
                 Assert.AreEqual("False,2,3\nFalse,2,4\nFalse,2,5\n", actual);

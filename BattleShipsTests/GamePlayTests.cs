@@ -15,37 +15,53 @@ namespace BattleShipsTests
             // arrange
             // set up the test with two initialised players, one alive and the other dead
             // add both players to an instance of the gameplay class then test the method
-            var placePosition1 = new Position(2, 3);
-            var placePosition2 = new Position(7, 2);
+            // act
+
+            // setup alive player scenario
+            var placePosition = new Position(7, 2);
             var thisShip1 = new Ship(ShipType.Battleship, true);
             var thisShip2 = new Ship(ShipType.Submarine, false);
             var alivePlayer = new Player();
             var tempList = new List<Ship>();
-            var thisGamePlay = new GamePlay();
 
-            // act
-            thisShip1.SetShipPositions(placePosition1);
-            thisShip2.ShipPostions = thisShip2.GetShipPositions(placePosition2);
+            thisShip1.SetShipPositions(placePosition);
+            thisShip2.SetShipPositions(placePosition);
+            thisShip2.ShipPostions.ForEach(p => p.IsFloating = false);
+
             tempList.Add(thisShip1); // floating ship
             tempList.Add(thisShip2); // sunk ship
             alivePlayer.PlayerShips = tempList;
 
-            var deadPlayer = alivePlayer;
-            var tempList2 = deadPlayer.PlayerShips;
-            tempList2.RemoveAt(0); // remove floating ship
+            // setup dead player scenario
+            var thisShip3 = new Ship(ShipType.Battleship, true);
+            var thisShip4 = new Ship(ShipType.Submarine, false);
+            var deadPlayer = new Player();
+            var tempList2 = new List<Ship>();
+
+            thisShip3.SetShipPositions(placePosition);
+            thisShip4.SetShipPositions(placePosition);
+            thisShip3.ShipPostions.ForEach(p => p.IsFloating = false);
+            thisShip4.ShipPostions.ForEach(p => p.IsFloating = false);
+
+            tempList2.Add(thisShip3); // sunk ship
+            tempList2.Add(thisShip4); // sunk ship
             deadPlayer.PlayerShips = tempList2;
 
             // add the two players to a list
             var tempList3 = new List<Player>();
             tempList3.Add(alivePlayer);
             tempList3.Add(deadPlayer);
+            var expectedCountNotUpdated = tempList3.Count;
+
+            // add the list to the game play property
+            var thisGamePlay = new GamePlay();
             thisGamePlay.playerList = tempList3;
 
             // test the method
             thisGamePlay.UpdatePlayerList();
 
             // assert
-            Assert.AreEqual(2, tempList3.Count);
+            Assert.AreEqual(2, expectedCountNotUpdated);
             Assert.AreEqual(1, thisGamePlay.playerList.Count);
         }
 

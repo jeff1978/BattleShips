@@ -19,7 +19,7 @@ namespace BattleShipsTests
 
             foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
-                expected = expected + "Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
+                expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
             }
 
             //assert
@@ -40,7 +40,7 @@ namespace BattleShipsTests
 
             foreach (var ShipTypeInGame in thisGame.listOfShipTypes)
             {
-                expected = expected + "Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
+                expected = expected + $"Ship type is {ShipTypeInGame.shipType} and quantity is {ShipTypeInGame.typeQuantity}\n";
             }
 
             //assert

@@ -13,19 +13,17 @@ namespace BattleShips
 
         public bool IsPlayerAlive()
         {
-            if (this.GetFloatingShips().Count == 0)
+            bool playerIsAlive = false;
+            if (GetFloatingShips().Count() > 0)
             {
-                return false;
+                playerIsAlive = true;
             }
-            else
-            {
-                return true;
-            }
+            return playerIsAlive;
         }
 
         public List<Ship> GetFloatingShips()
         {
-            return PlayerShips.Where(p => p.IsShipFloating()).ToList();
+            return PlayerShips.Where(p => p.IsShipFloating()==true).ToList();
         }
     }
 }

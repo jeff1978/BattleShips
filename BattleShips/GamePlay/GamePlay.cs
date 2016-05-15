@@ -40,7 +40,6 @@ namespace BattleShips
 
                 Console.WriteLine(GamePlayMessages.gameEndMessage);
                 Console.ReadLine();
-                IsGameOver = false;
             }
         }
 
@@ -117,7 +116,7 @@ namespace BattleShips
                         tempList.Remove(playerList[i]);
                         playerList = tempList;
                     }
-                 }
+                }
         }   
     }
 }
