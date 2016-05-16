@@ -7,10 +7,12 @@
     {
         public const string gameStart =
 @"   
+   
    Game starting....
 ";
         public const string getFireCommand =
-@"   {0} enter the coordinates to fire at.... eg. 3,2 
+@"
+   {0} enter the coordinates to fire at.... eg. 3,2 
 ";
         public const string missMessage =
 @"

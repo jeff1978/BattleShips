@@ -94,5 +94,35 @@ namespace BattleShipsTests
             Assert.IsTrue(thisGamePlay1.CheckForWinner());
             Assert.IsFalse(thisGamePlay2.CheckForWinner());
         }
+
+        [Test]
+        public void CheckGetEnemyPlayers()
+        {
+            // arrange
+            // create three players and add them to a list
+            // then pass one of the players as a parameter to
+            // GetEnemyPlayers() and check the result
+            var player1 = new Player();
+            player1.PlayerName = "Saul Goodman";
+            var player2 = new Player();
+            player2.PlayerName = "Frank Underwood";
+            var player3 = new Player();
+            player3.PlayerName = "Eric Benet";
+
+            var thisList = new List<Player>();
+            thisList.Add(player1);
+            thisList.Add(player2);
+            thisList.Add(player3);
+
+            // act
+            var thisGamePlay1 = new GamePlay();
+            thisGamePlay1.playerList = thisList;
+
+            var resultList = thisGamePlay1.GetEnemyPlayers(player2);
+
+            // assert
+            Assert.AreEqual("Saul Goodman", resultList[0].PlayerName);
+            Assert.AreEqual("Eric Benet", resultList[1].PlayerName);
+        }
     }
 }

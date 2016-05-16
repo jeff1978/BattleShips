@@ -35,12 +35,13 @@ namespace BattleShips
                     // process the fire command
                     PlayerTakeTurn(thisGamePlayParser.fireCoordinate, playerList[i]);
 
+                    // delete any players without floating ships and check for winner
+                    UpdatePlayerList();
                     IsGameOver = CheckForWinner();
                 }
-
-                Console.WriteLine(GamePlayMessages.gameEndMessage);
-                Console.ReadLine();
             }
+            Console.WriteLine(GamePlayMessages.gameEndMessage);
+            Console.ReadLine();
         }
 
         private void PlayerTakeTurn(Position firePosition, Player thisPlayer)
@@ -50,7 +51,7 @@ namespace BattleShips
 
             for (int i = 0; i < enemies.Count; i++)
             {
-                //get the enemy's floating ships only and fire at each one!
+                //get the this enemy's floating ships only and fire at each one!
                 var floatingEnemyShips = enemies[i].GetFloatingShips();
                 FireCommand(firePosition, floatingEnemyShips);
             }
@@ -79,44 +80,46 @@ namespace BattleShips
                             // issue hit message only
                             Console.WriteLine(GamePlayMessages.hitMessage);
                         }
-                        UpdatePlayerList();
                     }
                 }
             }
         }
 
-        private List<Player> GetEnemyPlayers(Player thisPlayer)
+        public List<Player> GetEnemyPlayers(Player thisPlayer)
         {
-            var tempList = playerList;
-            tempList.Remove(thisPlayer);
-            return tempList;
+            // need to be careful here i.e. by val not by ref!
+            // Must copy the player list values over
+            // to a new collection then remove the current player.
+
+            Player[] tempPlayerArray = new Player[playerList.Count];
+            playerList.CopyTo(tempPlayerArray);
+            var enemiesOnlyList = tempPlayerArray.Where(p => p != thisPlayer).ToList();
+            return enemiesOnlyList;
         }
 
         public bool CheckForWinner()
         {
-            if (playerList.Count == 1)
+            bool winnerFound = false;
+            if (playerList.Count < 2)
             {
                 Console.WriteLine(GamePlayMessages.winMessage, playerList[0].PlayerName);
-                return true;
+                winnerFound = true;
             }
-            else
-            {
-                return false;
-            }
+            return winnerFound;
         }
 
         public void UpdatePlayerList()
         {
+            var tempUpdateList = playerList;
             for (int i = 0; i < playerList.Count; i++)
-                  {
-                    if (playerList[i].IsPlayerAlive() == false)
-                    {
-                        Console.WriteLine(GamePlayMessages.leaveMessage, playerList[i].PlayerName);
-                        var tempList = playerList;
-                        tempList.Remove(playerList[i]);
-                        playerList = tempList;
-                    }
+            {
+                if (playerList[i].IsPlayerAlive() == false)
+                {
+                    Console.WriteLine(GamePlayMessages.leaveMessage, playerList[i].PlayerName);
+                    tempUpdateList.Remove(playerList[i]);
                 }
+            }
+            playerList = tempUpdateList;
         }   
     }
 }

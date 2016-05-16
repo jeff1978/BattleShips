@@ -23,7 +23,7 @@ namespace BattleShips
 
         public List<Ship> GetFloatingShips()
         {
-            return PlayerShips.Where(p => p.IsShipFloating()==true).ToList();
+            return PlayerShips.Where(p => p.IsShipFloating()).ToList();
         }
     }
 }
