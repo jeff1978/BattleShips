@@ -15,7 +15,9 @@ The application runs in a single executable file found here: <a href = "https://
 C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
 <h4>Development Status</h4>
-This project is ongoing and is still under development.
+The application works but development is still ongoing. Areas of development include:
+<br>Refactoring of code using lambdas and at least one generic method (required for the console parser classes)
+<br>Creation and implementation of language packs to support user options for English and Maori.
 <h4>Notes and Acknowledgements</h4>
 A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
 <h4>Supported operating systems and Issues</h4>
