@@ -7,10 +7,9 @@ This is my unique take on the popular board game. It uses a single console, has 
 Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships; a Scout and a Destroyer. In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe?raw=true">\BattleShips\bin\Debug\BattleShips.exe</a>
 <br><h4>Valid Commands:</h4>
 Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for vertically)
-<br>eg. 2,4,h for a ship of size 2 will occupy positions 2,4 and 3,4
 <br>Fire Input: 3,5 - fires a missile to position 3,5
 <br>Note: <br>Ship positions will not be allowed to overlap or lie outside the boundary of the sea.
-<br>The sea dimensions are zero based. eg. 5 x 5 sea size will have coordinates ranging from 0,0 to 4,4
+<br>The sea dimensions are zero based. eg. a 5 x 5 sea size will have coordinates ranging from 0,0 to 4,4
 <h4>Installing and Running</h4>
 The application runs in a single executable file found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe?raw=true">\BattleShips\bin\Debug\BattleShips.exe</a><br>The file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
 <h4>Unit Testing and Mockups</h4>
