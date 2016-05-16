@@ -8,15 +8,16 @@ Follow the on screen instructions to build a custom grid and start a new game. T
 <br><h4>Valid Commands:</h4>
 Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for vertically)
 <br>Fire Input: 3,5 - fires a missile to position 3,5
-<br>leave - removes the current player from the game
-<br>quit - ends the current game and returns to the welcome message
+<br>Note: Ship positions will not be allowed to overlap or lie outside the boundary of the sea.
 <h4>Installing and Running</h4>
 The application runs in a single executable file found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a><br>The file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
 <h4>Unit Testing and Mockups</h4>
 C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
 <h4>Development Status</h4>
-This project is ongoing and is still under development.
+The application works and development is still ongoing. Areas of development include:
+<br><br> - Refactoring of code using lambdas and at least one generic method (required for the console parser classes)
+<br> - Creation of language classes to support user options for both English and Maori.
 <h4>Notes and Acknowledgements</h4>
 A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
 <h4>Supported operating systems and Issues</h4>
