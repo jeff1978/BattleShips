@@ -8,8 +8,7 @@ Follow the on screen instructions to build a custom grid and start a new game. T
 <br><h4>Valid Commands:</h4>
 Place Ship Input: 2,4,h - places a ship at position 2,4 horizontally (or v for vertically)
 <br>Fire Input: 3,5 - fires a missile to position 3,5
-<br>leave - removes the current player from the game
-<br>quit - ends the current game and returns to the welcome message
+<br>Note: Ship positions will not be allowed to overlap or lie outside the boundary of the sea.
 <h4>Installing and Running</h4>
 The application runs in a single executable file found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe">\BattleShips\bin\Debug\BattleShips.exe</a><br>The file can be opened by double clicking it. The user can follow instructions on the console and also use it to type their input.
 <h4>Unit Testing and Mockups</h4>
