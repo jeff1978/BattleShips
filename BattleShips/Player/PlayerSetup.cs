@@ -39,8 +39,11 @@ namespace BattleShips
 
             // add a suffix to each name, to make for easier gameplay
             AddPrefixToName(playerList);
-            playerList.ForEach(p => Console.WriteLine(p.PlayerName));
 
+            // add a space and display the list of players 
+            // ready to start the game.
+            Console.WriteLine("");
+            playerList.ForEach(p => Console.WriteLine(p.PlayerName));
         } 
         #endregion
 
@@ -78,7 +81,7 @@ namespace BattleShips
         #region Add Player Name Method
         private void AddPlayerName(Player thisPlayer)
         {
-            Console.WriteLine(PlayerSetupMessages.welcomePlayers);
+            Console.WriteLine(PlayerSetupMessages.playerSetupIntro);
             Console.WriteLine(PlayerSetupMessages.getPlayerName);
             thisPlayerSetup.GetUserInput(RequestType.SetPlayerName);
             thisPlayer.PlayerName = thisPlayerSetup.playerName;

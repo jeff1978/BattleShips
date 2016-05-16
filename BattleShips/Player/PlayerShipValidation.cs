@@ -30,8 +30,8 @@ namespace BattleShips
 
         public bool IsPositionAvailable(Position thisPosition, List<Position> myShipPositions)
         {
-            // check each position in myShipPositions. Use TrueForAll and then negate in a lambda expression
-            // to find any invalid position.
+            // check each position in myShipPositions. Use TrueForAll and then negate
+            // in a lambda expression to find any invalid position.
             return myShipPositions.TrueForAll(p => !(p.row == thisPosition.row && p.column == thisPosition.column));
         }
 

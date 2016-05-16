@@ -45,9 +45,8 @@ namespace BattleShipsTest
         public void CheckIsPlayerAlive()
         {
             // arrange
-            // set up the test with two initialised ships
-            // set one of the ships with all floating but not the other
-            // check that player is alive
+            // set up the test with two initialised players
+            // set one of the players to alive and the other to dead
 
             // act
 
@@ -114,10 +113,7 @@ namespace BattleShipsTest
             thisShip3.ShipPostions[1].IsFloating = false;
 
             // add all ships to list then test
-            var shipList = new List<Ship>();
-            shipList.Add(thisShip1);
-            shipList.Add(thisShip2);
-            shipList.Add(thisShip3);
+            var shipList = new List<Ship>() { thisShip1, thisShip2, thisShip3};
 
             // act
             var thisPlayer = new Player();

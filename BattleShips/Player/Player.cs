@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace BattleShips
 {
+    /// <summary>
+    /// This class represents a player who has a name and a list of ships.
+    /// </summary>
     public class Player
     {
         public List<Ship> PlayerShips { get; set; }

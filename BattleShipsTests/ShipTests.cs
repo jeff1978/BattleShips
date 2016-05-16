@@ -62,11 +62,8 @@ namespace BattleShipsTest
 
                 // act
                 var ThisList = thisShip.GetShipPositions(placePosition);
+                ThisList.ForEach(p => actual = actual + $"{p.IsFloating},{p.row},{p.column}\n");
 
-                foreach (var Position in ThisList)
-                {
-                    actual = actual + $"{Position.IsFloating},{Position.row},{Position.column}\n";
-                }
                 // assert
                 Assert.AreEqual("False,2,3\nFalse,2,4\nFalse,2,5\n", actual);
             }

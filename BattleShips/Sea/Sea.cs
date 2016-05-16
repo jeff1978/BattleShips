@@ -1,6 +1,9 @@
 ﻿namespace BattleShips.BattleGround
 
 {
+    /// <summary>
+    /// This class represents a sea that uses integers to represent the x and y dimensions.
+    /// </summary>
     public class Sea
     {
         #region property

@@ -11,8 +11,6 @@
         SelectGameMode,
         SetNoOfShips,
         SetPlayerName,
-        PlaceNewShip,
-        Leave,
-        Exit
+        PlaceNewShip
     }
 }

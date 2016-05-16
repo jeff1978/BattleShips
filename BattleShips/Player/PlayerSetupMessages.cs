@@ -5,8 +5,9 @@
     /// </summary>
     public static class PlayerSetupMessages
     {
-        public const string welcomePlayers =
-@"   Player setup....
+        public const string playerSetupIntro =
+@"   
+   Player setup....
 ";
         public const string getPlayerName =
 @"   Enter your name. You must submit any value except spaces or null...: 

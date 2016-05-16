@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace BattleShips.BShip
 {
     /// <summary>
-    /// This class represents a ship on the sea.
+    /// This class represents a ship on the sea. The ship can lie horizontally or vertically. The ship must be of a particular
+    /// type that gives it its Type name and size. There is also a list of positions used to represent the ship location.
     /// </summary>
     public class Ship
     {
@@ -58,6 +59,7 @@ namespace BattleShips.BShip
             return newList;
         }
 
+        // This method sets the ships positions to floating.
         public void SetShipPositions(Position placePosition)
         {
             var tempList = GetShipPositions(placePosition);
@@ -65,6 +67,8 @@ namespace BattleShips.BShip
             ShipPostions = tempList;
         }
 
+        // This method checks the ship positions to determine
+        // if the ship is floating or sunk.
         public bool IsShipFloating()
         {
             // find at least one floating position

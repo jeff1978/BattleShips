@@ -16,6 +16,9 @@ namespace BattleShips
         private IGamePlayParser thisGamePlayParser = new GamePlayParser();
         public List<Player> playerList { get; set; }
 
+        // this field will be used to calculate whether to show the Miss!! message
+        public bool positionIsHit;
+
         public void PlayGame()
         {
             // show the game start message.
@@ -26,6 +29,8 @@ namespace BattleShips
             {
                 for (int i = 0; i < playerList.Count; i++)
                 {
+                    positionIsHit = false;
+
                     // show fire command message
                     Console.WriteLine(GamePlayMessages.getFireCommand, playerList[i].PlayerName);
 
@@ -34,6 +39,9 @@ namespace BattleShips
 
                     // process the fire command
                     PlayerTakeTurn(thisGamePlayParser.fireCoordinate, playerList[i]);
+
+                    // show the Miss!! message?
+                    showMissMessage();
 
                     // delete any players without floating ships and check for winner
                     UpdatePlayerList();
@@ -64,25 +72,32 @@ namespace BattleShips
                 // get the floating ship positions only
                 var floatingPositions = floatingShip.ShipPostions.Where(p => p.IsFloating).ToList();
 
-                foreach (var enemyPosition in floatingPositions)
+                // for each floating position compare it to the fire position
+                floatingPositions.ForEach(p => comparePositions(firePosition, p, floatingShip));
+            }
+        }
+
+        // This method compares two positions and where appropriate sets the floating property
+        // to false. It also issues the required messages to the console.
+        private void comparePositions(Position firePosition, Position enemyPosition, Ship floatingShip)
+        {
+            // compare the fire position with the enemy position
+            if (firePosition.row == enemyPosition.row && firePosition.column == enemyPosition.column)
+            {
+                positionIsHit = true;
+                enemyPosition.IsFloating = false;
+                if (floatingShip.IsShipFloating() == false)
                 {
-                    // compare the fire position with the enemy position
-                    if (firePosition.row == enemyPosition.row && firePosition.column == enemyPosition.column)
-                    {
-                        enemyPosition.IsFloating = false;
-                        if (floatingShip.IsShipFloating() == false)
-                        {
-                            // issue hit and sunk message
-                            Console.WriteLine(GamePlayMessages.sinkMessage, floatingShip.ShipType);
-                        }
-                        else
-                        {
-                            // issue hit message only
-                            Console.WriteLine(GamePlayMessages.hitMessage);
-                        }
-                    }
+                    // issue hit and sunk message
+                    Console.WriteLine(GamePlayMessages.sinkMessage, floatingShip.ShipType);
+                }
+                else
+                {
+                    // issue hit message only
+                    Console.WriteLine(GamePlayMessages.hitMessage);
                 }
             }
+            // else do nothing!
         }
 
         public List<Player> GetEnemyPlayers(Player thisPlayer)
@@ -120,6 +135,15 @@ namespace BattleShips
                 }
             }
             playerList = tempUpdateList;
-        }   
+        }
+
+        private void showMissMessage()
+        {
+            if (!positionIsHit)
+            {
+                Console.WriteLine(GamePlayMessages.missMessage);
+            }
+            // else do nothing
+        }
     }
 }

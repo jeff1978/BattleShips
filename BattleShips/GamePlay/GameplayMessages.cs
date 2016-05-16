@@ -7,16 +7,13 @@
     {
         public const string gameStart =
 @"   
-   
    Game starting....
 ";
         public const string getFireCommand =
-@"
-   {0} enter the coordinates to fire at.... eg. 3,2 
+@"   {0} enter the coordinates to fire at....
 ";
         public const string missMessage =
-@"
-   Miss!!
+@"   Miss!!
 ";
         public const string hitMessage = 
 @"   Position Hit!!
@@ -29,14 +26,12 @@
    the game.
 ";
         public const string winMessage =
-@"
-   ***** W I N N E R *****
+@"   ***** W I N N E R *****
    Congratulations {0}
     You are the winner.
 ";
         public const string gameEndMessage =
-@"
-   *** This game has ended ***
+@"   *** This game has ended ***
       Press any key to exit...
 ";
         public const string fireErrorMessage =
