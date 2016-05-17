@@ -15,20 +15,19 @@
         public const string getPlacementCommand =
 @"
    Enter the coordinates and orientation for your ship
-   e.g. 3,4,v or 7,2,h  (All ship positions must lie in
-   the bounds of the sea, and cannot overlap your other ships)
-   Enter the command to place your ship...
+   e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie
+   in the bounds of the sea, and cannot overlap your
+   other ships) Enter the command to place your ship...
 ";
         public const string placementErrorMessage = 
 @"   Ship not added because at least one position is already
    occupied or lies outside the sea boundary.
-   Enter the command to place your ship
+   Enter the command to place your ship...
 ";
         public const string commandsRejectedErrorMessage =
 @"   Too many incorrect placement commands were made.
    The ship was removed from your fleet.
 ";
-
         public const string shipTypeDetails =
 @"   Ship to add: {0}, size {1}....
 ";

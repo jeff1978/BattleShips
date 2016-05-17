@@ -32,6 +32,8 @@
 ";
         public const string getSeaSize =
 @"
+   Sea setup...
+
    Note: the sea grid size typed here must be > or = 5 x 5 :
    Enter the size of the sea, use a comma to separate the x and
    y dimensions eg. 6,7  Enter the sea size.....
@@ -55,10 +57,6 @@
 ";
         public const string getShipTypeNo =
 @"   Please enter the number of {0}s needed:
-";
-        public const string noMethodErrorMessage =
-@"   The input cannot be processed. No method implementation has
-   been found for the request.
 ";
     }
 }
