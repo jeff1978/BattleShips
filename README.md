@@ -1,7 +1,6 @@
 <h3>BattleShips</h3>
 <img src = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/BattleshipGameImage.jpg" align = right>
-This is my unique take on the popular board game. It uses a single console, has two game modes and it is multiplayer.
-<br>The development of this project is driven by unit testing (tests and mockups are included in this repo)
+This C# .NET solution is my unique take on the popular board game. It uses a single console, has two game modes and it is multiplayer. The development of this project is driven by unit testing (tests and mockups are included in this repo)
 
 <h4>Instructions:</h4>
 Follow the on screen instructions to build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships; a Scout and a Destroyer. In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/BattleShips.exe?raw=true">\BattleShips\bin\Debug\BattleShips.exe</a>
