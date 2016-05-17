@@ -34,19 +34,16 @@ namespace BattleShips.Setup
 
             // get and set the number of players
             Console.WriteLine(GameSetupMessages.getNumberOfPlayers);
-            inputParser.GetUserInput(RequestType.SetNoOfPlayers);
-            numberOfPlayers = inputParser.noOfPlayers;
+            numberOfPlayers = inputParser.SetNumberOfPlayers(); ;
 
             // get and set the game mode
             Console.WriteLine(GameSetupMessages.getGameMode);
-            inputParser.GetUserInput(RequestType.SelectGameMode);
-            var gameMode = inputParser.gameMode;
+            var gameMode = inputParser.SelectGameMode();
             listOfShipTypes = GameInput.GetSettings(gameMode, inputParser);
 
             // get and set the sea dimensions
             Console.WriteLine(GameSetupMessages.getSeaSize);
-            inputParser.GetUserInput(RequestType.SetSeaSize);
-            gameSea = inputParser.seaSize;
+            gameSea = inputParser.SetSeaSize();
         }
     }
 }

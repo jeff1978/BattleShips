@@ -19,12 +19,11 @@ namespace BattleShips.Setup
             for (int i = 0; i < shipNameList.Length; i++)
             {
                 Console.WriteLine(GameSetupMessages.getShipTypeNo, shipNameList.GetValue(i));
-                inputParser.GetUserInput(RequestType.SetNoOfShips);
+                var quantityInput = inputParser.SetNumberOfShips();
 
                 // if number of ships chosen is zero or more then...
-                    if (inputParser.noOfShips > -1)
+                    if (quantityInput > -1)
                     {
-                        var quantityInput = inputParser.noOfShips;
                         if (quantityInput != 0)
                         {
                         string nameOfType = shipNameList[i];

@@ -37,7 +37,8 @@ namespace BattleShips
             // setup all players
             playerList.ForEach(p => SetupOnePlayer(p));
 
-            // add a suffix to each name, to make for easier gameplay
+            // add a prefix to each name, to identify each player
+            // further and make for easier gameplay
             AddPrefixToName(playerList);
 
             // add a space and display the list of players 
@@ -53,7 +54,8 @@ namespace BattleShips
             // show messages and get player name
             AddPlayerName(thisPlayer);
 
-            // show ship menu message and create player ships
+            // create player the player's ships and add these to the
+            // player ship list property. Show the message asking for ship placement details.
             thisValidation.createPlayerShips(thisGameSetup.listOfShipTypes, thisPlayer);
             Console.WriteLine(PlayerSetupMessages.getPlacementCommand);
 
@@ -66,6 +68,7 @@ namespace BattleShips
                 while (shipIsAdded == false)
                 {
                     count++;
+                    // now try to add the ship
                     shipIsAdded = AddShipDetails(thisShip, thisPlayer);
                     if (count == 10 && shipIsAdded == false)
                     {
@@ -83,8 +86,7 @@ namespace BattleShips
         {
             Console.WriteLine(PlayerSetupMessages.playerSetupIntro);
             Console.WriteLine(PlayerSetupMessages.getPlayerName);
-            thisPlayerSetup.GetUserInput(RequestType.SetPlayerName);
-            thisPlayer.PlayerName = thisPlayerSetup.playerName;
+            thisPlayer.PlayerName = thisPlayerSetup.SetPlayerName();
         }
         #endregion
 
@@ -97,7 +99,8 @@ namespace BattleShips
             var placePosition = GetNewShipDetailsFromUser(thisShip);
 
             // get the player's existing ship positions and this ship's positions to check for clashes
-            // make sure that no positions lie outside the sea. If all is well then save ship and return true, else do nothing and return false.
+            // make sure that no positions lie outside the sea. If all is well then save ship and return true
+            // else do nothing and return false.
 
             var existingShipPositions = thisValidation.GetPlayerShipsPositions(thisPlayer.PlayerShips);
             var shipPositionList = thisShip.GetShipPositions(placePosition);
@@ -117,8 +120,8 @@ namespace BattleShips
         #region Get New Ship Details From User Method
         private Position GetNewShipDetailsFromUser(Ship thisShip)
         {
-            thisPlayerSetup.GetUserInput(RequestType.PlaceNewShip);
-            string[] userInput = thisPlayerSetup.newShipPlaceString.Split(',');
+            var shipPlacementString = thisPlayerSetup.PlaceNewShip();
+            string[] userInput = shipPlacementString.Split(',');
             if (userInput[2] == "h")
             {
                 thisShip.IsHorizontal = true;

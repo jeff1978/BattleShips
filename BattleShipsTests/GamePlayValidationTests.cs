@@ -18,11 +18,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputFireTest1 = new GamePlayValidation(thisReader1);
+                var inputFireTest1 = new GamePlayParser(thisReader1);
                 var actual1 = inputFireTest1.FireCommand();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputFireTest2 = new GamePlayValidation(thisReader2);
+                var inputFireTest2 = new GamePlayParser(thisReader2);
                 var actual2 = inputFireTest2.FireCommand();
 
                 // assert
@@ -41,11 +41,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputFireTest1 = new GamePlayValidation(thisReader1);
+                var inputFireTest1 = new GamePlayParser(thisReader1);
                 var actual1 = inputFireTest1.FireCommand();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputFireTest2 = new GamePlayValidation(thisReader2);
+                var inputFireTest2 = new GamePlayParser(thisReader2);
                 var actual2 = inputFireTest2.FireCommand();
 
                 // assert

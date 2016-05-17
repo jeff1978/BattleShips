@@ -91,16 +91,12 @@
   <ItemGroup>
     <Compile Include="ConsoleChecker\ConsoleReader.cs" />
     <Compile Include="ConsoleChecker\Interfaces\IGamePlayParser.cs" />
-    <Compile Include="ConsoleChecker\InputValidation\GamePlayValidation.cs" />
-    <Compile Include="ConsoleChecker\Interfaces\IPlayerSetupParser.cs" />
     <Compile Include="ConsoleChecker\GamePlayParser.cs" />
+    <Compile Include="ConsoleChecker\Interfaces\IPlayerSetupParser.cs" />
     <Compile Include="ConsoleChecker\PlayerSetupParser.cs" />
-    <Compile Include="ConsoleChecker\InputValidation\PlayerSetupValidation.cs" />
-    <Compile Include="ConsoleChecker\InputValidation\GameSetupValidation.cs" />
+    <Compile Include="ConsoleChecker\GameSetupParser.cs" />
     <Compile Include="ConsoleChecker\Interfaces\IConsoleReader.cs" />
     <Compile Include="ConsoleChecker\Interfaces\IGameSetupParser.cs" />
-    <Compile Include="ConsoleChecker\RequestType.cs" />
-    <Compile Include="ConsoleChecker\GameSetupParser.cs" />
     <Compile Include="GamePlay\GamePlay.cs" />
     <Compile Include="GamePlay\GamePlayMessages.cs" />
     <Compile Include="GamePlay\Interfaces\IGamePlay.cs" />

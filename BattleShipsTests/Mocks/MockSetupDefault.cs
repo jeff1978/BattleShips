@@ -9,36 +9,30 @@ namespace BattleShipsTests
 {
 
     /// <summary>
-    /// This class mocks the console inputs for user commands. It inplements the IInputParser interface
+    /// This class mocks the console inputs for user commands during Default game mode setup.
+    /// It inplements the IGameSetupParser interface
     /// </summary>
     public class MockSetupDefault : IGameSetupParser
     {
-        // add appropriate props and methods for interface
-        public int noOfPlayers { get; set; }
-        public int noOfShips { get; set; }
-        public GameMode gameMode { get; set; }
-        public Sea seaSize { get; set; }
-        public List<ShipTypeInGame> listOfShipTypes { get; set; }
-
-        public void GetUserInput(RequestType thisRequest)
+        public int SetNumberOfPlayers()
         {
-            switch (thisRequest)
-            {
-                case RequestType.SetNoOfPlayers:
-                    noOfPlayers = 3;
-                    break;
-                case RequestType.SetNoOfShips:
-                    // not needed for this test.
-                    break;
-                case RequestType.SelectGameMode:
-                    gameMode = GameMode.Default;
-                    break;
-                case RequestType.SetSeaSize:
-                    seaSize = new Sea(6, 7);
-                    break;
-                default:
-                    throw new ArgumentException("The input cannot be processed. No method implementation has been found for your request.");
-            }
+            return 3;
+        }
+
+        public int SetNumberOfShips()
+        {
+            // Not needed for this test!
+            return 4;
+        }
+
+        public GameMode SelectGameMode()
+        {
+            return GameMode.Default;
+        }
+
+        public Sea SetSeaSize()
+        {
+            return new Sea(6, 7);
         }
     }
 }

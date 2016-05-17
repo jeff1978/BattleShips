@@ -19,11 +19,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
+                var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.SetPlayerName();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
+                var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.SetPlayerName();
 
                 // assert
@@ -41,11 +41,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
+                var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.SetPlayerName();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
+                var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.SetPlayerName();
 
                 // assert
@@ -64,11 +64,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
+                var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.PlaceNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
+                var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.PlaceNewShip();
 
                 // assert
@@ -84,11 +84,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new PlayerSetupValidation(thisReader1);
+                var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.PlaceNewShip();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new PlayerSetupValidation(thisReader2);
+                var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.PlaceNewShip();
 
                 // assert

@@ -18,11 +18,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new GameSetupValidation(thisReader1);
+                var inputPlayerTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.SetNumberOfPlayers();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new GameSetupValidation(thisReader2);
+                var inputPlayerTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.SetNumberOfPlayers();
 
                 // assert
@@ -41,11 +41,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputShipTest1 = new GameSetupValidation(thisReader1);
+                var inputShipTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputShipTest1.SetNumberOfShips();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputShipTest2 = new GameSetupValidation(thisReader2);
+                var inputShipTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputShipTest2.SetNumberOfShips();
 
                 // assert
@@ -64,11 +64,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputPlayerTest1 = new GameSetupValidation(thisReader1);
+                var inputPlayerTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputPlayerTest1.SetNumberOfPlayers();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputPlayerTest2 = new GameSetupValidation(thisReader2);
+                var inputPlayerTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputPlayerTest2.SetNumberOfPlayers();
 
                 // assert
@@ -88,11 +88,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputShipTest1 = new GameSetupValidation(thisReader1);
+                var inputShipTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputShipTest1.SetNumberOfShips();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputShipsTest2 = new GameSetupValidation(thisReader2);
+                var inputShipsTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputShipsTest2.SetNumberOfShips();
 
                 // assert
@@ -111,11 +111,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputModeTest1 = new GameSetupValidation(thisReader1);
+                var inputModeTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputModeTest1.SelectGameMode();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputModeTest2 = new GameSetupValidation(thisReader2);
+                var inputModeTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputModeTest2.SelectGameMode();
 
                 // assert
@@ -133,11 +133,11 @@ namespace BattleShipsTests
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
-                var inputModeTest1 = new GameSetupValidation(thisReader1);
+                var inputModeTest1 = new GameSetupParser(thisReader1);
                 var actual1 = inputModeTest1.SelectGameMode();
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
-                var inputModeTest2 = new GameSetupValidation(thisReader2);
+                var inputModeTest2 = new GameSetupParser(thisReader2);
                 var actual2 = inputModeTest2.SelectGameMode();
 
                 // assert

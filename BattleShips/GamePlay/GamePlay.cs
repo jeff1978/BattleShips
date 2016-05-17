@@ -34,13 +34,13 @@ namespace BattleShips
                     // show fire command message
                     Console.WriteLine(GamePlayMessages.getFireCommand, playerList[i].PlayerName);
 
-                    // get user input for fire command and set it in the property
-                    thisGamePlayParser.GetUserInput(RequestType.SetFireCommand);
+                    // get Position from user for fire command
+                    var fireCoordinate = thisGamePlayParser.FireCommand();
 
                     // process the fire command
-                    PlayerTakeTurn(thisGamePlayParser.fireCoordinate, playerList[i]);
+                    PlayerTakeTurn(fireCoordinate, playerList[i]);
 
-                    // show the Miss!! message?
+                    // check if missed !! then show message
                     showMissMessage();
 
                     // delete any players without floating ships and check for winner
