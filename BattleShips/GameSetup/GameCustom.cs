@@ -2,6 +2,7 @@
 using BattleShips.BShip;
 using System;
 using System.Collections.Generic;
+using BattleShips.Properties;
 
 namespace BattleShips.Setup
 {
@@ -18,7 +19,7 @@ namespace BattleShips.Setup
             var thisList = new List<ShipTypeInGame>();
             for (int i = 0; i < shipNameList.Length; i++)
             {
-                Console.WriteLine(GameSetupMessages.getShipTypeNo, shipNameList.GetValue(i));
+                Console.WriteLine(Resources.getShipTypeNo, shipNameList.GetValue(i));
                 var quantityInput = inputParser.SetNumberOfShips();
 
                 // if number of ships chosen is zero or more then...

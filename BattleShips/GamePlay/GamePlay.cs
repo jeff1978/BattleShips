@@ -4,8 +4,8 @@ using BattleShips.ConsoleChecker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BattleShips;
-
+using BattleShips.Properties;
+ 
 namespace BattleShips
 {
     /// <summary>
@@ -22,7 +22,7 @@ namespace BattleShips
         public void PlayGame()
         {
             // show the game start message.
-            Console.WriteLine(GamePlayMessages.gameStart);
+            Console.WriteLine(Resources.gameStart);
 
             bool IsGameOver = false;
             while (IsGameOver == false)
@@ -32,7 +32,7 @@ namespace BattleShips
                     positionIsHit = false;
 
                     // show fire command message
-                    Console.WriteLine(GamePlayMessages.getFireCommand, playerList[i].PlayerName);
+                    Console.WriteLine(Resources.getFireCommand, playerList[i].PlayerName);
 
                     // get Position from user for fire command
                     var fireCoordinate = thisGamePlayParser.FireCommand();
@@ -48,7 +48,7 @@ namespace BattleShips
                     IsGameOver = CheckForWinner();
                 }
             }
-            Console.WriteLine(GamePlayMessages.gameEndMessage);
+            Console.WriteLine(Resources.gameEndMessage);
             Console.ReadLine();
         }
 
@@ -89,12 +89,12 @@ namespace BattleShips
                 if (floatingShip.IsShipFloating() == false)
                 {
                     // issue hit and sunk message
-                    Console.WriteLine(GamePlayMessages.sinkMessage, floatingShip.ShipType);
+                    Console.WriteLine(Resources.sinkMessage, floatingShip.ShipType);
                 }
                 else
                 {
                     // issue hit message only
-                    Console.WriteLine(GamePlayMessages.hitMessage);
+                    Console.WriteLine(Resources.hitMessage);
                 }
             }
             // else do nothing!
@@ -117,7 +117,7 @@ namespace BattleShips
             bool winnerFound = false;
             if (playerList.Count < 2)
             {
-                Console.WriteLine(GamePlayMessages.winMessage, playerList[0].PlayerName);
+                Console.WriteLine(Resources.winMessage, playerList[0].PlayerName);
                 winnerFound = true;
             }
             return winnerFound;
@@ -130,7 +130,7 @@ namespace BattleShips
             {
                 if (playerList[i].IsPlayerAlive() == false)
                 {
-                    Console.WriteLine(GamePlayMessages.leaveMessage, playerList[i].PlayerName);
+                    Console.WriteLine(Resources.leaveMessage, playerList[i].PlayerName);
                     tempUpdateList.Remove(playerList[i]);
                 }
             }
@@ -141,7 +141,7 @@ namespace BattleShips
         {
             if (!positionIsHit)
             {
-                Console.WriteLine(GamePlayMessages.missMessage);
+                Console.WriteLine(Resources.missMessage);
             }
             // else do nothing
         }

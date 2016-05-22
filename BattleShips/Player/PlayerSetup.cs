@@ -5,6 +5,7 @@ using BattleShips.Setup;
 using System;
 using System.Collections.Generic;
 using BattleShips;
+using BattleShips.Properties;
 
 namespace BattleShips
 {
@@ -43,7 +44,6 @@ namespace BattleShips
 
             // add a space and display the list of players 
             // ready to start the game.
-            Console.WriteLine("");
             playerList.ForEach(p => Console.WriteLine(p.PlayerName));
         } 
         #endregion
@@ -57,7 +57,7 @@ namespace BattleShips
             // create player the player's ships and add these to the
             // player ship list property. Show the message asking for ship placement details.
             thisValidation.createPlayerShips(thisGameSetup.listOfShipTypes, thisPlayer);
-            Console.WriteLine(PlayerSetupMessages.getPlacementCommand);
+            Console.WriteLine(Resources.getPlacementCommand);
 
             // for each ship ask for the place command and place the ship.
             // give the user 10 goes then remove the ship and move onto next one.
@@ -72,7 +72,7 @@ namespace BattleShips
                     shipIsAdded = AddShipDetails(thisShip, thisPlayer);
                     if (count == 10 && shipIsAdded == false)
                     {
-                        Console.WriteLine(PlayerSetupMessages.commandsRejectedErrorMessage);
+                        Console.WriteLine(Resources.commandsRejectedErrorMessage);
                         thisPlayer.PlayerShips.Remove(thisShip);
                         shipIsAdded = true;
                     }
@@ -84,8 +84,8 @@ namespace BattleShips
         #region Add Player Name Method
         private void AddPlayerName(Player thisPlayer)
         {
-            Console.WriteLine(PlayerSetupMessages.playerSetupIntro);
-            Console.WriteLine(PlayerSetupMessages.getPlayerName);
+            Console.WriteLine(Resources.playerSetupIntro);
+            Console.WriteLine(Resources.getPlayerName);
             thisPlayer.PlayerName = thisPlayerSetup.SetPlayerName();
         }
         #endregion
@@ -93,7 +93,7 @@ namespace BattleShips
         #region Add Ship Details Method
         private bool AddShipDetails(Ship thisShip, Player thisPlayer)
         {
-            Console.WriteLine(PlayerSetupMessages.shipTypeDetails, thisShip.ShipType, (int)thisShip.ShipType);
+            Console.WriteLine(Resources.shipTypeDetails, thisShip.ShipType, (int)thisShip.ShipType);
 
             // get user input and format it
             var placePosition = GetNewShipDetailsFromUser(thisShip);
@@ -111,7 +111,7 @@ namespace BattleShips
             }
             else
             {
-                Console.WriteLine(PlayerSetupMessages.placementErrorMessage);
+                Console.WriteLine(Resources.placementErrorMessage);
                 return false;
             }
         }
@@ -134,7 +134,7 @@ namespace BattleShips
         private void AddPrefixToName(List<Player> playerList)
         {
             int i = 1;
-            playerList.ForEach(p => p.PlayerName = "Player " + (i++) + ": " + p.PlayerName);
+            playerList.ForEach(p => p.PlayerName = Resources.playerSuffix + " " + (i++) + " : " + p.PlayerName);
         } 
         #endregion
     }

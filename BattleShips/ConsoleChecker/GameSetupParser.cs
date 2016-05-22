@@ -1,4 +1,5 @@
 ﻿using BattleShips.BattleGround;
+using BattleShips.Properties;
 using BattleShips.Setup;
 using System;
 namespace BattleShips.ConsoleChecker
@@ -44,7 +45,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfPlayers);
                 if (result == false || int.Parse(input) < 2)
                 {
-                    Console.WriteLine(GameSetupMessages.getPlayerNoErrorMessage);
+                    Console.WriteLine(Resources.getPlayerNoErrorMessage);
                     count++;
                 }
                 else { return noOfPlayers; }
@@ -69,7 +70,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out noOfShips);
                 if (result == false || int.Parse(input) < 0)
                 {
-                    Console.WriteLine(GameSetupMessages.getShipNoErrorMessage);
+                    Console.WriteLine(Resources.getShipNoErrorMessage);
                     count++;
                 }
                 else { return noOfShips; }
@@ -95,7 +96,7 @@ namespace BattleShips.ConsoleChecker
                 bool result = int.TryParse(input, out modeEntered);
                 if (result == false || int.Parse(input) < 0 || int.Parse(input) > gameModeEnum - 1)
                 {
-                    Console.WriteLine(GameSetupMessages.getModeErrorMessage);
+                    Console.WriteLine(Resources.getModeErrorMessage);
                     count++;
                 }
                 else {
@@ -133,7 +134,7 @@ namespace BattleShips.ConsoleChecker
                 }
                 if (isValid == false)
                 {
-                    Console.WriteLine(GameSetupMessages.getSeaErrorMessage);
+                    Console.WriteLine(Resources.getSeaErrorMessage);
                     count++;
                 }
                 else

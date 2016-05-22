@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="commandsRejectedErrorMessage" xml:space="preserve">
+    <value>Rawa i hanga maha whakahau whakanohonga hē.
+    I tangohia te kaipuke i to koutou kaipuke.</value>
+    <comment>Too many incorrect placement commands were made. The ship was removed from your fleet.</comment>
+  </data>
+  <data name="fireErrorMessage" xml:space="preserve">
+    <value>Kihai i mohio te whakahau. Me whakarite e he tika te hōputu tauira 4,5 ranei 5,2 Tomo
+taunga ki te ahi i to outou pere...</value>
+    <comment>The command was not recognised. Ensure that the format is correct eg. 4,5  or  5,2  Enter coordinates to fire your missile...</comment>
+  </data>
+  <data name="gameEndMessage" xml:space="preserve">
+    <value>*** Kua mutu tenei kēmu ***
+Pēhi i tetahi matua ki te putaatu ...</value>
+    <comment>*** This game has ended ***
+      Press any key to exit...</comment>
+  </data>
+  <data name="gameStart" xml:space="preserve">
+    <value>Tīmata kēmu....</value>
+    <comment>Game starting....</comment>
+  </data>
+  <data name="getFireCommand" xml:space="preserve">
+    <value>{0} hoatu i te taunga mo to koutou ūnga...</value>
+    <comment>{0} enter the coordinates to fire at....</comment>
+  </data>
+  <data name="getGameMode" xml:space="preserve">
+    <value>Kōwhiringa aratau Game .....
+
+    0 - game Taunoa: katoa kaitākaro e tetahi noa matataua me kotahi kaipuke aiwhakangaro.
+    1 - Ritenga game: whiriwhiri i te nga momo kaipuke me nga rahinga e hiahiatia ana.
+
+E tomo 0 ranei 1:</value>
+    <comment>Game mode choices.....
+
+   0 - Default game : every player has just one scout and one destroyer ship.
+   1 - Custom game : choose the the ship types and the quantities needed.
+
+Enter 0 or 1:</comment>
+  </data>
+  <data name="getModeErrorMessage" xml:space="preserve">
+    <value>E kore te kōwhiringa tomo koutou i mohio. Whakamātauria ano te whakamahi i he tokomaha tika mo koutou aratau kēmu.</value>
+    <comment>The mode you entered was not recognised. Try again using a valid number for your game mode.</comment>
+  </data>
+  <data name="getNameErrorMessage" xml:space="preserve">
+    <value>E tomo te ingoa tika. e kore te tikanga Ingoa e mokowāmā whakakahore ranei. Ngana ano.</value>
+    <comment>Enter a valid name. Name must not be white space or null. Try again.</comment>
+  </data>
+  <data name="getNumberOfPlayers" xml:space="preserve">
+    <value>E tomo te maha o ngā kaitākaro mō tenei kēmu (kia rua neke atu rānei):</value>
+    <comment>Enter the number of players for this game ( must be two or more ):</comment>
+  </data>
+  <data name="getPlaceErrorMessage" xml:space="preserve">
+    <value>Kihai i mohio te whakahau. Me whakarite e he tika te hōputu tauira. 4,5,v ranei 5,2,h tomo te taunga me te aronga mō te kaipuke.</value>
+    <comment>The command was not recognised. Ensure that the format is correct eg. 4,5,v  or  5,2,h  Enter the coordinates and direction for the ship.</comment>
+  </data>
+  <data name="getPlacementCommand" xml:space="preserve">
+    <value>E tomo te taunga me te takotoranga mo koutou kaipuke hei tauira 3,4,h ranei 7,2,v Tīwhiri: Me takoto tūranga kaipuke katoa i roto i nga rohe o te moana, a kore e taea te īnaki koutou te tahi atu kaipuke) E tomo te whakahau ki te tuu i to koutou kaipuke ...</value>
+    <comment>Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships) Enter the command to place your ship...</comment>
+  </data>
+  <data name="getPlayerName" xml:space="preserve">
+    <value>E tomo tou ingoa. Me tuku e koe tetahi uara anake ngā wāhi null ranei ...:</value>
+    <comment>Enter your name. You must submit any value except spaces or null...:</comment>
+  </data>
+  <data name="getPlayerNoErrorMessage" xml:space="preserve">
+    <value>E tomo te number.Two tika atu kaitākaro ranei E hiahiatia ana hoki tenei kēmu.</value>
+    <comment>Enter a valid number.Two or more players are required for this game.</comment>
+  </data>
+  <data name="getSeaErrorMessage" xml:space="preserve">
+    <value>Kihai i nga āhuatanga moana homai tika. Me whakarite e He tika, me te e te rahi iti ko 5,5 te hōputu. E tomo te āhuatanga moana.</value>
+    <comment>The sea dimensions given were not valid. Ensure that the format is correct and that the minimum size is 5,5. Enter the sea dimensions.</comment>
+  </data>
+  <data name="getSeaSize" xml:space="preserve">
+    <value>Tatūnga Moana ...
+
+ Note: Me waiho te rahi mātiti moana pato konei &gt; ranei = 5 x 5: E tomo te rahi o te moana, te whakamahi i te piko ki wehe i te x me te y āhuatanga tauira. 6,7 tomo te rahi te moana .....</value>
+    <comment>Sea setup...
+
+Note: the sea grid size typed here must be &gt; or = 5 x 5 : Enter the size of the sea, use a comma to separate the x and y dimensions eg. 6,7  Enter the sea size.....</comment>
+  </data>
+  <data name="getShipNoErrorMessage" xml:space="preserve">
+    <value>E kore te tokomaha tomo koutou i mohio. Ki te kaipuke o tenei e kore e atawhai hiahiatia ka pato 0</value>
+    <comment>The number you entered was not recognised. If ships of this kind are not required then type 0</comment>
+  </data>
+  <data name="getShipTypeNo" xml:space="preserve">
+    <value>Tomo koa te maha o {0} e hiahiatia ana te:</value>
+    <comment>Please enter the number of {0}s needed:</comment>
+  </data>
+  <data name="hitMessage" xml:space="preserve">
+    <value>Poti pakaru!!</value>
+    <comment>{0} enter the coordinates to fire at....</comment>
+  </data>
+  <data name="leaveMessage" xml:space="preserve">
+    <value>{0} e kore e toe kaipuke me kua mahue te kēmu.</value>
+    <comment>{0} has no ships remaining and has left the game.</comment>
+  </data>
+  <data name="missMessage" xml:space="preserve">
+    <value>Pere ngaro!!</value>
+    <comment>Miss!!</comment>
+  </data>
+  <data name="placementErrorMessage" xml:space="preserve">
+    <value>Ship kore tāpiri no te mea kua i te iti rawa kia kotahi te tūranga noho takoto i waho te rohe moana ranei. E tomo te whakahau ki te tuu i to koutou kaipuke ...</value>
+    <comment>Ship not added because at least one position is already occupied or lies outside the sea boundary. Enter the command to place your ship...</comment>
+  </data>
+  <data name="playerSetupIntro" xml:space="preserve">
+    <value>Whakaturia ake toa ...</value>
+    <comment>Player setup....</comment>
+  </data>
+  <data name="playerSuffix" xml:space="preserve">
+    <value>Toa</value>
+    <comment>Player</comment>
+  </data>
+  <data name="shipTypeDetails" xml:space="preserve">
+    <value>Pōti ki tāpiri: {0}, rahi {1} ....</value>
+    <comment>Ship to add: {0}, size {1}....</comment>
+  </data>
+  <data name="sinkMessage" xml:space="preserve">
+    <value>Kua tūkinotia kaipuke ano me {0} ngaro !!</value>
+    <comment>Position hit and {0} sunk!!</comment>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>__________________________________
+   |   ___________________________   |
+   |  |                           |  |
+   |  |                           |  |
+   |  |      Battleships v1.0     |  |
+   |  |                           |  |
+   |  |___________________________|  |
+   |                                 |
+   |*********************************|
+   |              J A W              |
+   |_________________________________|
+
+        Welcome to Battleships!</value>
+    <comment>__________________________________
+   |   ___________________________   |
+   |  |                           |  |
+   |  |                           |  |
+   |  |      Battleships v1.0     |  |
+   |  |                           |  |
+   |  |___________________________|  |
+   |                                 |
+   |*********************************|
+   |              J A W              |
+   |_________________________________|
+
+        Welcome to Battleships!</comment>
+  </data>
+  <data name="winMessage" xml:space="preserve">
+    <value>***** T O A *****
+     Mihi {0}
+   Ko koe te toa.</value>
+    <comment>***** W I N N E R *****
+   Congratulations {0}
+    You are the winner.</comment>
+  </data>
+</root>

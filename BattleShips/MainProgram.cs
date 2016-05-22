@@ -1,5 +1,5 @@
 ﻿using BattleShips.ConsoleChecker;
-using BattleShips.Setup;
+using BattleShips.Formatting;
 using System;
 
 namespace BattleShips
@@ -8,6 +8,15 @@ namespace BattleShips
     {
         static void Main(string[] args)
             {
+            // override the console writeline
+            // for better formatting.
+            Console.SetOut(new OutputFormat());
+
+            // get the language option from the user
+            // and set up the chosen language or default
+            ISetupLanguage thisLanguage = new SetupLanguage();
+            thisLanguage.SelectLanguage();
+
             // setup the game and the players
             IPlayerSetup thisGame = new PlayerSetup();
             thisGame.SetupAllPlayers();

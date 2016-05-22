@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using BattleShips.ConsoleChecker;
-using System;
+﻿using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
 using BattleShips.BattleGround;
-using BattleShips.BShip;
 
 namespace BattleShipsTests
 {

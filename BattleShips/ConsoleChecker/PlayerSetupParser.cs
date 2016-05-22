@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleShips.Properties;
+using System;
 
 namespace BattleShips.ConsoleChecker
 {
@@ -39,7 +40,7 @@ namespace BattleShips.ConsoleChecker
                 string input = ThisReader.ReadConsole();
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine(PlayerSetupMessages.getNameErrorMessage);
+                    Console.WriteLine(Resources.getNameErrorMessage);
                     count++;
                 }
                 else
@@ -72,7 +73,7 @@ namespace BattleShips.ConsoleChecker
                 }
 
                 if (isValid == false){ 
-                    Console.WriteLine(PlayerSetupMessages.getPlaceErrorMessage);
+                    Console.WriteLine(Resources.getPlaceErrorMessage);
                     count++;
                     isValid = true;
                 }

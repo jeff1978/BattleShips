@@ -10,7 +10,6 @@ C:\Users\Jeff\OneDrive\Documents\BattleShips\BattleShips\bin\Debug\nunit.framewo
 C:\Users\Jeff\OneDrive\Documents\BattleShips\BattleShips\obj\Debug\BattleShips.csprojResolveAssemblyReference.cache
 C:\Users\Jeff\OneDrive\Documents\BattleShips\BattleShips\obj\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\BattleShips\BattleShips\obj\Debug\BattleShips.pdb
-C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.exe.config
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\BattleShips.pdb
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.framework.dll
@@ -18,3 +17,8 @@ C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\nunit.f
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.exe
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.pdb
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.csproj.GenerateResource.Cache
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.Properties.Resources.resources
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\bin\Debug\mi-NZ\BattleShips.resources.dll
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\mi-NZ\BattleShips.resources.dll
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShips\obj\Debug\BattleShips.Properties.Resources.mi-NZ.resources

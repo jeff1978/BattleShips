@@ -1,4 +1,5 @@
 ﻿using BattleShips.BattleGround;
+using BattleShips.Properties;
 using System;
 
 namespace BattleShips.ConsoleChecker
@@ -50,7 +51,7 @@ namespace BattleShips.ConsoleChecker
                 }
                 if (isValid == false)
                 {
-                    Console.WriteLine(GamePlayMessages.fireErrorMessage);
+                    Console.WriteLine(Resources.fireErrorMessage);
                     count++;
                 }
                 else

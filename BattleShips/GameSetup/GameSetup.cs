@@ -3,6 +3,10 @@ using BattleShips.ConsoleChecker;
 using BattleShips.BShip;
 using System;
 using System.Collections.Generic;
+using BattleShips.Properties;
+using System.Resources;
+using System.Threading;
+using System.Reflection;
 
 namespace BattleShips.Setup
 {
@@ -16,9 +20,9 @@ namespace BattleShips.Setup
         /// <summary>
         /// Constructor injection used here to facilitate mockup for unit testing.
         /// </summary>
-        public GameSetup(IGameSetupParser thisIIParser)
+        public GameSetup(IGameSetupParser thisIParser)
         {
-            inputParser = thisIIParser;
+            inputParser = thisIParser;
         }
 
         // The game setup information will be stored here   
@@ -28,21 +32,18 @@ namespace BattleShips.Setup
 
         // Public method for access to this class
         public void SetupGame()
-        {           
-            // show welcome message
-            Console.WriteLine(GameSetupMessages.welcome);
-
+        {
             // get and set the number of players
-            Console.WriteLine(GameSetupMessages.getNumberOfPlayers);
-            numberOfPlayers = inputParser.SetNumberOfPlayers(); ;
+            Console.WriteLine(Resources.getNumberOfPlayers);
+            numberOfPlayers = inputParser.SetNumberOfPlayers(); 
 
             // get and set the game mode
-            Console.WriteLine(GameSetupMessages.getGameMode);
+            Console.WriteLine(Resources.getGameMode);
             var gameMode = inputParser.SelectGameMode();
             listOfShipTypes = GameInput.GetSettings(gameMode, inputParser);
 
             // get and set the sea dimensions
-            Console.WriteLine(GameSetupMessages.getSeaSize);
+            Console.WriteLine(Resources.getSeaSize);
             gameSea = inputParser.SetSeaSize();
         }
     }
