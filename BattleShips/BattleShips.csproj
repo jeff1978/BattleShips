@@ -159,8 +159,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="obj\Debug\BattleShips.exe" />
-    <Content Include="obj\Debug\mi-NZ\BattleShips.resources.dll" />
+    <Content Include="bin\Debug\BattleShips.exe" />
+    <Content Include="bin\Debug\mi-nz\BattleShips.resources.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
