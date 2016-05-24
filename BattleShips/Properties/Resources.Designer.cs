@@ -109,8 +109,8 @@ namespace BattleShips.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Game mode choices.....
         ///
-        ///   0 - Default game : every player has just one scout and one destroyer ship.
-        ///   1 - Custom game : choose the the ship types and the quantities needed.
+        ///0 - Default game : every player has just one scout and one destroyer ship.
+        ///1 - Custom game : choose the the ship types and the quantities needed.
         ///
         ///Enter 0 or 1:.
         /// </summary>
@@ -290,27 +290,6 @@ namespace BattleShips.Properties {
         internal static string sinkMessage {
             get {
                 return ResourceManager.GetString("sinkMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to __________________________________
-        ///   |   ___________________________   |
-        ///   |  |                           |  |
-        ///   |  |                           |  |
-        ///   |  |      Battleships v1.0     |  |
-        ///   |  |                           |  |
-        ///   |  |___________________________|  |
-        ///   |                                 |
-        ///   |*********************************|
-        ///   |              J A W              |
-        ///   |_________________________________|
-        ///
-        ///        Welcome to Battleships!.
-        /// </summary>
-        internal static string welcome {
-            get {
-                return ResourceManager.GetString("welcome", resourceCulture);
             }
         }
         

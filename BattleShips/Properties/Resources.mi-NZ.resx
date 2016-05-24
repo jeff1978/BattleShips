@@ -118,17 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="commandsRejectedErrorMessage" xml:space="preserve">
-    <value>Rawa i hanga maha whakahau whakanohonga hē.
-    I tangohia te kaipuke i to koutou kaipuke.</value>
+    <value>Rawa i hanga maha whakahau whakanohonga hē. I tangohia te kaipuke i to koutou kaipuke.</value>
     <comment>Too many incorrect placement commands were made. The ship was removed from your fleet.</comment>
   </data>
   <data name="fireErrorMessage" xml:space="preserve">
-    <value>Kihai i mohio te whakahau. Me whakarite e he tika te hōputu tauira 4,5 ranei 5,2 Tomo
-taunga ki te ahi i to outou pere...</value>
+    <value>Kihai i mohio te whakahau. Me whakarite e he tika te hōputu tauira 4,5 ranei 5,2 Tomo taunga ki te ahi i to outou pere...</value>
     <comment>The command was not recognised. Ensure that the format is correct eg. 4,5  or  5,2  Enter coordinates to fire your missile...</comment>
   </data>
   <data name="gameEndMessage" xml:space="preserve">
-    <value>*** Kua mutu tenei kēmu ***
+    <value>   *** Kua mutu tenei kēmu ***
 Pēhi i tetahi matua ki te putaatu ...</value>
     <comment>*** This game has ended ***
       Press any key to exit...</comment>
@@ -144,8 +142,8 @@ Pēhi i tetahi matua ki te putaatu ...</value>
   <data name="getGameMode" xml:space="preserve">
     <value>Kōwhiringa aratau Game .....
 
-    0 - game Taunoa: katoa kaitākaro e tetahi noa matataua me kotahi kaipuke aiwhakangaro.
-    1 - Ritenga game: whiriwhiri i te nga momo kaipuke me nga rahinga e hiahiatia ana.
+0 - game Taunoa: katoa kaitākaro e tetahi noa matataua me kotahi kaipuke aiwhakangaro.
+1 - Ritenga game: whiriwhiri i te nga momo kaipuke me nga rahinga e hiahiatia ana.
 
 E tomo 0 ranei 1:</value>
     <comment>Game mode choices.....
@@ -190,7 +188,7 @@ Enter 0 or 1:</comment>
   <data name="getSeaSize" xml:space="preserve">
     <value>Tatūnga Moana ...
 
- Note: Me waiho te rahi mātiti moana pato konei &gt; ranei = 5 x 5: E tomo te rahi o te moana, te whakamahi i te piko ki wehe i te x me te y āhuatanga tauira. 6,7 tomo te rahi te moana .....</value>
+Note: Me waiho te rahi mātiti moana pato konei &gt; ranei = 5 x 5: E tomo te rahi o te moana, te whakamahi i te piko ki wehe i te x me te y āhuatanga tauira. 6,7 tomo te rahi te moana .....</value>
     <comment>Sea setup...
 
 Note: the sea grid size typed here must be &gt; or = 5 x 5 : Enter the size of the sea, use a comma to separate the x and y dimensions eg. 6,7  Enter the sea size.....</comment>
@@ -234,34 +232,6 @@ Note: the sea grid size typed here must be &gt; or = 5 x 5 : Enter the size of t
   <data name="sinkMessage" xml:space="preserve">
     <value>Kua tūkinotia kaipuke ano me {0} ngaro !!</value>
     <comment>Position hit and {0} sunk!!</comment>
-  </data>
-  <data name="welcome" xml:space="preserve">
-    <value>__________________________________
-   |   ___________________________   |
-   |  |                           |  |
-   |  |                           |  |
-   |  |      Battleships v1.0     |  |
-   |  |                           |  |
-   |  |___________________________|  |
-   |                                 |
-   |*********************************|
-   |              J A W              |
-   |_________________________________|
-
-        Welcome to Battleships!</value>
-    <comment>__________________________________
-   |   ___________________________   |
-   |  |                           |  |
-   |  |                           |  |
-   |  |      Battleships v1.0     |  |
-   |  |                           |  |
-   |  |___________________________|  |
-   |                                 |
-   |*********************************|
-   |              J A W              |
-   |_________________________________|
-
-        Welcome to Battleships!</comment>
   </data>
   <data name="winMessage" xml:space="preserve">
     <value>***** T O A *****

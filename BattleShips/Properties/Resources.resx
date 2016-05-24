@@ -136,8 +136,8 @@
   <data name="getGameMode" xml:space="preserve">
     <value>Game mode choices.....
 
-   0 - Default game : every player has just one scout and one destroyer ship.
-   1 - Custom game : choose the the ship types and the quantities needed.
+0 - Default game : every player has just one scout and one destroyer ship.
+1 - Custom game : choose the the ship types and the quantities needed.
 
 Enter 0 or 1:</value>
   </data>
@@ -199,21 +199,6 @@ Note: the sea grid size typed here must be &gt; or = 5 x 5 : Enter the size of t
   </data>
   <data name="sinkMessage" xml:space="preserve">
     <value>Position hit and {0} sunk!!</value>
-  </data>
-  <data name="welcome" xml:space="preserve">
-    <value>__________________________________
-   |   ___________________________   |
-   |  |                           |  |
-   |  |                           |  |
-   |  |      Battleships v1.0     |  |
-   |  |                           |  |
-   |  |___________________________|  |
-   |                                 |
-   |*********************************|
-   |              J A W              |
-   |_________________________________|
-
-        Welcome to Battleships!</value>
   </data>
   <data name="winMessage" xml:space="preserve">
     <value>***** W I N N E R *****
