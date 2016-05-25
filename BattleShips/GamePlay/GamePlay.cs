@@ -13,10 +13,17 @@ namespace BattleShips
     /// </summary>
     public class GamePlay : IGamePlay
     {
-        private IGamePlayParser thisGamePlayParser = new GamePlayParser();
+        private IGamePlayParser thisGamePlayParser { get; set; }
         public List<Player> playerList { get; set; }
         private bool positionIsHit { get; set; }
         public bool IsGameOver { get; set; }
+        private IConsoleReader thisReader { get; set; }
+
+        public GamePlay()
+        {
+        thisReader = new ConsoleReader();
+        thisGamePlayParser = new GamePlayParser(thisReader);
+        }
 
         public void PlayGame()
         {
