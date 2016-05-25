@@ -13,10 +13,11 @@ namespace BattleShips
     {
         public List<Ship> PlayerShips { get; set; }
         public string PlayerName { get; set; }
+        private bool playerIsAlive { get; set; }
 
         public bool IsPlayerAlive()
         {
-            bool playerIsAlive = false;
+            playerIsAlive = false;
             if (GetFloatingShips().Count() > 0)
             {
                 playerIsAlive = true;
