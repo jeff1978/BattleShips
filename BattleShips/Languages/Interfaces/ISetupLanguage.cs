@@ -4,6 +4,6 @@
     {
         IConsoleReader ThisReader { get; set; }
 
-        void SelectLanguage();
+        void GetUserLanguageOption();
     }
 }

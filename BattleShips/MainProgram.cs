@@ -15,7 +15,7 @@ namespace BattleShips
             // get the language option from the user
             // and set up the chosen language or default
             ISetupLanguage thisLanguage = new SetupLanguage();
-            thisLanguage.SelectLanguage();
+            thisLanguage.GetUserLanguageOption();
 
             // setup the game and the players
             IPlayerSetup thisGame = new PlayerSetup();

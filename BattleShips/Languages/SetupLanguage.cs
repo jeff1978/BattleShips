@@ -19,7 +19,7 @@ namespace BattleShips.ConsoleChecker
         /// ten goes then do nothing (i.e. leave the default language)
         /// </summary>
         /// <returns></returns>
-        public void SelectLanguage()
+        public void GetUserLanguageOption()
         {
             IConsoleReader anyReader = new ConsoleReader();
             ThisReader = anyReader;
@@ -46,23 +46,28 @@ namespace BattleShips.ConsoleChecker
                     langIsChosen = true;
                     // cast the int to its enum and check its name
                     GameLanguage thisModeAsEnum = (GameLanguage)langEntered;
-                    switch (thisModeAsEnum.ToString())
-                    {
-                    case "English":
-                            // do nothing, revert to default resource file (English)
-                            Console.WriteLine(LanguageSetupMessages.showSelectionMessage, "English");
-                            break;
-                    case "Maori":
-                            Thread.CurrentThread.CurrentCulture = new CultureInfo("mi-NZ");
-                            Thread.CurrentThread.CurrentUICulture = new CultureInfo("mi-NZ");
-                            Console.WriteLine(LanguageSetupMessages.showSelectionMessage, "Maori");
-                            break;
-                        // add more cases for additional languages
-                    default:
-                            // do nothing
-                            break;
-                    }
+                    SetUserLanguageOption(thisModeAsEnum);
                 }
+            }
+        }
+
+        private static void SetUserLanguageOption(GameLanguage thisModeAsEnum)
+        {
+            switch (thisModeAsEnum.ToString())
+            {
+                case "English":
+                    // do nothing, revert to default resource file (English)
+                    Console.WriteLine(LanguageSetupMessages.showSelectionMessage, "English");
+                    break;
+                case "Maori":
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo("mi-NZ");
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("mi-NZ");
+                    Console.WriteLine(LanguageSetupMessages.showSelectionMessage, "Maori");
+                    break;
+                // add more cases for additional languages
+                default:
+                    // do nothing
+                    break;
             }
         }
     }
