@@ -4,7 +4,6 @@ using BattleShips.ConsoleChecker;
 using BattleShips.Setup;
 using System;
 using System.Collections.Generic;
-using BattleShips;
 using BattleShips.Properties;
 
 namespace BattleShips
