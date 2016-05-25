@@ -20,3 +20,4 @@ C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShipsTests\bin\Debug\nu
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShipsTests\obj\Debug\BattleShipsTests.csprojResolveAssemblyReference.cache
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShipsTests\obj\Debug\BattleShipsTests.dll
 C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShipsTests\obj\Debug\BattleShipsTests.pdb
+C:\Users\Jeff\OneDrive\Documents\Repos\BattleShips\BattleShipsTests\bin\Debug\mi-nz\BattleShips.resources.dll

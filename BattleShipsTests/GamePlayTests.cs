@@ -75,10 +75,12 @@ namespace BattleShipsTests
             // act
             var thisGamePlay1 = new GamePlay() { playerList = winList };
             var thisGamePlay2 = new GamePlay() { playerList = noWinList };
+            thisGamePlay1.CheckForWinner();
+            thisGamePlay2.CheckForWinner();
 
             // assert
-            Assert.IsTrue(thisGamePlay1.CheckForWinner());
-            Assert.IsFalse(thisGamePlay2.CheckForWinner());
+            Assert.IsTrue(thisGamePlay1.IsGameOver);
+            Assert.IsFalse(thisGamePlay2.IsGameOver);
         }
 
         [Test]

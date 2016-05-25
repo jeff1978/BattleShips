@@ -157,7 +157,7 @@ namespace BattleShips.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship....
+        ///   Looks up a localized string similar to Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship.....
         /// </summary>
         internal static string getPlacementCommand {
             get {

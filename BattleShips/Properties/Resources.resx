@@ -154,7 +154,7 @@ Enter 0 or 1:</value>
     <value>The command was not recognised. Ensure that the format is correct eg. 4,5,v  or  5,2,h  Enter the coordinates and direction for the ship.</value>
   </data>
   <data name="getPlacementCommand" xml:space="preserve">
-    <value>Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship...</value>
+    <value>Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship....</value>
   </data>
   <data name="getPlayerName" xml:space="preserve">
     <value>Enter your name. You must submit any value except spaces or null...:</value>

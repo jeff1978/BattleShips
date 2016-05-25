@@ -16,7 +16,7 @@ namespace BattleShips
         private IGamePlayParser thisGamePlayParser = new GamePlayParser();
         public List<Player> playerList { get; set; }
         private bool positionIsHit { get; set; }
-        private bool IsGameOver { get; set; }
+        public bool IsGameOver { get; set; }
 
         public void PlayGame()
         {
