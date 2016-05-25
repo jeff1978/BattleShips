@@ -15,16 +15,15 @@ namespace BattleShips
     {
         private IGamePlayParser thisGamePlayParser = new GamePlayParser();
         public List<Player> playerList { get; set; }
-
-        // this field will be used to calculate whether to show the Miss!! message
-        public bool positionIsHit;
+        private bool positionIsHit { get; set; }
+        private bool IsGameOver { get; set; }
 
         public void PlayGame()
         {
             // show the game start message.
             Console.WriteLine(Resources.gameStart);
 
-            bool IsGameOver = false;
+            IsGameOver = false;
             while (IsGameOver == false)
             {
                 for (int i = 0; i < playerList.Count; i++)
@@ -45,7 +44,7 @@ namespace BattleShips
 
                     // delete any players without floating ships and check for winner
                     UpdatePlayerList();
-                    IsGameOver = CheckForWinner();
+                    CheckForWinner();
                 }
             }
             Console.WriteLine(Resources.gameEndMessage);
@@ -112,15 +111,14 @@ namespace BattleShips
             return enemiesOnlyList;
         }
 
-        public bool CheckForWinner()
+        public void CheckForWinner()
         {
-            bool winnerFound = false;
+            IsGameOver = false;
             if (playerList.Count < 2)
             {
                 Console.WriteLine(Resources.winMessage, playerList[0].PlayerName);
-                winnerFound = true;
+                IsGameOver = true;
             }
-            return winnerFound;
         }
 
         public void UpdatePlayerList()

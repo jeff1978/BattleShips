@@ -15,7 +15,7 @@ namespace BattleShips.Formatting
         private TextWriter originalOut;
 
         // create a counter used to check the line length
-        private int count = 0;
+        private int count { get; set; }
 
         // create a constant used to store the preferred line length
         private const int idealLineLength = 60;
