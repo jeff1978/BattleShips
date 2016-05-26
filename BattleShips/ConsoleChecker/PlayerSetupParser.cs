@@ -67,7 +67,8 @@ namespace BattleShips.ConsoleChecker
                 string input = ThisReader.ReadConsole();
                 string[] dimensions = input.Split(',');
                 // now look for any invalid part
-                if (dimensions.Length != 3 || !(dimensions[2] == "h" || dimensions[2] == "v") || int.TryParse(dimensions[1], out y)==false || int.TryParse(dimensions[0], out x)==false)
+                if (dimensions.Length != 3 || !(dimensions[2] == "h" || dimensions[2] == "v") || int.TryParse(dimensions[1],
+                    out y)==false || int.TryParse(dimensions[0], out x)==false)
                 {
                     isValid = false;
                 }

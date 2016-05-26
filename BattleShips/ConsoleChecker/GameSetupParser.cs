@@ -5,67 +5,59 @@ using System;
 namespace BattleShips.ConsoleChecker
 {
     /// <summary>
-    /// This is a list of validation methods used to check user input during game setup. Read line operations are repeated
-    /// until valid input is obtained. A count is used to submit default values after 10 unsuccesful attempts.
+    /// This is a list of validation methods used to check user input during game setup.
     /// </summary>
     public class GameSetupParser : IGameSetupParser
     {
         public IConsoleReader ThisReader { get; set; }
+        private int operationResult { get; set; }
+        private int minimumValue { get; set; }
+        private string errorMsg { get; set; }
+        public bool isValidInput { get; set; }
 
         public GameSetupParser(IConsoleReader thisReader)
         {
             ThisReader = thisReader;
+            isValidInput = false;
         }
 
         public int SetNumberOfPlayers()
         {
-            int noOfPlayers;
-            int count = 0;
-            while (count < 10)
-            {
-                string input = ThisReader.ReadConsole();
-                bool result = int.TryParse(input, out noOfPlayers);
-                if (result == false || int.Parse(input) < 2)
-                {
-                    Console.WriteLine(Resources.getPlayerNoErrorMessage);
-                    count++;
-                }
-                else { return noOfPlayers; }
-            }
-            return 2;
+            GetUserInt(MinimumValue: 2, ErrorMsg: Resources.getPlayerNoErrorMessage);
+            return operationResult;
         }
 
-        /// <summary>
-        /// This method gets the user to type in an integer for the number of ships and then validates it
-        /// before returning it.
-        /// Get an int equal or greater than zero and repeat request until valid entry
-        /// Give the user ten goes then submit a default.
-        /// </summary>
-        /// <returns></returns>
         public int SetNumberOfShips()
         {
-            int noOfShips;
-            int count = 1;
-            while (count < 10)
-            {
-                string input = ThisReader.ReadConsole();
-                bool result = int.TryParse(input, out noOfShips);
-                if (result == false || int.Parse(input) < 0)
-                {
-                    Console.WriteLine(Resources.getShipNoErrorMessage);
-                    count++;
-                }
-                else { return noOfShips; }
-            }
-            return 1;
+            GetUserInt(MinimumValue: 0, ErrorMsg: Resources.getShipNoErrorMessage);
+            return operationResult;
         }
 
-        /// <summary>
-        /// This method gets the user to type in an integer for the game mode and then validates it
-        /// before returning it as a GameMode object.
-        /// Get int of range in GameMode enum list. Give the user ten goes then submit a default.
-        /// </summary>
-        /// <returns></returns>
+        private void GetUserInt(int MinimumValue, string ErrorMsg)
+        {
+            minimumValue = MinimumValue;
+            errorMsg = ErrorMsg;
+            while (isValidInput == false)
+            {
+                isValidInput = true;
+                int validItem;
+                string input = ThisReader.ReadConsole();
+                isValidInput = int.TryParse(input, out validItem);
+                processUserInt(validItem, input);
+            }
+            isValidInput = false;
+        }
+
+        private void processUserInt(int validItem, string input)
+        {
+            if (isValidInput == false || int.Parse(input) < minimumValue)
+            {
+                Console.WriteLine(errorMsg);
+                isValidInput = false;
+            }
+            else { operationResult = validItem; }
+        }
+
         public GameMode SelectGameMode()
         {
             GameMode chosenMode;
