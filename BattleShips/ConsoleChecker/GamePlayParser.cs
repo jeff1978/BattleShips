@@ -11,7 +11,7 @@ namespace BattleShips.ConsoleChecker
     {
         public IConsoleReader ThisReader { get; set; }
         private Position firePosition { get; set; }
-        private bool isValidInput { get; set; }
+        public bool isValidInput { get; set; }
 
         public GamePlayParser(IConsoleReader thisReader)
         {
@@ -33,7 +33,7 @@ namespace BattleShips.ConsoleChecker
             return firePosition;
         }
 
-        private string[] splitUserInput(string userInput)
+        public string[] splitUserInput(string userInput)
         {
             isValidInput = true;
             int validItem;

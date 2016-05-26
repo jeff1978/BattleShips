@@ -37,19 +37,11 @@ namespace BattleShips
                 {
                     positionIsHit = false;
 
-                    // show fire command message
+                    // show messages and run gameplay methods
                     Console.WriteLine(Resources.getFireCommand, playerList[i].PlayerName);
-
-                    // get Position from user for fire command
                     var fireCoordinate = thisGamePlayParser.FireCommand();
-
-                    // process the fire command
                     PlayerTakeTurn(fireCoordinate, playerList[i]);
-
-                    // check if missed !! then show message
                     showMissMessage();
-
-                    // delete any players without floating ships and check for winner
                     UpdatePlayerList();
                     CheckForWinner();
                 }
@@ -83,8 +75,6 @@ namespace BattleShips
             }
         }
 
-        // This method compares two positions and where appropriate sets the floating property
-        // to false. It also issues the required messages to the console.
         private void comparePositions(Position firePosition, Position enemyPosition, Ship floatingShip)
         {
             // compare the fire position with the enemy position
