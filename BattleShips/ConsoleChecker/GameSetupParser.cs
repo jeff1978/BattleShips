@@ -65,13 +65,13 @@ namespace BattleShips.ConsoleChecker
             while (isValidInput == false)
             {
                 // the the user mode int, validate and process it.
-                GetUserModeInt(gameModeEnumLength);
+                processUserModeInput(gameModeEnumLength);
             }
             isValidInput = false;
             return thisGameMode;
         }
 
-        private void GetUserModeInt(int gameModeEnumLength)
+        private void processUserModeInput(int gameModeEnumLength)
         {
             int modeEntered;
             string userInput = ThisReader.ReadConsole();
@@ -85,9 +85,8 @@ namespace BattleShips.ConsoleChecker
             {
                 isValidInput = true;
                 // cast the int to its enum
-                GameMode thisModeAsEnum = (GameMode)modeEntered;
-                thisGameMode = thisModeAsEnum;
-            }
+                thisGameMode = (GameMode)modeEntered;
+             }
         }
 
         public Sea SetSeaSize()
