@@ -12,29 +12,11 @@ namespace BattleShips.ConsoleChecker
     {
         public IConsoleReader ThisReader { get; set; }
 
-        #region constructors
-        /// <summary>
-        /// Overloaded constructor used for game and unit testing.
-        /// </summary>
-        /// <param name="thisReader"></param>
         public GameSetupParser(IConsoleReader thisReader)
         {
             ThisReader = thisReader;
         }
-        public GameSetupParser()
-        {
-            IConsoleReader anyReader = new ConsoleReader();
-            ThisReader = anyReader;
-        }
-        #endregion
 
-        /// <summary>
-        /// This method gets the user to type in an integer for the number of players and then validates it
-        /// before returning it.
-        /// Get an int equal or greater than two and repeat request until valid entry.
-        /// Give the user ten goes then submit a default.
-        /// </summary>
-        /// <returns></returns>
         public int SetNumberOfPlayers()
         {
             int noOfPlayers;

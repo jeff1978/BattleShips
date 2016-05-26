@@ -13,12 +13,18 @@ namespace BattleShips
     /// </summary>
     public class PlayerSetup : IPlayerSetup
     {
-        #region
-        public IGameSetup thisGameSetup = new GameSetup(new GameSetupParser());
+        public IGameSetup thisGameSetup { get; set; }
         public IPlayerSetupParser thisPlayerSetup = new PlayerSetupParser();
         public IPlayerShipValidation thisValidation = new PlayerShipValidation();
         public List<Player> playerList { get; private set; }
-        #endregion
+        private IConsoleReader thisReader { get; set; }
+
+        public PlayerSetup()
+        {
+            thisReader = new ConsoleReader();
+            IGameSetupParser thisParser = new GameSetupParser(thisReader);
+            thisGameSetup = new GameSetup(thisParser);
+        }
 
         #region Setup All Players Method
         public void SetupAllPlayers()
@@ -34,15 +40,8 @@ namespace BattleShips
             }
             playerList = tempList;
 
-            // setup all players
             playerList.ForEach(p => SetupOnePlayer(p));
-
-            // add a prefix to each name, to identify each player
-            // further and make for easier gameplay
             AddPrefixToName(playerList);
-
-            // add a space and display the list of players 
-            // ready to start the game.
             playerList.ForEach(p => Console.WriteLine(p.PlayerName));
         } 
         #endregion
@@ -53,8 +52,6 @@ namespace BattleShips
             // show messages and get player name
             AddPlayerName(thisPlayer);
 
-            // create player the player's ships and add these to the
-            // player ship list property. Show the message asking for ship placement details.
             thisValidation.createPlayerShips(thisGameSetup.listOfShipTypes, thisPlayer);
             Console.WriteLine(Resources.getPlacementCommand);
 
@@ -98,9 +95,6 @@ namespace BattleShips
             var placePosition = GetNewShipDetailsFromUser(thisShip);
 
             // get the player's existing ship positions and this ship's positions to check for clashes
-            // make sure that no positions lie outside the sea. If all is well then save ship and return true
-            // else do nothing and return false.
-
             var existingShipPositions = thisValidation.GetPlayerShipsPositions(thisPlayer.PlayerShips);
             var shipPositionList = thisShip.GetShipPositions(placePosition);
             if (thisValidation.CanShipBeAdded(thisGameSetup.gameSea, shipPositionList, existingShipPositions))
