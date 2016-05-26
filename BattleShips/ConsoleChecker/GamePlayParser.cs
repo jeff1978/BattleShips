@@ -42,7 +42,8 @@ namespace BattleShips.ConsoleChecker
             {
                 // try parsing each split part
                 bool result = int.TryParse(splitItem, out validItem);
-                if (result == false || int.Parse(splitItem) < 0 || stringSplits.Length != 2) { isValidInput = false; }
+                if (result == false || int.Parse(splitItem) < 0 || stringSplits.Length != 2)
+                { isValidInput = false; }
             }
             return stringSplits;
         }

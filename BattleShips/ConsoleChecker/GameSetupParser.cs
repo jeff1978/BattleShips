@@ -15,6 +15,7 @@ namespace BattleShips.ConsoleChecker
         private string errorMsg { get; set; }
         public bool isValidInput { get; set; }
         private GameMode thisGameMode { get; set; }
+        private Sea thisSea { get; set; }
 
         public GameSetupParser(IConsoleReader thisReader)
         {
@@ -91,32 +92,40 @@ namespace BattleShips.ConsoleChecker
 
         public Sea SetSeaSize()
         {
-            int count = 0;
-            while (count  < 10)
+            while (isValidInput == false)
             {
-                bool isValid = true;
-                int validItem;
-                string input = ThisReader.ReadConsole();
-                string[] dimensions = input.Split(',');
-                foreach (var item in dimensions)
-                {
-                    bool result = int.TryParse(item, out validItem);
-                    if (result == false || int.Parse(item) < 5 || dimensions.Length!=2)
-                    {
-                        isValid = false;
-                    }
-                }
-                if (isValid == false)
-                {
-                    Console.WriteLine(Resources.getSeaErrorMessage);
-                    count++;
-                }
-                else
-                {
-                    return new Sea(int.Parse(dimensions[0]), int.Parse(dimensions[1]));
-                }             
-             }
-            return new Sea(5, 5);
+                // split the user input and validate it
+                string[] stringSplits = splitUserInput(ThisReader.ReadConsole());
+                // process the strings and act on the result
+                processInput(stringSplits);
+            }
+            // reset the property
+            isValidInput = false;
+            return thisSea;
+        }
+
+        public string[] splitUserInput(string userInput)
+        {
+            isValidInput = true;
+            int validItem;
+            string[] stringSplits = userInput.Split(',');
+            foreach (var splitItem in stringSplits)
+            {
+                // try parsing each split part
+                bool result = int.TryParse(splitItem, out validItem);
+                if (result == false || int.Parse(splitItem) < 5 || stringSplits.Length != 2)
+                { isValidInput = false; }
+            }
+            return stringSplits;
+        }
+
+        private void processInput(string[] stringSplits)
+        {
+            if (isValidInput == false) { Console.WriteLine(Resources.getSeaErrorMessage); }
+            else
+            {
+                thisSea = new Sea(int.Parse(stringSplits[0]), int.Parse(stringSplits[1]));
+            }
         }
     }
 }
