@@ -14,6 +14,7 @@ namespace BattleShips.ConsoleChecker
         private int minimumValue { get; set; }
         private string errorMsg { get; set; }
         public bool isValidInput { get; set; }
+        private GameMode thisGameMode { get; set; }
 
         public GameSetupParser(IConsoleReader thisReader)
         {
@@ -60,35 +61,35 @@ namespace BattleShips.ConsoleChecker
 
         public GameMode SelectGameMode()
         {
-            GameMode chosenMode;
-            var gameModeEnum = Enum.GetValues(typeof(GameMode)).Length;
-            int modeEntered;
-            int count = 0;
-            while (count < 10)
+            var gameModeEnumLength = Enum.GetValues(typeof(GameMode)).Length;
+            while (isValidInput == false)
             {
-                string input = ThisReader.ReadConsole();
-                bool result = int.TryParse(input, out modeEntered);
-                if (result == false || int.Parse(input) < 0 || int.Parse(input) > gameModeEnum - 1)
-                {
-                    Console.WriteLine(Resources.getModeErrorMessage);
-                    count++;
-                }
-                else {
-                    // cast the int to its enum
-                    GameMode thisModeAsEnum = (GameMode)modeEntered;
-                    chosenMode = thisModeAsEnum;
-                    return chosenMode; }
+                // the the user mode int, validate and process it.
+                GetUserModeInt(gameModeEnumLength);
             }
-            return GameMode.Default;
+            isValidInput = false;
+            return thisGameMode;
         }
 
-        /// <summary>
-        /// This method gets the user to type in a string for the sea size and then validates it.
-        /// before returning it as a Sea object.
-        /// Get string input in the format a,b where a and b are greater than 4.
-        /// Give the user ten goes then submit a default.
-        /// </summary>
-        /// <returns></returns>
+        private void GetUserModeInt(int gameModeEnumLength)
+        {
+            int modeEntered;
+            string userInput = ThisReader.ReadConsole();
+            bool result = int.TryParse(userInput, out modeEntered);
+            if (result == false || int.Parse(userInput) < 0 || int.Parse(userInput) > gameModeEnumLength - 1)
+            {
+                Console.WriteLine(Resources.getModeErrorMessage);
+                isValidInput = false;
+            }
+            else
+            {
+                isValidInput = true;
+                // cast the int to its enum
+                GameMode thisModeAsEnum = (GameMode)modeEntered;
+                thisGameMode = thisModeAsEnum;
+            }
+        }
+
         public Sea SetSeaSize()
         {
             int count = 0;
