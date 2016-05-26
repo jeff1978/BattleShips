@@ -14,16 +14,20 @@ namespace BattleShips
     public class PlayerSetup : IPlayerSetup
     {
         public IGameSetup thisGameSetup { get; set; }
-        public IPlayerSetupParser thisPlayerSetup = new PlayerSetupParser();
+        public IPlayerSetupParser thisPlayerSetupParser { get; set; }
         public IPlayerShipValidation thisValidation = new PlayerShipValidation();
         public List<Player> playerList { get; private set; }
         private IConsoleReader thisReader { get; set; }
+        private IConsoleReader anotherReader { get; set; }
 
         public PlayerSetup()
         {
             thisReader = new ConsoleReader();
             IGameSetupParser thisParser = new GameSetupParser(thisReader);
             thisGameSetup = new GameSetup(thisParser);
+
+            anotherReader = new ConsoleReader();
+            thisPlayerSetupParser = new PlayerSetupParser(anotherReader);
         }
 
         #region Setup All Players Method
@@ -82,7 +86,7 @@ namespace BattleShips
         {
             Console.WriteLine(Resources.playerSetupIntro);
             Console.WriteLine(Resources.getPlayerName);
-            thisPlayer.PlayerName = thisPlayerSetup.SetPlayerName();
+            thisPlayer.PlayerName = thisPlayerSetupParser.SetPlayerName();
         }
         #endregion
 
@@ -113,7 +117,7 @@ namespace BattleShips
         #region Get New Ship Details From User Method
         private Position GetNewShipDetailsFromUser(Ship thisShip)
         {
-            var shipPlacementString = thisPlayerSetup.PlaceNewShip();
+            var shipPlacementString = thisPlayerSetupParser.PlaceNewShip();
             string[] userInput = shipPlacementString.Split(',');
             if (userInput[2] == "h")
             {
