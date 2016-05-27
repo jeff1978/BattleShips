@@ -1,11 +1,9 @@
 ﻿using BattleShips.ConsoleChecker;
-using BattleShips.Setup;
 using NUnit.Framework;
-using System;
 
 namespace BattleShipsTests
 {
-        [TestFixture]
+    [TestFixture]
         public class PlayerSetupParserTests
         {
             [Test]
