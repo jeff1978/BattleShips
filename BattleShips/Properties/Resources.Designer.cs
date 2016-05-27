@@ -157,7 +157,8 @@ namespace BattleShips.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship.....
+        ///   Looks up a localized string similar to {0}...
+        ///Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship.....
         /// </summary>
         internal static string getPlacementCommand {
             get {
@@ -249,6 +250,15 @@ namespace BattleShips.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ...the game mode has been set to {0}..
+        /// </summary>
+        internal static string modeSetConfirmation {
+            get {
+                return ResourceManager.GetString("modeSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ship not added because at least one position is already occupied or lies outside the sea boundary. Enter the command to place your ship....
         /// </summary>
         internal static string placementErrorMessage {
@@ -258,7 +268,25 @@ namespace BattleShips.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Player setup.....
+        ///   Looks up a localized string similar to ...your name has been set..
+        /// </summary>
+        internal static string playerNameSetConfirmation {
+            get {
+                return ResourceManager.GetString("playerNameSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ...this game has {0} players..
+        /// </summary>
+        internal static string playerNoSetConfirmation {
+            get {
+                return ResourceManager.GetString("playerNoSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New player setup.....
         /// </summary>
         internal static string playerSetupIntro {
             get {
@@ -272,6 +300,33 @@ namespace BattleShips.Properties {
         internal static string playerSuffix {
             get {
                 return ResourceManager.GetString("playerSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ...the sea has been set to {0},{1}.
+        /// </summary>
+        internal static string seaSetConfirmation {
+            get {
+                return ResourceManager.GetString("seaSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ...{0} ships were chosen..
+        /// </summary>
+        internal static string shipNoSetConfirmation {
+            get {
+                return ResourceManager.GetString("shipNoSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ...your ship position has been set..
+        /// </summary>
+        internal static string shipPositionsSetConfirmation {
+            get {
+                return ResourceManager.GetString("shipPositionsSetConfirmation", resourceCulture);
             }
         }
         

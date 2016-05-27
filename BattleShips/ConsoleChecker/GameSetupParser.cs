@@ -26,12 +26,14 @@ namespace BattleShips.ConsoleChecker
         public int SetNumberOfPlayers()
         {
             GetUserInt(MinimumValue: 2, ErrorMsg: Resources.getPlayerNoErrorMessage);
+            Console.WriteLine(Resources.playerNoSetConfirmation, operationResult);
             return operationResult;
         }
 
         public int SetNumberOfShips()
         {
             GetUserInt(MinimumValue: 0, ErrorMsg: Resources.getShipNoErrorMessage);
+            Console.WriteLine(Resources.shipNoSetConfirmation, operationResult);
             return operationResult;
         }
 
@@ -87,7 +89,8 @@ namespace BattleShips.ConsoleChecker
                 isValidInput = true;
                 // cast the int to its enum
                 thisGameMode = (GameMode)modeEntered;
-             }
+                Console.WriteLine(Resources.modeSetConfirmation, thisGameMode);
+            }
         }
 
         public Sea SetSeaSize()
@@ -125,6 +128,7 @@ namespace BattleShips.ConsoleChecker
             else
             {
                 thisSea = new Sea(int.Parse(stringSplits[0]), int.Parse(stringSplits[1]));
+                Console.WriteLine(Resources.seaSetConfirmation, stringSplits[0], stringSplits[1]);
             }
         }
     }

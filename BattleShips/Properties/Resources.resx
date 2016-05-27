@@ -154,7 +154,8 @@ Enter 0 or 1:</value>
     <value>The command was not recognised. Ensure that the format is correct eg. 4,5,v  or  5,2,h  Enter the coordinates and direction for the ship.</value>
   </data>
   <data name="getPlacementCommand" xml:space="preserve">
-    <value>Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship....</value>
+    <value>{0}...
+Enter the coordinates and orientation for your ship e.g. 3,4,h or 7,2,v  Hint: All ship positions must lie in the bounds of the sea, and cannot overlap your other ships. Enter the command to place your ship....</value>
   </data>
   <data name="getPlayerName" xml:space="preserve">
     <value>Enter your name. You must submit any value except spaces or null...:</value>
@@ -185,14 +186,32 @@ Note: the sea grid size typed here must be &gt; or = 5 x 5 : Enter the size of t
   <data name="missMessage" xml:space="preserve">
     <value>Miss!!</value>
   </data>
+  <data name="modeSetConfirmation" xml:space="preserve">
+    <value>...the game mode has been set to {0}.</value>
+  </data>
   <data name="placementErrorMessage" xml:space="preserve">
     <value>Ship not added because at least one position is already occupied or lies outside the sea boundary. Enter the command to place your ship...</value>
   </data>
+  <data name="playerNameSetConfirmation" xml:space="preserve">
+    <value>...your name has been set.</value>
+  </data>
+  <data name="playerNoSetConfirmation" xml:space="preserve">
+    <value>...this game has {0} players.</value>
+  </data>
   <data name="playerSetupIntro" xml:space="preserve">
-    <value>Player setup....</value>
+    <value>New player setup....</value>
   </data>
   <data name="playerSuffix" xml:space="preserve">
     <value>Player</value>
+  </data>
+  <data name="seaSetConfirmation" xml:space="preserve">
+    <value>...the sea has been set to {0},{1}</value>
+  </data>
+  <data name="shipNoSetConfirmation" xml:space="preserve">
+    <value>...{0} ships were chosen.</value>
+  </data>
+  <data name="shipPositionsSetConfirmation" xml:space="preserve">
+    <value>...your ship position has been set.</value>
   </data>
   <data name="shipTypeDetails" xml:space="preserve">
     <value>Ship to add: {0}, size {1}....</value>

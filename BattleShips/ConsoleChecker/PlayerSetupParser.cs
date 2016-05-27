@@ -40,7 +40,11 @@ namespace BattleShips.ConsoleChecker
                 Console.WriteLine(Resources.getNameErrorMessage);
                 isValidInput = false;
             }
-            else { operationResult = userInput; }
+            else
+            {
+                operationResult = userInput;
+                Console.WriteLine(Resources.playerNameSetConfirmation);
+            }
         }
 
         public string PlaceNewShip()
@@ -62,7 +66,10 @@ namespace BattleShips.ConsoleChecker
             if (isValidInput == false)
             { Console.WriteLine(Resources.getPlaceErrorMessage); }
             else
-            { operationResult = userInput; }
+            {
+                operationResult = userInput;
+                Console.WriteLine(Resources.shipPositionsSetConfirmation);
+            }
         }
 
         public string ValidateUserShipInput(string userInput)

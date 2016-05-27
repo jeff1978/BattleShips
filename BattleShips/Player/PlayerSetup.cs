@@ -54,7 +54,7 @@ namespace BattleShips
             AddPlayerName(thisPlayer);
 
             thisValidation.createPlayerShips(thisGameSetup.listOfShipTypes, thisPlayer);
-            Console.WriteLine(Resources.getPlacementCommand);
+            Console.WriteLine(Resources.getPlacementCommand, thisPlayer.PlayerName);
 
             // for each ship ask for the place command and place the ship.
             // give the user 10 goes then remove the ship and move onto next one.
