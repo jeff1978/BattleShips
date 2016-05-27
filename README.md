@@ -14,10 +14,6 @@ The application runs in a single executable file and uses a satellite assembly f
 <h4>Unit Testing and Mockups</h4>
 C# Test files and mockups are found here: <a href = "https://github.com/jeff1978/BattleShips/tree/master/BattleShipsTests">\BattleShipsTests</a>
 <br>Tests were run using the nuget packages: NUnit 2.6.4 and NUnit Test Adapter 2.0.0
-<h4>Development Status</h4>
-The application works and development is still ongoing. Areas of development include:
-<br><br> - refactoring of code, improvement of error handling.
-<br> - formatting the output strings for better gameplay.
 <h4>Notes and Acknowledgements</h4>
 A full list of information sources can be found here: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/Acknowledgements.txt">\BattleShips\BattleShips\Acknowledgements.txt.</a>
 <h4>Supported operating systems and Issues</h4>
