@@ -36,21 +36,19 @@ namespace BattleShipsTests
                 // arrange
                 string inputString1 = null;
                 string inputString2 = " ";
-                string expected1 = "Unknown";
-                string expected2 = "Unknown";
 
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
-                var actual1 = inputPlayerTest1.SetPlayerName();
+                inputPlayerTest1.ValidateUserNameInput(thisReader1.ReadConsole());
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
-                var actual2 = inputPlayerTest2.SetPlayerName();
+                inputPlayerTest2.ValidateUserNameInput(thisReader2.ReadConsole());
 
                 // assert
-                Assert.AreEqual(expected1, actual1);
-                Assert.AreEqual(expected2, actual2);
+                Assert.IsFalse(inputPlayerTest1.isValidInput);
+                Assert.IsFalse(inputPlayerTest2.isValidInput);
             }
 
             [Test]
@@ -85,15 +83,15 @@ namespace BattleShipsTests
                 // act
                 IConsoleReader thisReader1 = new MockConsoleReader(inputString1);
                 var inputPlayerTest1 = new PlayerSetupParser(thisReader1);
-                var actual1 = inputPlayerTest1.PlaceNewShip();
+                var outputString1 = inputPlayerTest1.ValidateUserShipInput(thisReader1.ReadConsole());
 
                 IConsoleReader thisReader2 = new MockConsoleReader(inputString2);
                 var inputPlayerTest2 = new PlayerSetupParser(thisReader2);
-                var actual2 = inputPlayerTest2.PlaceNewShip();
+                var outputString2 = inputPlayerTest2.ValidateUserShipInput(thisReader2.ReadConsole());
 
                 // assert
-                Assert.AreEqual("-1,-1,v", actual1);
-                Assert.AreEqual("-1,-1,v", actual2);
+                Assert.IsFalse(inputPlayerTest1.isValidInput);
+                Assert.IsFalse(inputPlayerTest2.isValidInput);
             }
         }
 }

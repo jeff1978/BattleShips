@@ -48,16 +48,16 @@ namespace BattleShips.ConsoleChecker
             while (isValidInput == false)
             {
                 // get the user input and validate it
-                string userInput = ValidateUserInput(ThisReader.ReadConsole());
+                string userInput = ValidateUserShipInput(ThisReader.ReadConsole());
                 // process the string and act on the result
-                processUserShipInput(userInput);
+                ValidateUserNameInput(userInput);
             }
             // reset the property
             isValidInput = false;
             return operationResult;
         }
 
-        public void processUserShipInput(string userInput)
+        public void ValidateUserNameInput(string userInput)
         {
             if (isValidInput == false)
             { Console.WriteLine(Resources.getPlaceErrorMessage); }
@@ -65,7 +65,7 @@ namespace BattleShips.ConsoleChecker
             { operationResult = userInput; }
         }
 
-        public string ValidateUserInput(string userInput)
+        public string ValidateUserShipInput(string userInput)
         {
             // assume all is well
             isValidInput = true;
