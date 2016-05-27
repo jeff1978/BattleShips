@@ -4,9 +4,6 @@ using BattleShips.BShip;
 using System;
 using System.Collections.Generic;
 using BattleShips.Properties;
-using System.Resources;
-using System.Threading;
-using System.Reflection;
 
 namespace BattleShips.Setup
 {
@@ -17,9 +14,6 @@ namespace BattleShips.Setup
     {
         private IGameSetupParser inputParser { get; set; }
 
-        /// <summary>
-        /// Constructor injection used here to facilitate mockup for unit testing.
-        /// </summary>
         public GameSetup(IGameSetupParser thisIParser)
         {
             inputParser = thisIParser;

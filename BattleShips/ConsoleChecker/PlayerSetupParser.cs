@@ -10,12 +10,12 @@ namespace BattleShips.ConsoleChecker
     {
         public IConsoleReader ThisReader { get; set; }
         public bool isValidInput { get; set; }
-        private string playerName { get; set; }
+        private string operationResult { get; set; }
 
         public PlayerSetupParser(IConsoleReader thisReader)
         {
             ThisReader = thisReader;
-            playerName = string.Empty;
+            operationResult = string.Empty;
             isValidInput = false;
         }
 
@@ -24,14 +24,14 @@ namespace BattleShips.ConsoleChecker
             while (isValidInput == false)
             {
                 // get user input, validate and process it.
-                processUserInput();
+                processUserNameInput();
             }
             // reset the property
             isValidInput = false;
-            return playerName;
+            return operationResult;
         }
 
-        private void processUserInput()
+        public void processUserNameInput()
         {
             isValidInput = true;
             string userInput = ThisReader.ReadConsole();
@@ -40,37 +40,45 @@ namespace BattleShips.ConsoleChecker
                 Console.WriteLine(Resources.getNameErrorMessage);
                 isValidInput = false;
             }
-            else { playerName = userInput; }
+            else { operationResult = userInput; }
         }
 
         public string PlaceNewShip()
         {
-            bool isValid = true;
-            int count = 0;
-            while (count < 10)
+            while (isValidInput == false)
             {
-                int x;
-                int y;
-                string input = ThisReader.ReadConsole();
-                string[] dimensions = input.Split(',');
-                // now look for any invalid part
-                if (dimensions.Length != 3 || !(dimensions[2] == "h" || dimensions[2] == "v") || int.TryParse(dimensions[1],
-                    out y)==false || int.TryParse(dimensions[0], out x)==false)
-                {
-                    isValid = false;
-                }
+                // get the user input and validate it
+                string userInput = ValidateUserInput(ThisReader.ReadConsole());
+                // process the string and act on the result
+                processUserShipInput(userInput);
+            }
+            // reset the property
+            isValidInput = false;
+            return operationResult;
+        }
 
-                if (isValid == false){ 
-                    Console.WriteLine(Resources.getPlaceErrorMessage);
-                    count++;
-                    isValid = true;
-                }
-                else
-                {
-                    return input;
-                }             
-             }
-            return "-1,-1,v";
+        public void processUserShipInput(string userInput)
+        {
+            if (isValidInput == false)
+            { Console.WriteLine(Resources.getPlaceErrorMessage); }
+            else
+            { operationResult = userInput; }
+        }
+
+        public string ValidateUserInput(string userInput)
+        {
+            // assume all is well
+            isValidInput = true;
+            int x;
+            int y;
+            string[] stringSplits = userInput.Split(',');
+            // now look for any invalid part
+            if (stringSplits.Length != 3 || !(stringSplits[2] == "h" || stringSplits[2] == "v") || int.TryParse(stringSplits[1],
+                out y) == false || int.TryParse(stringSplits[0], out x) == false)
+            {
+                isValidInput = false;
+            }
+            return userInput;
         }
     }
 }

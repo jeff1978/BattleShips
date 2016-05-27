@@ -11,8 +11,8 @@ namespace BattleShips.ConsoleChecker
     {
         public IConsoleReader ThisReader { get; set; }
         private int operationResult { get; set; }
-        private int minimumValue { get; set; }
-        private string errorMsg { get; set; }
+        public int minimumValue { get; set; }
+        public string errorMsg { get; set; }
         public bool isValidInput { get; set; }
         private GameMode thisGameMode { get; set; }
         private Sea thisSea { get; set; }
@@ -41,17 +41,17 @@ namespace BattleShips.ConsoleChecker
             errorMsg = ErrorMsg;
             while (isValidInput == false)
             {
-                isValidInput = true;
-                int validItem;
-                string input = ThisReader.ReadConsole();
-                isValidInput = int.TryParse(input, out validItem);
-                processUserInt(validItem, input);
+                processUserInt();
             }
             isValidInput = false;
         }
 
-        private void processUserInt(int validItem, string input)
+        public void processUserInt()
         {
+            isValidInput = true;
+            int validItem;
+            string input = ThisReader.ReadConsole();
+            isValidInput = int.TryParse(input, out validItem);
             if (isValidInput == false || int.Parse(input) < minimumValue)
             {
                 Console.WriteLine(errorMsg);
@@ -72,7 +72,7 @@ namespace BattleShips.ConsoleChecker
             return thisGameMode;
         }
 
-        private void processUserModeInput(int gameModeEnumLength)
+        public void processUserModeInput(int gameModeEnumLength)
         {
             int modeEntered;
             string userInput = ThisReader.ReadConsole();

@@ -13,21 +13,18 @@ namespace BattleShips
     /// </summary>
     public class PlayerSetup : IPlayerSetup
     {
-        public IGameSetup thisGameSetup { get; set; }
-        public IPlayerSetupParser thisPlayerSetupParser { get; set; }
-        public IPlayerShipValidation thisValidation = new PlayerShipValidation();
+        private IGameSetup thisGameSetup { get; set; }
+        private IPlayerSetupParser thisPlayerSetupParser { get; set; }
+        private IPlayerShipValidation thisValidation = new PlayerShipValidation();
         public List<Player> playerList { get; private set; }
         private IConsoleReader thisReader { get; set; }
-        private IConsoleReader anotherReader { get; set; }
 
         public PlayerSetup()
         {
             thisReader = new ConsoleReader();
             IGameSetupParser thisParser = new GameSetupParser(thisReader);
             thisGameSetup = new GameSetup(thisParser);
-
-            anotherReader = new ConsoleReader();
-            thisPlayerSetupParser = new PlayerSetupParser(anotherReader);
+            thisPlayerSetupParser = new PlayerSetupParser(thisReader);
         }
 
         #region Setup All Players Method
