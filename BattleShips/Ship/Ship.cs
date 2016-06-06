@@ -19,16 +19,10 @@ namespace BattleShips.BShip
             ShipType = thisType;
         }
         
-        /// <summary>
-        /// This method will take the place parameters and work out the occupied grid
-        /// coordinates based on the ship type and direction. Assume that the ship
-        /// placement coordinate is on the far left (if horizontal) or bottom (if
-        /// vertical.
-        /// </summary>
-        /// <param name="placePosition"></param>
-        /// <param name="shipSize"></param>
-        /// <param name="isShipHorizontal"></param>
-        /// <returns></returns>
+        // This method will take the place parameters and work out the occupied grid
+        // coordinates based on the ship type and direction. Assume that the ship
+        // placement coordinate is on the far left (if horizontal) or bottom (if
+        // vertical.
         public List<Position> GetShipPositions(Position placePosition)
         {
             // lets breakdown the placePosition and work out the 
@@ -72,12 +66,7 @@ namespace BattleShips.BShip
         public bool IsShipFloating()
         {
             // find at least one floating position
-            bool atLeastOneFloating = false;
-            if (ShipPostions.Exists(p => p.IsFloating))
-            {
-                atLeastOneFloating = true;
-            }
-            return atLeastOneFloating;
+            return ShipPositions.Exists(p => p.IsFloating;
         }
     }
 }
