@@ -1,10 +1,11 @@
 <h3>BattleShips</h3>
 <img src = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/BattleshipGameImage.jpg" align = right>
 This C# .NET solution is my unique take on the popular board game. The application has language options for both English and Maori. It uses a single console, has two game modes and it is multiplayer. The development of this project is driven by unit testing (tests and mockups are included in this repo)
-<br><h4>Design Patterns</h4>
-The following OO patterns are used:
-<br><b>Iterator</b> : This uses the IEnumerable interface and the generic list collection type supported by C#. LINQ extension methods are used to search lists of objects using simple lambda statements.
-<br><b>Dependency Injection</b> : This decouples the static console.readline() method from input validation code. Unit testing uses a wrapper class and mock classes to simulate user input.
+<br><h4>Design Patterns Used</h4>
+<b>Iterator :</b>
+<br>This uses the IEnumerable interface and the generic list collection type supported by C#. LINQ extension methods are used to search lists of objects using simple lambda statements.
+<br><b>Dependency Injection :</b>
+<br>This decouples the static console.readline() method from input validation code. Unit testing uses a wrapper class and mock classes to simulate user input.
 <h4>Instructions:</h4>
 Follow the on screen instructions to choose a language, build a custom grid and start a new game. There can be two or more players. In simple mode each player has just two ships; a Scout and a Destroyer. In custom mode, the ship types and quantities can instead be chosen. Players take turns to fire at their opponents' ships. The last surviving player is the winner. For convenience the file can be downloaded from: <a href = "https://github.com/jeff1978/BattleShips/blob/master/BattleShips/bin/Debug/">\BattleShips\bin\Debug</a> If you wish to play the game in Maori, make sure you download the satellite assembly (the mi-nz folder) also found in the bin directory.
 <br><h4>Valid Commands:</h4>
