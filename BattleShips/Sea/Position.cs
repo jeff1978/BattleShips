@@ -13,20 +13,12 @@
         public bool IsFloating { get; set; }
         #endregion
 
-        /// <summary>
-        /// This is the principal class used to represent the coordinates of a grid. This also
-        ///  includes a boolean property called IsFloating that is used as a flag for identifying floating or sunk positions.
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="IsFloating"> This is an optional default parameter already initialised.</param>
-
         #region constructor
         public Position(int x, int y, bool IsFloating=false)
         {
             this.row = x;
             this.column = y;
-        }
+        },
         #endregion
     }
 }
