@@ -29,11 +29,11 @@ namespace BattleShipsTest
             thisShip3.SetShipPositions(placePosition);
 
             // damage the second ship
-            thisShip2.ShipPostions[2].IsFloating = false;
+            thisShip2.ShipPositions[2].IsFloating = false;
 
             // sink the third ship
-            thisShip3.ShipPostions[0].IsFloating = false;
-            thisShip3.ShipPostions[1].IsFloating = false;
+            thisShip3.ShipPositions[0].IsFloating = false;
+            thisShip3.ShipPositions[1].IsFloating = false;
 
             // act and assert
             Assert.IsTrue(thisShip1.IsShipFloating());
@@ -59,7 +59,7 @@ namespace BattleShipsTest
 
             thisShip1.SetShipPositions(placePosition);
             thisShip2.SetShipPositions(placePosition);
-            thisShip2.ShipPostions.ForEach(p => p.IsFloating = false);
+            thisShip2.ShipPositions.ForEach(p => p.IsFloating = false);
                 
             tempList.Add(thisShip1); // floating ship
             tempList.Add(thisShip2); // sunk ship
@@ -73,8 +73,8 @@ namespace BattleShipsTest
 
             thisShip3.SetShipPositions(placePosition);
             thisShip4.SetShipPositions(placePosition);
-            thisShip3.ShipPostions.ForEach(p => p.IsFloating = false);
-            thisShip4.ShipPostions.ForEach(p => p.IsFloating = false);
+            thisShip3.ShipPositions.ForEach(p => p.IsFloating = false);
+            thisShip4.ShipPositions.ForEach(p => p.IsFloating = false);
 
             tempList2.Add(thisShip3); // sunk ship
             tempList2.Add(thisShip4); // sunk ship
@@ -106,11 +106,11 @@ namespace BattleShipsTest
             thisShip3.SetShipPositions(placePosition3);
 
             // damage the second ship
-            thisShip2.ShipPostions[2].IsFloating = false;
+            thisShip2.ShipPositions[2].IsFloating = false;
 
             // sink the third ship
-            thisShip3.ShipPostions[0].IsFloating = false;
-            thisShip3.ShipPostions[1].IsFloating = false;
+            thisShip3.ShipPositions[0].IsFloating = false;
+            thisShip3.ShipPositions[1].IsFloating = false;
 
             // add all ships to list then test
             var shipList = new List<Ship>() { thisShip1, thisShip2, thisShip3};
@@ -128,11 +128,11 @@ namespace BattleShipsTest
             // check only two ships returned
             Assert.AreEqual(2, floatingShips.Count());
             // check all 3 positions for ship 1 are floating
-            Assert.IsTrue(floatingShips[0].ShipPostions[0].IsFloating);
-            Assert.IsTrue(floatingShips[0].ShipPostions[1].IsFloating);
-            Assert.IsTrue(floatingShips[0].ShipPostions[2].IsFloating);
+            Assert.IsTrue(floatingShips[0].ShipPositions[0].IsFloating);
+            Assert.IsTrue(floatingShips[0].ShipPositions[1].IsFloating);
+            Assert.IsTrue(floatingShips[0].ShipPositions[2].IsFloating);
             // check for one sunk position in ship 2
-            Assert.IsFalse(floatingShips[1].ShipPostions[2].IsFloating);
+            Assert.IsFalse(floatingShips[1].ShipPositions[2].IsFloating);
         }
     }
 }

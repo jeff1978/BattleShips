@@ -77,10 +77,10 @@ namespace BattleShipsTest
 
                 // act
                 thisShip1.SetShipPositions(placePosition1);
-                thisShip2.ShipPostions = thisShip2.GetShipPositions(placePosition2);
+                thisShip2.ShipPositions = thisShip2.GetShipPositions(placePosition2);
 
-                var numberOfFloatingPositions1 = thisShip1.ShipPostions.Where(p => p.IsFloating == true).Count();
-                var numberOfFloatingPositions2 = thisShip2.ShipPostions.Where(p => p.IsFloating == true).Count();
+                var numberOfFloatingPositions1 = thisShip1.ShipPositions.Where(p => p.IsFloating == true).Count();
+                var numberOfFloatingPositions2 = thisShip2.ShipPositions.Where(p => p.IsFloating == true).Count();
 
                 // assert
                 Assert.AreEqual(3, numberOfFloatingPositions1);

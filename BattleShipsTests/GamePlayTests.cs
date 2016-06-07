@@ -24,7 +24,7 @@ namespace BattleShipsTests
 
             thisShip1.SetShipPositions(placePosition);
             thisShip2.SetShipPositions(placePosition);
-            thisShip2.ShipPostions.ForEach(p => p.IsFloating = false);
+            thisShip2.ShipPositions.ForEach(p => p.IsFloating = false);
 
             var tempList = new List<Ship>();
             tempList.Add(thisShip1); // floating ship
@@ -38,8 +38,8 @@ namespace BattleShipsTests
 
             thisShip3.SetShipPositions(placePosition);
             thisShip4.SetShipPositions(placePosition);
-            thisShip3.ShipPostions.ForEach(p => p.IsFloating = false);
-            thisShip4.ShipPostions.ForEach(p => p.IsFloating = false);
+            thisShip3.ShipPositions.ForEach(p => p.IsFloating = false);
+            thisShip4.ShipPositions.ForEach(p => p.IsFloating = false);
 
             // add two sunk ships
             var tempList2 = new List<Ship>() { thisShip3, thisShip4};

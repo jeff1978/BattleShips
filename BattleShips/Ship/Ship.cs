@@ -11,7 +11,7 @@ namespace BattleShips.BShip
     {
         public bool IsHorizontal { get; set; }
         public ShipType ShipType { get; set; }
-        public List<Position> ShipPostions {get; set;}
+        public List<Position> ShipPositions {get; set;}
 
     public Ship(ShipType thisType, bool isHorizontal)
         {
@@ -58,7 +58,7 @@ namespace BattleShips.BShip
         {
             var tempList = GetShipPositions(placePosition);
             tempList.ForEach(p => p.IsFloating = true);
-            ShipPostions = tempList;
+            ShipPositions = tempList;
         }
 
         // This method checks the ship positions to determine

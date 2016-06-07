@@ -18,7 +18,7 @@
         {
             this.row = x;
             this.column = y;
-        },
+        }
         #endregion
     }
 }

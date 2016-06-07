@@ -41,9 +41,9 @@ namespace BattleShips
             var playerShipPositions = new List<Position>();
             foreach (var Ship in PlayerShips)
             {
-                if (Ship.ShipPostions != null)
+                if (Ship.ShipPositions != null)
                 {
-                    Ship.ShipPostions.ForEach(p => playerShipPositions.Add(p));
+                    Ship.ShipPositions.ForEach(p => playerShipPositions.Add(p));
                 }
             }
             return playerShipPositions;

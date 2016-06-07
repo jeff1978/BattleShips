@@ -68,7 +68,7 @@ namespace BattleShips
             foreach (var floatingShip in floatingEnemyShips)
             {
                 // get the floating ship positions only
-                var floatingPositions = floatingShip.ShipPostions.Where(p => p.IsFloating).ToList();
+                var floatingPositions = floatingShip.ShipPositions.Where(p => p.IsFloating).ToList();
 
                 // for each floating position compare it to the fire position
                 floatingPositions.ForEach(p => comparePositions(firePosition, p, floatingShip));
